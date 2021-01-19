@@ -61,7 +61,7 @@
       (Hint: Start by taking the time derivative of $\mathbf{r}\cdot \mathbf{r}=r^2$ and do steps to obtain eq. (1). Use a similar idea to obtain eq. (2)).
 
       \textcolor{hwColor}{
-        Assume $r=a \hat{i}+b \hat{j}+c \hat{k} $ then $ v=\dfrac{dr}{dt}=\dfrac{da}{dt}\hat{i}+\dfrac{db}{dt}\hat{j}+\dfrac{dc}{dt}\hat{k}$, and $\hat{r}=\dfrac{a \hat{i}+b \hat{j}+c \hat{k}}{\sqrt{a^2+b^2+c^2}}$ \\
+        (1): Assume $r=a \hat{i}+b \hat{j}+c \hat{k} $ then $ v=\dfrac{dr}{dt}=\dfrac{da}{dt}\hat{i}+\dfrac{db}{dt}\hat{j}+\dfrac{dc}{dt}\hat{k}$, and $\hat{r}=\dfrac{a \hat{i}+b \hat{j}+c \hat{k}}{\sqrt{a^2+b^2+c^2}}$ \\
         \\
         L.H.S: \\
         $
@@ -81,6 +81,31 @@
 
       \textcolor{hwColor}{
         \rule{15cm}{1pt}
+      }
+
+      \textcolor{hwColor}{
+        (2): Assume $v=\dfrac{da}{dt} \hat{i}+\dfrac{db}{dt} \hat{j}+\dfrac{dc}{dt} \hat{k}$ then $v=|V|=\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}$ \\
+        \\
+        L.H.S: \\
+        $
+          \dfrac{dv}{dt}=\dfrac{d}{dt}(\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2})=\dfrac{2\dfrac{da}{dt}\dfrac{d^2a}{dt^2}+2\dfrac{db}{dt}\dfrac{d^2b}{dt^2}+2\dfrac{dc}{dt}\dfrac{d^2c}{dt^2}}{2\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}}=\dfrac{\dfrac{da}{dt}\dfrac{d^2a}{dt^2}+\dfrac{db}{dt}\dfrac{d^2b}{dt^2}+\dfrac{dc}{dt}\dfrac{d^2c}{dt^2}}{\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}} \\
+        $
+        \\
+        \\
+        R.H.S: \\
+        $\hat{v}=\dfrac{\dfrac{da}{dt}\hat{i}+\dfrac{db}{dt}\hat{j}+\dfrac{dc}{dt}\hat{k}}{\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}}$ and $a=\dfrac{d^2a}{dt^2}\hat{i}+\dfrac{d^2b}{dt^2}\hat{j}+\dfrac{d^2c}{dt^2}\hat{k}$ \\
+        \\
+        \\
+        \\
+        $
+          \hat{v}.a=\dfrac{\dfrac{da}{dt}\dfrac{d^2a}{dt^2}}{\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}}+\dfrac{\dfrac{db}{dt}\dfrac{d^2b}{dt^2}}{\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}}+\dfrac{\dfrac{dc}{dt}\dfrac{d^2c}{dt^2}}{\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}} \\
+          \\
+          \\
+          \hat{v}.a=\dfrac{\dfrac{da}{dt}\dfrac{d^2a}{dt^2}+\dfrac{db}{dt}\dfrac{d^2b}{dt^2}+\dfrac{dc}{dt}\dfrac{d^2c}{dt^2}}{\sqrt{(\dfrac{da}{dt})^2+(\dfrac{db}{dt})^2+(\dfrac{dc}{dt})^2}} \\
+          \\
+          \\
+          L.H.S=R.H.S \Rightarrow \dfrac{dv}{dt}=\hat{v}.a
+        $
       }
 
     \item Prove eq. (10.4) of the textbook.
