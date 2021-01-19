@@ -8,6 +8,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{float}
+\usepackage{bigints} 
 \usepackage[colorinlistoftodos]{todonotes}
 
 \definecolor{hwColor}{HTML}{AD53BA}
@@ -137,10 +138,46 @@
         $
       }
     
-    \item Calculate the length of the curve $\gamma(t) =( t-1, 1-t^2, 2 + \frac{2}{3}t^3)$, $t\in[0,1]$.
+    \item Calculate the length of the curve $\gamma(t)=(t-1, 1-t^2, 2+\frac{2}{3}t^3)$, $t\in[0,1]$.
     Compare this length with that of the segment of extremes $A=\gamma(0)$ and $B=\gamma(1)$.
 
+      \textcolor{hwColor}{
+        $
+          L=\bigints_{0}^{1} \sqrt{\dfrac{d\gamma}{dt}.\dfrac{d\gamma}{dt}}dt \\
+          \\
+          \dfrac{d\gamma}{dt}=\dfrac{d}{dt}(t-1, 1-t^2, 2+\frac{2}{3}t^3)=(1,-2t,2t^2)=\hat{i}-2t\hat{j}+2t^2\hat{k} \\
+        $
+        \\
+        Taking the dot product of $\dfrac{d\gamma}{dt}$ with itself gives us: \\
+        \\
+        $
+          \dfrac{d\gamma}{dt}.\dfrac{d\gamma}{dt}=\left(\hat{i}-2t\hat{j}+2t^2\hat{k}\right).\left(\hat{i}-2t\hat{j}+2t^2\hat{k}\right)=1+4t^2+4t^4 \\
+          \\
+          \\
+          L=\bigints_{0}^{1} \sqrt{1+4t^2+4t^4}dt=\bigints_{0}^{1} \sqrt{(2t^2+1)^2}dt \\
+          \\
+        $
+        Assuming that $(2t^2+1)^2\geq 0$, we have: \\
+        \\
+        $
+          L=\bigints_{0}^{1} (2t^2+1)dt=\bigints_{0}^{1} (2t^2+1)dt=\left[\dfrac{2t^3}{3}+t\right]\Big|_{0}^{1} \Rightarrow L=\dfrac{5}{3}
+        $
+      }
 
+      \textcolor{hwColor}{
+        \rule{15cm}{1pt}
+      }
+
+      \textcolor{hwColor}{
+        $
+          A=\gamma(0)=(-1, 1, 2) \\
+          B=\gamma(1)=(0, 0, \dfrac{5}{3}) \\
+          \\
+          |AB|=\sqrt{(0+1)^2+(0-1)^2+(\dfrac{5}{3}-2)^2}=\dfrac{\sqrt{19}}{3} \\
+        $
+        \\
+        Hence, $L > |AB|$
+      }
 
     \item Let $\gamma$ be the curve (in two dimensions) defined by $\gamma(t)=(t-\sin t, 
     1-\cos t)$, with $t\in[0,2\pi]$.  Determine the point on $\gamma$ where the curvature $\kappa$ is minimum.
