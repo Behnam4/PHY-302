@@ -65,8 +65,22 @@
         \\
         L.H.S: \\
         $
-          \dfrac{dr}{dt}=\dfrac{d(\sqrt{a^2+b^2+c^2})}{dt}
+          \dfrac{dr}{dt}=\dfrac{d(\sqrt{a^2+b^2+c^2})}{dt}=\dfrac{2a\dfrac{da}{dt}+2b\dfrac{db}{dt}+2c\dfrac{dc}{dt}}{2\sqrt{a^2+b^2+c^2}}=\dfrac{a\dfrac{da}{dt}+b\dfrac{db}{dt}+c\dfrac{dc}{dt}}{\sqrt{a^2+b^2+c^2}}
         $
+        \\
+        \\
+        R.H.S: \\
+        $
+          \hat{r}.v=(\dfrac{a \hat{i}+b \hat{j}+c \hat{k}}{\sqrt{a^2+b^2+c^2}}).(\dfrac{da}{dt}\hat{i}+\dfrac{db}{dt}\hat{j}+\dfrac{dc}{dt}\hat{k})=\dfrac{a}{\sqrt{a^2+b^2+c^2}}\dfrac{da}{dt}+\dfrac{b}{\sqrt{a^2+b^2+c^2}}\dfrac{db}{dt}+\dfrac{c}{\sqrt{a^2+b^2+c^2}}\dfrac{dc}{dt} \\
+          \\
+          =\dfrac{a\dfrac{da}{dt}+b\dfrac{db}{dt}+c\dfrac{dc}{dt}}{\sqrt{a^2+b^2+c^2}} \\
+        $
+        \\
+        $L.H.S=R.H.S \Rightarrow \dfrac{dr}{dt}=\hat{r}.v$
+      }
+
+      \textcolor{hwColor}{
+        \rule{15cm}{1pt}
       }
 
     \item Prove eq. (10.4) of the textbook.
