@@ -1,0 +1,93 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+    \center % Center everything on the page
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm] % Name of your university/college
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] % Major heading such as course name
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework One}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill % Fill the rest of the page with whitespace
+
+  \end{titlepage}
+
+  \begin{enumerate}
+    \item Let $\mathbf{r}(t)$ be the position vector of a particle and $\mathbf{v}(t)$ be its velocity vector, $\mathbf{v}(t) = d\mathbf{r}(t)/dt$. Let $\mathbf{a} = d\mathbf{v}/dt$ be the particle's acceleration. Prove that
+      \begin{eqnarray}
+      \frac{dr}{dt}=\mathbf{\hat{r}}\cdot \mathbf{v}~,  \\
+      \frac{dv}{dt}=\mathbf{\hat{v}}\cdot \mathbf{a}~,  
+      \end{eqnarray}
+      where $r = |\mathbf{r}|$, $v = |\mathbf{v} |$, $\mathbf{\hat{r}}=\mathbf{r}/r$, and $\mathbf{\hat{v}}=\mathbf{v}/v$.   Describe the motion stipulated by $\mathbf{\hat{r}}\cdot \mathbf{v} = 0$; $\mathbf{\hat{v}}\cdot \mathbf{a}=0$.\\
+      (Hint: Start by taking the time derivative of $\mathbf{r}\cdot \mathbf{r}=r^2$ and do steps to obtain eq. (1). Use a similar idea to obtain eq. (2)).
+
+      \textcolor{hwColor}{
+        Assume $r=a \hat{i}+b \hat{j}+c \hat{k} $ then $ v=\dfrac{dr}{dt}=\dfrac{da}{dt}\hat{i}+\dfrac{db}{dt}\hat{j}+\dfrac{dc}{dt}\hat{k}$, and $\hat{r}=\dfrac{a \hat{i}+b \hat{j}+c \hat{k}}{\sqrt{a^2+b^2+c^2}}$ \\
+        \\
+        L.H.S: \\
+        $
+          \dfrac{dr}{dt}=\dfrac{d(\sqrt{a^2+b^2+c^2})}{dt}
+        $
+      }
+
+    \item Prove eq. (10.4) of the textbook.
+    
+      \textcolor{hwColor}{
+        $
+          Eq. (10.4) ~~~~ \dfrac{d(\phi a)}{du}=\phi \dfrac{da}{du}+a \dfrac{d\phi}{du}
+        $
+      }
+    
+    \item Calculate the length of the curve $\gamma(t) =( t-1, 1-t^2, 2 + \frac{2}{3}t^3)$, $t\in[0,1]$.
+    Compare this length with that of the segment of extremes $A=\gamma(0)$ and $B=\gamma(1)$.
+
+
+
+    \item Let $\gamma$ be the curve (in two dimensions) defined by $\gamma(t)=(t-\sin t, 
+    1-\cos t)$, with $t\in[0,2\pi]$.  Determine the point on $\gamma$ where the curvature $\kappa$ is minimum.
+
+
+    \item Consider the surface $\Sigma=(x,y, \frac{1}{2}(x^2 + 2 y^2))$. Find the vector $\mathbf{n}(x,y)$ which is orthogonal to $\Sigma$ in a generic point $P$.  Find the particular point on $\Sigma$ for which $\mathbf{n}$ is parallel to the $z$ axis. 
+
+  \end{enumerate}
+
+\end{document}
