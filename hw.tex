@@ -4,11 +4,14 @@
 \thispagestyle{empty}
 \usepackage{import}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{float}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
 
 \definecolor{hwColor}{HTML}{AD53BA}
 
@@ -33,7 +36,7 @@
 
 
     \HRule \\[0.4cm]
-    { \huge \bfseries Homework ...}\\[0.4cm] 
+    { \huge \bfseries Homework Two}\\[0.4cm] 
     \HRule \\[1.5cm]
 
     \textbf{Behnam Amiri}
@@ -51,8 +54,416 @@
 
   \end{titlepage}
 
+  \textbf{Part A} 
   \begin{enumerate}
-    \item Start here 
+    \item Compute the gradients of the following functions: 
+      \begin{enumerate}
+        \item $\phi=xyz$;
+
+          \textcolor{hwColor}{
+            $
+              \overrightarrow{\nabla} \phi=\dfrac{\partial \phi}{\partial x} \hat{i}+\dfrac{\partial \phi}{\partial y} \hat{j}+\dfrac{\partial \phi}{\partial z}\hat{k}=(yz)\hat{i}+(xz)\hat{j}+(xy)\hat{k}
+            $
+          }
+
+        \item $\psi = \ln \left[ z (x^2-y ^2)^{-1/2}\right]$; 
+
+          \textcolor{hwColor}{
+            $
+              \overrightarrow{\nabla} \psi=\dfrac{\partial \psi}{\partial x} \hat{i}+\dfrac{\partial \psi}{\partial y} \hat{j}+\dfrac{\partial \psi}{\partial z}\hat{k}=\dfrac{\partial\left[ln(\dfrac{z}{\sqrt{x^2-y^2}})\right]}{\partial x}\hat{i}+\dfrac{\partial\left[ln(\dfrac{z}{\sqrt{x^2-y^2}})\right]}{\partial y}\hat{j}+\dfrac{\partial\left[ln(\dfrac{z}{\sqrt{x^2-y^2}})\right]}{\partial z}\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} \psi=\dfrac{\dfrac{0-z\dfrac{2x}{2\sqrt{x^2-y^2}}}{x^2-y^2}}{\dfrac{z}{\sqrt{x^2-y^2}}}\hat{i}+\dfrac{\dfrac{0-z\dfrac{-2y}{2\sqrt{x^2-y^2}}}{x^2-y^2}}{\dfrac{z}{\sqrt{x^2-y^2}}}\hat{j}+\dfrac{\dfrac{\sqrt{x^2-y^2}-\dfrac{0}{2\sqrt{x^2-y^2}}z}{x^2-y^2}}{\dfrac{z}{\sqrt{x^2-y^2}}}\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} \psi=-\dfrac{x}{x^2-y^2}\hat{i}+\dfrac{y}{x^2-y^2}\hat{j}+\dfrac{1}{z}\hat{k}
+            $
+          }
+
+        \item $ r=|\mathbf{r} |= \sqrt{x^2+y^2+z^2}$; (recall that $\mathbf{r}$ is the position vector)
+
+          \textcolor{hwColor}{
+            $
+              \overrightarrow{\nabla} r=\dfrac{\partial r}{\partial x} \hat{i}+\dfrac{\partial r}{\partial y} \hat{j}+\dfrac{\partial r}{\partial z}\hat{k}=\dfrac{\partial (\sqrt{x^2+y^2+z^2})}{\partial x} \hat{i}+\dfrac{\partial (\sqrt{x^2+y^2+z^2})}{\partial y} \hat{j}+\dfrac{\partial (\sqrt{x^2+y^2+z^2})}{\partial z}\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} r=\dfrac{2x}{2\sqrt{x^2+y^2+z^2}}\hat{i}+\dfrac{2y}{2\sqrt{x^2+y^2+z^2}}\hat{j}+\dfrac{2z}{2\sqrt{x^2+y^2+z^2}}\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} r=\dfrac{x}{\sqrt{x^2+y^2+z^2}}\hat{i}+\dfrac{y}{\sqrt{x^2+y^2+z^2}}\hat{j}+\dfrac{z}{\sqrt{x^2+y^2+z^2}}\hat{k}
+            $
+          }
+
+        \item $\frac{1}{r}$  ($r$ defined above)
+
+          \textcolor{hwColor}{
+            $
+              \overrightarrow{\nabla} \dfrac{1}{r}=\dfrac{\partial}{\partial x} (\dfrac{1}{r})\hat{i}+\dfrac{\partial}{\partial y} (\dfrac{1}{r})\hat{j}+\dfrac{\partial}{\partial z}(\dfrac{1}{r})\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} \dfrac{1}{r}=\dfrac{\partial}{\partial x} (\dfrac{1}{\sqrt{x^2+y^2+z^2}})\hat{i}+\dfrac{\partial}{\partial y} (\dfrac{1}{\sqrt{x^2+y^2+z^2}})\hat{j}+\dfrac{\partial}{\partial z}(\dfrac{1}{\sqrt{x^2+y^2+z^2}})\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} \dfrac{1}{r}=\dfrac{\partial}{\partial x} (\dfrac{0-\dfrac{2x}{2\sqrt{x^2+y^2+z^2}}}{x^2+y^2+z^2})\hat{i}+\dfrac{\partial}{\partial y} (\dfrac{0-\dfrac{2y}{2\sqrt{x^2+y^2+z^2}}}{x^2+y^2+z^2})\hat{j}+\dfrac{\partial}{\partial z}(\dfrac{0-\dfrac{2z}{2\sqrt{x^2+y^2+z^2}}}{x^2+y^2+z^2})\hat{k} \\
+              \\
+              \\
+              \overrightarrow{\nabla} \dfrac{1}{r}=-\dfrac{x}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}\hat{i}-\dfrac{y}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}\hat{j}-\dfrac{z}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}\hat{k}
+            $
+          }
+
+      \end{enumerate}
+
+    \item Find a unit vector perpendicular to the surface $\phi(x, y, z) = xy^3z^2=4$, at the point $(-1, -1, 2)$.
+    
+    \textcolor{hwColor}{
+      The gradient of $\phi$ at the point $(-1,-1,2)$ is a vector normal to the surface at this point. The gradient is obtained as follows: \\ \\
+      $
+        \overrightarrow{\nabla} \phi=\dfrac{\partial \phi}{\partial x} \hat{i}+\dfrac{\partial \phi}{\partial y} \hat{j}+\dfrac{\partial \phi}{\partial z}\hat{k}  \\
+        \\
+        \overrightarrow{\nabla} \phi=(y^3z^2) \hat{i}+(3xy^2z^2) \hat{j}+(2xy^3z) \hat{k} \\
+        \\
+        \overrightarrow{\nabla} \phi(-1,-1,2)=(-1)^3(2)^2 \hat{i}+3(-1)(-1)^2(2)^2 \hat{j}+2(-1)(-1)^3(2) \hat{k}=-4 \hat{i}-12 \hat{j}+4 \hat{k} \\
+        \\
+        \overrightarrow{n}=\dfrac{-4 \hat{i}-12 \hat{j}+4 \hat{k}}{\sqrt{(-4)^2+(-12)^2+4^2}}=-\dfrac{4}{4\sqrt{11}} \hat{i}-\dfrac{12}{4 \sqrt{11}} \hat{j}+\dfrac{4}{4\sqrt{11}} \hat{k} \\
+        \\
+        \\
+        \Longrightarrow \overrightarrow{n}=-\dfrac{1}{\sqrt{11}} \hat{i}-\dfrac{3}{\sqrt{11}} \hat{j}+\dfrac{1}{\sqrt{11}} \hat{k}
+      $
+    }
+
+
+    \item Compute the divergence of each of the following vector fields:
+    
+      \textcolor{hwColor}{ Assume the postition vector is: $r=|\mathbf{r}|=\sqrt{x^2+y^2+z^2} \Rightarrow \mathbf{r}=x \hat{i}+y \hat{j}+z \hat{k}$ }
+      \begin{enumerate}
+        \item The position vector, $\mathbf{r}$
+
+          \textcolor{hwColor}{
+            $
+              Div ~~ \overrightarrow{r}=\overrightarrow{\nabla}.\overrightarrow{r}=\dfrac{\partial r_x}{\partial x}+\dfrac{\partial r_y}{\partial y}+\dfrac{\partial r_z}{\partial z}=\dfrac{\partial x}{\partial x}+\dfrac{\partial y}{\partial y}+\dfrac{\partial z}{\partial z}=3
+            $
+          }
+
+        \item $\mathbf{r}/r^3$ for $r\neq 0$  (here $r=|\mathbf{r}|$)
+
+          \textcolor{hwColor}{
+            $
+              \dfrac{\overrightarrow{\mathbf{r}}}{r^3}=\dfrac{x \hat{i}+y \hat{j}+z \hat{k}}{|r|^3}=\dfrac{x}{(\sqrt{x^2+y^2+z^2})^3}\hat{i}+\dfrac{y}{(\sqrt{x^2+y^2+z^2})^3}\hat{j}+\dfrac{z}{(\sqrt{x^2+y^2+z^2})^3}\hat{k} \\ \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{r}}}{r^3}=\overrightarrow{\nabla}.\overrightarrow{\dfrac{\mathbf{r}}{r^3}}=\dfrac{\partial}{\partial x}\left[\dfrac{x}{(\sqrt{x^2+y^2+z^2})^3}\right]+\dfrac{\partial}{\partial y} \left[\dfrac{y}{(\sqrt{x^2+y^2+z^2})^3}\right]+\dfrac{\partial}{\partial z}\left[\dfrac{z}{(\sqrt{x^2+y^2+z^2})^3}\right] \\ \\ \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{r}}}{r^3}=\dfrac{(\sqrt{x^2+y^2+z^2})^3-3x^2 \sqrt{x^2+y^2+z^2}}{(\sqrt{x^2+y^2+z^2})^6} \\
+              +\dfrac{(\sqrt{x^2+y^2+z^2})^3-3y^2 \sqrt{x^2+y^2+z^2}}{(\sqrt{x^2+y^2+z^2})^6} \\
+              +\dfrac{(\sqrt{x^2+y^2+z^2})^3-3z^2 \sqrt{x^2+y^2+z^2}}{(\sqrt{x^2+y^2+z^2})^6} \\
+              \\
+              \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{r}}}{r^3}=\dfrac{3}{(\sqrt{x^2+y^2+z^2})^3}-\dfrac{3(x^2+y^2+z^2)}{(\sqrt{x^2+y^2+z^2})^5} \\
+              \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{r}}}{r^3}=\dfrac{3}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}-\dfrac{3}{(x^2+y^2+z^2)^{\dfrac{3}{2}}} ~~~ \Longrightarrow Div ~~ \dfrac{\overrightarrow{\mathbf{r}}}{r^3}=0
+            $
+          }
+
+        \pagebreak
+
+        \item $\mathbf{A}/r $ for $r\neq  0$, and $\mathbf{A}$ a constant vector ($r$ defined above)
+
+          \textcolor{hwColor}{
+            Let $A_x, A_y,$ and $A_z$ be some constants. \\
+            $
+              \dfrac{\overrightarrow{\mathbf{A}}}{r}=\dfrac{A_x \hat{i}+A_y \hat{j}+A_z \hat{k}}{r}=\dfrac{A_x \hat{i}+A_y \hat{j}+A_z \hat{k}}{\sqrt{x^2+y^2+z^2}} \\ \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{A}}}{r}=\overrightarrow{\nabla}.\dfrac{\overrightarrow{\mathbf{A}}}{r}=\dfrac{\partial}{\partial x}\left[\dfrac{A_x}{\sqrt{x^2+y^2+z^2}}\right]+\dfrac{\partial}{\partial y}\left[\dfrac{A_y}{\sqrt{x^2+y^2+z^2}}\right]+\dfrac{\partial}{\partial z}\left[\dfrac{A_z}{\sqrt{x^2+y^2+z^2}}\right] \\ \\
+              \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{A}}}{r}=\dfrac{\dfrac{0-A_x x}{\sqrt{x^2+y^2+z^2}}}{x^2+y^2+z^2}+\dfrac{\dfrac{0-A_y y}{\sqrt{x^2+y^2+z^2}}}{x^2+y^2+z^2}+\dfrac{\dfrac{0-A_z z}{\sqrt{x^2+y^2+z^2}}}{x^2+y^2+z^2} \\ \\ 
+              \\ 
+              Div ~~ \dfrac{\overrightarrow{\mathbf{A}}}{r}=-\dfrac{A_x x}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}-\dfrac{A_y y}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}-\dfrac{A_z z}{(x^2+y^2+z^2)^{\dfrac{3}{2}}} \\ \\
+              \\
+              Div ~~ \dfrac{\overrightarrow{\mathbf{A}}}{r}=\dfrac{-1}{(x^2+y^2+z^2)^{\dfrac{3}{2}}}\left[A_x x+A_y y+A_z z\right]
+            $
+          }
+
+      \end{enumerate}
+
+
+    \item Compute the curl of each of the following vector fields: 
+      \begin{enumerate}
+        \item $\mathbf{V}=(yz , xz, xy)$
+
+          \textcolor{hwColor}{
+            $
+              V_x=yz, ~ V_y=xz, ~ V_z=xy \\ \\
+              curl ~ \overrightarrow{V}=\overrightarrow{\nabla} \times \overrightarrow{V}=\begin{vmatrix}
+                \hat{i} & \hat{j} & \hat{k} \\
+                \\
+                \dfrac{\partial }{\partial x} & \dfrac{\partial }{\partial y} & \dfrac{\partial }{\partial z} \\
+                \\
+                V_x & V_y & V_z 
+              \end{vmatrix} \\
+              \\
+              =\hat{i} (\dfrac{\partial V_z}{\partial y}-\dfrac{\partial V_y}{\partial z})-\hat{j}(\dfrac{\partial V_z}{\partial x}-\dfrac{\partial V_x}{\partial z})+\hat{k} (\dfrac{\partial V_y}{\partial x}-\dfrac{\partial V_x}{\partial y}) \\
+              \\
+              =\hat{i}(x-x)-\hat{j}(y-y)+\hat{k}(z-z)=0
+            $
+          }
+
+        \item $\mathbf{r}$
+
+          \textcolor{hwColor}{
+            $
+              \mathbf{r}=x \hat{i}+y \hat{j}+z \hat{k} \Rightarrow \mathbf{r}_x=x, ~ \mathbf{r}_y=y, ~ \mathbf{r}_z=z \\ \\
+              curl ~ \overrightarrow{\mathbf{r}}=\overrightarrow{\nabla} \times \overrightarrow{\mathbf{r}}=\begin{vmatrix}
+                \hat{i} & \hat{j} & \hat{k} \\
+                \\
+                \dfrac{\partial }{\partial x} & \dfrac{\partial }{\partial y} & \dfrac{\partial }{\partial z} \\
+                \\
+                \mathbf{r}_x & \mathbf{r}_y & \mathbf{r}_z 
+              \end{vmatrix} \\
+              \\
+              =\hat{i} (\dfrac{\partial \mathbf{r}_z}{\partial y}-\dfrac{\partial \mathbf{r}_y}{\partial z})-\hat{j}(\dfrac{\partial \mathbf{r}_z}{\partial x}-\dfrac{\partial \mathbf{r}_x}{\partial z})+\hat{k} (\dfrac{\partial \mathbf{r}_y}{\partial x}-\dfrac{\partial \mathbf{r}_x}{\partial y}) \\
+              \\
+              =\hat{i}(0-0)-\hat{j}(0-0)+\hat{k}(0-0)=0
+            $
+          }
+
+        \item $\frac{\mathbf{r}}{r^3}$  ($r=|\mathbf{r} |$)
+
+          \textcolor{hwColor}{
+            $
+              \mathbf{r}=x \hat{i}+y \hat{j}+z \hat{k} \\ 
+              \Rightarrow \dfrac{\mathbf{r}}{(\sqrt{x^2+y^2+z^2})^3}=\dfrac{x}{(\sqrt{x^2+y^2+z^2})^3}\hat{i}+\dfrac{y}{(\sqrt{x^2+y^2+z^2})^3}\hat{j}+\dfrac{z}{(\sqrt{x^2+y^2+z^2})^3}\hat{k} \\ \\
+              \mathbf{r}_x=\dfrac{x}{(\sqrt{x^2+y^2+z^2})^3}, ~~ \mathbf{r}_y=\dfrac{y}{(\sqrt{x^2+y^2+z^2})^3}, ~~ \mathbf{r}_z=\dfrac{z}{(\sqrt{x^2+y^2+z^2})^3} \\
+              \\
+              \\
+              curl ~ \overrightarrow{\mathbf{r}}=\overrightarrow{\nabla} \times \overrightarrow{\mathbf{r}}=\begin{vmatrix}
+                \hat{i} & \hat{j} & \hat{k} \\
+                \\
+                \dfrac{\partial }{\partial x} & \dfrac{\partial }{\partial y} & \dfrac{\partial }{\partial z} \\
+                \\
+                \mathbf{r}_x & \mathbf{r}_y & \mathbf{r}_z 
+              \end{vmatrix} \\
+              \\
+              =\hat{i} (\dfrac{\partial \mathbf{r}_z}{\partial y}-\dfrac{\partial \mathbf{r}_y}{\partial z})-\hat{j}(\dfrac{\partial \mathbf{r}_z}{\partial x}-\dfrac{\partial \mathbf{r}_x}{\partial z})+\hat{k} (\dfrac{\partial \mathbf{r}_y}{\partial x}-\dfrac{\partial \mathbf{r}_x}{\partial y}) \\
+              \\
+              =\hat{i} (\dfrac{\partial}{\partial y}\left[\dfrac{z}{(\sqrt{x^2+y^2+z^2})^3}\right]-\dfrac{\partial}{\partial z}\left[\dfrac{y}{(\sqrt{x^2+y^2+z^2})^3}\right]) \\ \\
+              -\hat{j}(\dfrac{\partial}{\partial x}\left[\dfrac{z}{(\sqrt{x^2+y^2+z^2})^3}\right]-\dfrac{\partial }{\partial z}\left[\dfrac{x}{(\sqrt{x^2+y^2+z^2})^3}\right]) \\ \\
+              +\hat{k} (\dfrac{\partial }{\partial x}\left[\dfrac{y}{(\sqrt{x^2+y^2+z^2})^3}\right]-\dfrac{\partial }{\partial y}\left[\dfrac{x}{(\sqrt{x^2+y^2+z^2})^3}\right]) \\ \\
+              \\
+              curl ~ \overrightarrow{\mathbf{r}}=\hat{i} (\dfrac{0-z3\dfrac{2y}{2\sqrt{x^2+y^2+z^2}}(\sqrt{x^2+y^2+z^2})^2}{(\sqrt{x^2+y^2+z^2})^6}-\dfrac{0-3y\dfrac{2z}{2\sqrt{x^2+y^2+z^2}}(\sqrt{x^2+y^2+z^2})^2}{(\sqrt{x^2+y^2+z^2})^6}) \\
+              \\
+              \\
+              -\hat{j}(\dfrac{0-3z\dfrac{2x}{2\sqrt{x^2+y^2+z^2}}(\sqrt{x^2+y^2+z^2})^2}{(\sqrt{x^2+y^2+z^2})^6}-\dfrac{0-3x\dfrac{2z}{2\sqrt{x^2+y^2+z^2}}(\sqrt{x^2+y^2+z^2})^2}{(\sqrt{x^2+y^2+z^2})^6}) \\
+              \\
+              \\
+              +\hat{k} (\dfrac{0-3y\dfrac{2x}{2\sqrt{x^2+y^2+z^2}}(\sqrt{x^2+y^2+z^2})^2}{(\sqrt{x^2+y^2+z^2})^6}-\dfrac{0-3x \dfrac{2y}{2\sqrt{x^2+y^2+z^2}}(\sqrt{x^2+y^2+z^2})^2}{(\sqrt{x^2+y^2+z^2})^6}) \\ \\
+            $
+          }
+
+          \pagebreak
+
+          \textcolor{hwColor}{
+            $
+              curl ~ \overrightarrow{\mathbf{r}}=\hat{i} (\dfrac{-3zy}{(\sqrt{x^2+y^2+z^2})^5}-\dfrac{-3yz}{(\sqrt{x^2+y^2+z^2})^5}) \\ \\
+              -\hat{j}(\dfrac{-3zx}{(\sqrt{x^2+y^2+z^2})^5}-\dfrac{-3xz}{(\sqrt{x^2+y^2+z^2})^5}) \\ \\
+              +\hat{k} (\dfrac{-3yx}{(\sqrt{x^2+y^2+z^2})^5}-\dfrac{-3xy}{(\sqrt{x^2+y^2+z^2})^5}) \\ \\
+              \Longrightarrow curl ~ \overrightarrow{\mathbf{r}}=0 
+            $
+          }
+
+      \end{enumerate}
+
+  \end{enumerate}
+
+  \textbf{Part B}
+  \begin{enumerate}
+    \item Prove that the curl of a gradient is always zero (eq. (10.37)) of the textbook.
+    
+      \textcolor{hwColor}{
+        $curl ~~ grad ~~ \phi=\overrightarrow{\nabla} \times \overrightarrow{\nabla}\phi=0$ eq. (10.37). \\
+        \\
+        Let's assume $\phi(x,y,z)$ is a scalar field. The gradient of $\phi$ is as following:  \\ \\
+        $\overrightarrow{\nabla} \phi(x,y,z)=\hat{i} \dfrac{\partial \phi(x,y,z)}{\partial x}+\hat{j} \dfrac{\partial \phi(x,y,z)}{\partial y}+\hat{k} \dfrac{\partial \phi(x,y,z)}{\partial z}$ is a vector field. \\ 
+        We donote it by $\Phi=\overrightarrow{\nabla}\phi$. \\
+        \\
+        \\
+        Now let's continue the work by finding the curl of $\Phi$: \\
+        $
+          curl ~ \Phi=\begin{vmatrix}
+            \hat{i} & \hat{j} & \hat{k} \\
+            \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+            \dfrac{\partial \phi(x,y,z)}{\partial x} & \dfrac{\partial \phi(x,y,z)}{\partial y} & \dfrac{\partial \phi(x,y,z)}{\partial z}
+          \end{vmatrix} \\
+          \\
+          \\
+          curl ~ \Phi=\hat{i} (\dfrac{\partial}{\partial y} \left[\dfrac{\partial \phi(x,y,z)}{\partial z}\right]-\dfrac{\partial}{\partial z}\left[\dfrac{\partial \phi(x,y,z)}{\partial y}\right]) \\
+          \\
+          -\hat{j} (\dfrac{\partial}{\partial x}\left[\dfrac{\partial \phi(x,y,z)}{\partial z}\right]-\dfrac{\partial}{\partial z}\left[\dfrac{\partial \phi(x,y,z)}{\partial x}\right]) \\
+          \\
+          +\hat{k} (\dfrac{\partial}{\partial x}\left[\dfrac{\partial \phi(x,y,z)}{\partial y}\right]-\dfrac{\partial}{\partial y}\left[\dfrac{\partial \phi(x,y,z)}{\partial x}\right]) \\
+          \\
+          \\
+          curl ~ \Phi=\hat{i} (\dfrac{\partial^2 \phi(x,y,z)}{\partial y \partial z}-\dfrac{\partial^2 \phi(x,y,z)}{\partial z \partial y}) \\
+          \\
+          -\hat{j} (\dfrac{\partial^2 \phi(x,y,z)}{\partial x \partial z}-\dfrac{\partial^2 \phi(x,y,z)}{\partial z \partial x}) \\
+          \\
+          +\hat{k} (\dfrac{\partial^2 \phi(x,y,z)}{\partial x \partial y}-\dfrac{\partial^2 \phi(x,y,z)}{\partial y \partial x}) \\
+        $
+      }
+
+      \pagebreak
+
+      \textcolor{hwColor}{
+        $
+          curl ~ \Phi=\hat{i} (0)-\hat{j} (0)+\hat{k} (0)=0 \Longrightarrow curl ~~ grad ~~ \phi=\overrightarrow{\nabla} \times \overrightarrow{\nabla}\phi=0
+        $
+      }
+
+    \item Prove three (of your choice) of the identities in Table 10.1 of the textbook (please avoid the one that is already proven in the book, see top of page 355).
+    
+      \textcolor{hwColor}{
+        $\phi$ and $\psi$ are scalar fields, $\mathbf{a}$ and $\mathbf{b}$ are vector fields. \\ 
+        \begin{enumerate}
+          \item $\overrightarrow{\nabla}(\phi + \psi)=\overrightarrow{\nabla}\phi+\overrightarrow{\nabla}\psi$ \\ \\
+          $
+            L.H.S: ~ (\dfrac{\partial }{\partial x}\hat{i}+\dfrac{\partial }{\partial y}\hat{j}+\dfrac{\partial }{\partial z}\hat{k})(\phi + \psi)=\dfrac{\partial (\phi + \psi)}{\partial x}\hat{i}+\dfrac{\partial (\phi + \psi)}{\partial y}\hat{j}+\dfrac{\partial (\phi + \psi)}{\partial z}\hat{k} \\
+            \\
+            =\dfrac{\partial \phi}{\partial x}\hat{i}+\dfrac{\partial \psi}{\partial x}\hat{i}+\dfrac{\partial \phi}{\partial y}\hat{j}+\dfrac{\partial \psi}{\partial y}\hat{j}+\dfrac{\partial \phi}{\partial z}\hat{k}+\dfrac{\partial \psi}{\partial z}\hat{k} \\
+            \\
+            =\left(\dfrac{\partial \phi}{\partial x}\hat{i}+\dfrac{\partial \phi}{\partial y}\hat{j}+\dfrac{\partial \phi}{\partial z}\hat{k}\right)+\left(\dfrac{\partial \psi}{\partial x}\hat{i}+\dfrac{\partial \psi}{\partial y}\hat{j}+\dfrac{\partial \psi}{\partial z}\hat{k}\right) \\
+            \\
+            =\left(\dfrac{\partial}{\partial x}\hat{i}+\dfrac{\partial}{\partial y}\hat{j}+\dfrac{\partial}{\partial z}\hat{k}\right)\phi+\left(\dfrac{\partial}{\partial x}\hat{i}+\dfrac{\partial}{\partial y}\hat{j}+\dfrac{\partial}{\partial z}\hat{k}\right)\psi \\
+            \\
+            \therefore ~~ \overrightarrow{\nabla}(\phi + \psi)=\overrightarrow{\nabla}\phi+\overrightarrow{\nabla}\psi \\
+          $
+          \rule{15cm}{1pt}
+          \item $\overrightarrow{\nabla}.(\mathbf{a}+\mathbf{b})=\overrightarrow{\nabla}.\mathbf{a}+\overrightarrow{\nabla}.\mathbf{b}$ \\ \\
+          $
+            L.H.S: ~~ (\dfrac{\partial }{\partial x}\hat{i}+\dfrac{\partial }{\partial y}\hat{j}+\dfrac{\partial }{\partial z}\hat{k}).\left[(a_x+b_x)\hat{i}+(a_y+b_y)\hat{j}+(a_z+b_z)\hat{k}\right] \\
+            \\
+            =\dfrac{\partial (a_x+b_x)}{\partial x}+\dfrac{\partial (a_y+b_y)}{\partial y}+\dfrac{\partial (a_z+b_z)}{\partial z} \\
+            \\
+            \\
+            R.H.S: ~~ (\dfrac{\partial }{\partial x}\hat{i}+\dfrac{\partial }{\partial y}\hat{j}+\dfrac{\partial }{\partial z}\hat{k})\left[a_x \hat{i}+a_y \hat{j}+a_z \hat{k}\right]+(\dfrac{\partial }{\partial x}\hat{i}+\dfrac{\partial }{\partial y}\hat{j}+\dfrac{\partial }{\partial z}\hat{k})\left[b_x \hat{i}+b_y \hat{j}+b_z \hat{k}\right] \\
+            \\
+            =\dfrac{\partial a_x}{\partial x}+\dfrac{\partial a_y}{\partial y}+\dfrac{\partial a_z}{\partial z}+\dfrac{\partial b_x}{\partial x}+\dfrac{\partial b_y}{\partial y}+\dfrac{\partial b_z}{\partial z} \\
+            \\
+            =\dfrac{\partial (a_x+b_x)}{\partial x}+\dfrac{\partial (a_y+b_y)}{\partial y}+\dfrac{\partial (a_z+b_z)}{\partial z} \\
+            \\
+            \\
+            L.H.S=R.H.S ~~ \Longrightarrow \overrightarrow{\nabla}.(\mathbf{a}+\mathbf{b})=\overrightarrow{\nabla}.\mathbf{a}+\overrightarrow{\nabla}.\mathbf{b} \\
+          $
+          \rule{15cm}{1pt}
+          \item $\overrightarrow{\nabla} \times (\mathbf{a}+\mathbf{b})=\overrightarrow{\nabla} \times \mathbf{a}+\overrightarrow{\nabla} \times \mathbf{b}$ \\ \\
+          $
+            L.H.S: ~~ (\dfrac{\partial }{\partial x}\hat{i}+\dfrac{\partial }{\partial y}\hat{j}+\dfrac{\partial }{\partial z}\hat{k}) \times \left[(a_x+b_x)\hat{i}+(a_y+b_y)\hat{j}+(a_z+b_z)\hat{k}\right] \\
+            \\
+            =\begin{vmatrix}
+              \hat{i} & \hat{j} & \hat{k} \\
+              \\
+              \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+              \\
+              a_x+b_x & a_y+b_y & a_z+b_z 
+            \end{vmatrix} \\
+            \\
+            \\
+            =\left(\dfrac{\partial (a_z+b_z)}{\partial y}-\dfrac{\partial (a_y+b_y)}{\partial z}\right)\hat{i}-\left(\dfrac{\partial (a_z+b_z)}{\partial x}-\dfrac{\partial (a_x+b_x)}{\partial z}\right)\hat{j}+\left(\dfrac{\partial (a_y+b_y)}{\partial x}-\dfrac{\partial (a_x+b_x)}{\partial y}\right)\hat{k} \\
+            \\
+            \\
+            = \left[(\dfrac{\partial a_z}{\partial y}-\dfrac{\partial a_y}{\partial z})\hat{i}-(\dfrac{\partial a_z}{\partial x}-\dfrac{\partial a_x}{\partial z})\hat{j}+(\dfrac{\partial a_y}{\partial x}-\dfrac{\partial a_x}{\partial y})\hat{k}\right] \\ \\
+            \\ 
+            +\left[(\dfrac{\partial b_z}{\partial y}-\dfrac{\partial b_y}{\partial z})\hat{i}-(\dfrac{\partial b_z}{\partial x}-\dfrac{\partial b_x}{\partial z})\hat{j}+(\dfrac{\partial b_y}{\partial x}-\dfrac{\partial b_x}{\partial y})\hat{k}\right] \\
+            \\
+            \\
+            =\begin{vmatrix}
+              \hat{i} & \hat{j} & \hat{k} \\
+              \\
+              \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+              \\
+              a_x & a_y & a_z
+            \end{vmatrix} + \begin{vmatrix}
+              \hat{i} & \hat{j} & \hat{k} \\
+              \\
+              \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+              \\
+              b_x & b_y & b_z
+            \end{vmatrix} \\
+            \\
+            \\
+            \\
+            \therefore ~~ \overrightarrow{\nabla} \times (\mathbf{a}+\mathbf{b})=\overrightarrow{\nabla} \times \mathbf{a}+\overrightarrow{\nabla} \times \mathbf{b}
+          $
+        \end{enumerate}
+      }
+    
+    \item What is the operator $\mathbf{V}\cdot \mathbf{\nabla}$, where $\mathbf{V}$ is a generic vector field? [Hint: you can find this discussed in the textbook.] Prove  that $(\mathbf{V}\cdot \mathbf{\nabla})\mathbf{r}=\mathbf{V}$, where $\mathbf{r}$ is the position vector. [Note: in this class we always use the convention that an operator act on what is on its \emph{right}.]
+    
+      \textcolor{hwColor}{
+        $\mathbf{V}.\overrightarrow{\nabla}$ is ready to act on a function $f(x,y,z)$. In other words, $\mathbf{V}.\overrightarrow{\nabla}$
+        is an operator that maps a vector valued function to a scalar. \\
+        This is a scalar operator, but it obviously can be applied to a scalar field, resulting in a scalar field, or to a vector field resulting in a vector field: \\
+        \\
+        $\mathbf{V}.\overrightarrow{\nabla} \equiv \left[\mathbf{V}_x \dfrac{\partial}{\partial x}+\mathbf{V}_y \dfrac{\partial}{\partial y}+\mathbf{V}_z \dfrac{\partial}{\partial z}\right]$ \\
+        \\
+        $
+          (\mathbf{V}.\overrightarrow{\nabla})\mathbf{r}=\mathbf{V} \\
+          \\
+          L.H.S: \\ \\
+          \left(\mathbf{V}_x \dfrac{\partial}{\partial x}+\mathbf{V}_y \dfrac{\partial}{\partial y}+\mathbf{V}_z \dfrac{\partial}{\partial z}\right)(x\hat{i}+y\hat{j}+z\hat{k}) \\
+          \\
+          =\left(\mathbf{V}_x \dfrac{\partial}{\partial x}+\mathbf{V}_y \dfrac{\partial}{\partial y}+\mathbf{V}_z \dfrac{\partial}{\partial z}\right) x\hat{i} \\
+          \\
+          +\left(\mathbf{V}_x \dfrac{\partial}{\partial x}+\mathbf{V}_y \dfrac{\partial}{\partial y}+\mathbf{V}_z \dfrac{\partial}{\partial z}\right) y\hat{j} \\
+          \\
+          +\left(\mathbf{V}_x \dfrac{\partial}{\partial x}+\mathbf{V}_y \dfrac{\partial}{\partial y}+\mathbf{V}_z \dfrac{\partial}{\partial z}\right) z\hat{k} \\
+          \\
+          \\
+          \\
+          =\left(\mathbf{V}_x \dfrac{\partial x}{\partial x}+\mathbf{V}_y \dfrac{\partial x}{\partial y}+\mathbf{V}_z \dfrac{\partial x}{\partial z}\right) \hat{i} \\
+          \\
+          +\left(\mathbf{V}_x \dfrac{\partial y}{\partial x}+\mathbf{V}_y \dfrac{\partial y}{\partial y}+\mathbf{V}_z \dfrac{\partial y}{\partial z}\right) \hat{j} \\
+          \\
+          +\left(\mathbf{V}_x \dfrac{\partial z}{\partial x}+\mathbf{V}_y \dfrac{\partial z}{\partial y}+\mathbf{V}_z \dfrac{\partial z}{\partial z}\right) \hat{k} \\ 
+          \\
+          \\
+          \\
+          =\left(\mathbf{V}_x \dfrac{\partial x}{\partial x}\right) \hat{i}+\left(\mathbf{V}_y \dfrac{\partial y}{\partial y}\right) \hat{j}+\left(\mathbf{V}_z \dfrac{\partial z}{\partial z}\right) \hat{k}=\mathbf{V}_x \hat{i}+\mathbf{V}_y\hat{j}+\mathbf{V}_z \hat{k}=\mathbf{V} \\
+          \\
+          \\
+          \therefore (\mathbf{V}.\overrightarrow{\nabla})\mathbf{r}=\mathbf{V}
+        $
+      }
+    
+    \item Find a vector whose curl is the divergenceless vector $\mathbf{V} = (x \cos z , y \cos z , -2 \sin z )$
+
+      \textcolor{hwColor}{
+        $
+          curl ~ \overrightarrow{?}=\mathbf{V} \\
+          \\
+          \\
+          \begin{vmatrix}
+            \hat{i} & \hat{j} & \hat{k} \\
+            \\
+            \dfrac{\partial }{\partial x} & \dfrac{\partial }{\partial y} & \dfrac{\partial }{\partial z} \\
+            \\
+            ?_x & ?_y & ?_z 
+          \end{vmatrix}=(x\cos z,y\cos z,-2\sin z) \\
+          \\
+          \\
+          \Rightarrow \hat{i}(\dfrac{\partial ?_z}{\partial y}-\dfrac{\partial ?_y}{\partial z})-\hat{j}(\dfrac{\partial ?_z}{\partial x}-\dfrac{\partial ?_x}{\partial z})+\hat{k}(\dfrac{\partial ?_y}{\partial x}-\dfrac{\partial ?_x}{\partial y})=(x\cos z,y\cos z,-2\sin z) \\
+          \\
+          \\
+          \left((\dfrac{\partial ?_z}{\partial y}-\dfrac{\partial ?_y}{\partial z}), -(\dfrac{\partial ?_z}{\partial x}-\dfrac{\partial ?_x}{\partial z}), (\dfrac{\partial ?_y}{\partial x}-\dfrac{\partial ?_x}{\partial y})\right)=(x\cos z,y\cos z,-2\sin z) \\
+          \\
+          \\
+          $
+          By equating the corresponding vector components, we get the following system of partial differential equations: \\ \\ \\
+          $
+          \Longrightarrow \begin{cases}
+            (\dfrac{\partial ?_z}{\partial y}-\dfrac{\partial ?_y}{\partial z})=x\cos z \\
+            \\
+            -(\dfrac{\partial ?_z}{\partial x}-\dfrac{\partial ?_x}{\partial z})=y\cos z \\
+            \\
+            (\dfrac{\partial ?_y}{\partial x}-\dfrac{\partial ?_x}{\partial y})=-2\sin z
+          \end{cases}
+        $
+      }
+    
   \end{enumerate}
 
 \end{document}
