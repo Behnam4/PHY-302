@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{bigints} 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{float}
@@ -432,8 +433,10 @@
     \item Find a vector whose curl is the divergenceless vector $\mathbf{V} = (x \cos z , y \cos z , -2 \sin z )$
 
       \textcolor{hwColor}{
+        We seek a vector such that: \\
+        \\
         $
-          curl ~ \overrightarrow{?}=\mathbf{V} \\
+          curl ~ \overrightarrow{A}=\overrightarrow{\nabla} \times \overrightarrow{\mathbf{A}}=\mathbf{V} \\
           \\
           \\
           \begin{vmatrix}
@@ -441,26 +444,61 @@
             \\
             \dfrac{\partial }{\partial x} & \dfrac{\partial }{\partial y} & \dfrac{\partial }{\partial z} \\
             \\
-            ?_x & ?_y & ?_z 
+            A_x & A_y & A_z 
           \end{vmatrix}=(x\cos z,y\cos z,-2\sin z) \\
           \\
           \\
-          \Rightarrow \hat{i}(\dfrac{\partial ?_z}{\partial y}-\dfrac{\partial ?_y}{\partial z})-\hat{j}(\dfrac{\partial ?_z}{\partial x}-\dfrac{\partial ?_x}{\partial z})+\hat{k}(\dfrac{\partial ?_y}{\partial x}-\dfrac{\partial ?_x}{\partial y})=(x\cos z,y\cos z,-2\sin z) \\
+          \Rightarrow \hat{i}(\dfrac{\partial A_z}{\partial y}-\dfrac{\partial A_y}{\partial z})-\hat{j}(\dfrac{\partial A_z}{\partial x}-\dfrac{\partial A_x}{\partial z})+\hat{k}(\dfrac{\partial A_y}{\partial x}-\dfrac{\partial A_x}{\partial y})=(x\cos z,y\cos z,-2\sin z) \\
           \\
           \\
-          \left((\dfrac{\partial ?_z}{\partial y}-\dfrac{\partial ?_y}{\partial z}), -(\dfrac{\partial ?_z}{\partial x}-\dfrac{\partial ?_x}{\partial z}), (\dfrac{\partial ?_y}{\partial x}-\dfrac{\partial ?_x}{\partial y})\right)=(x\cos z,y\cos z,-2\sin z) \\
+          \left((\dfrac{\partial A_z}{\partial y}-\dfrac{\partial A_y}{\partial z}), -(\dfrac{\partial A_z}{\partial x}-\dfrac{\partial A_x}{\partial z}), (\dfrac{\partial A_y}{\partial x}-\dfrac{\partial A_x}{\partial y})\right)=(x\cos z,y\cos z,-2\sin z) \\
           \\
           \\
           $
           By equating the corresponding vector components, we get the following system of partial differential equations: \\ \\ \\
           $
           \Longrightarrow \begin{cases}
-            (\dfrac{\partial ?_z}{\partial y}-\dfrac{\partial ?_y}{\partial z})=x\cos z \\
+            (\dfrac{\partial A_z}{\partial y}-\dfrac{\partial A_y}{\partial z})=x\cos z \\
             \\
-            -(\dfrac{\partial ?_z}{\partial x}-\dfrac{\partial ?_x}{\partial z})=y\cos z \\
+            -(\dfrac{\partial A_z}{\partial x}-\dfrac{\partial A_x}{\partial z})=y\cos z \\
             \\
-            (\dfrac{\partial ?_y}{\partial x}-\dfrac{\partial ?_x}{\partial y})=-2\sin z
+            (\dfrac{\partial A_y}{\partial x}-\dfrac{\partial A_x}{\partial y})=-2\sin z
           \end{cases}
+        $
+      }
+
+      \textcolor{hwColor}{
+        Since the $\overrightarrow{A}$ is not unique, let us declare $A_x=0$, thus: \\
+        \\
+        $\dfrac{\partial A_x}{\partial y}=\dfrac{\partial A_x}{\partial z}=0$ \\ \\
+        So we have: \\ \\
+        $
+          \left(\dfrac{\partial A_x}{\partial z}-\dfrac{\partial A_z}{\partial x}\right)=\hat{j}y cos(z) \Rightarrow \dfrac{\partial A_z}{\partial x}=-ycos(z) \\ \\
+          \\
+          \bigints \dfrac{\partial A_z}{\partial x} dx=-\bigints y cos(z)dx \Rightarrow A_z=-xy cos(z) \\ \\
+        $
+        Then, \\ \\
+        $
+          \left(\dfrac{\partial A_z}{\partial y}-\dfrac{\partial A_y}{\partial z}\right)=\hat{i}x cos(z) \\
+          \\
+          \\
+          -\dfrac{\partial (xy cos(z))}{\partial y}-\dfrac{\partial A_y}{\partial z}=x cos(z) \Rightarrow -x cos(z)-\dfrac{\partial A_y}{\partial z}=x cos(z) \\
+          \\
+          \dfrac{\partial A_y}{\partial z}=-2x cos(z) \\ \\
+          \bigints \dfrac{\partial A_y}{\partial z} dz=-\bigints 2x cos(z)dz \Rightarrow A_y=-2xsin(z) \\ \\
+        $
+      }
+
+      \textcolor{hwColor}{
+        So our vector is then $\overrightarrow{A}=-\hat{j} ~ 2xsin(z)-\hat{k} ~ xy cos(z)$ \\
+        \\
+        We can verify that by: \\
+        \\
+        $
+          \overrightarrow{\nabla} \times \overrightarrow{A}=\left(\dfrac{\partial A_z}{\partial y}-\dfrac{\partial A_y}{\partial z}\right) \hat{i}+\left(\dfrac{\partial A_x}{\partial z}-\dfrac{\partial A_z}{\partial x}\right) \hat{j}+\left(\dfrac{\partial A_y}{\partial x}-\dfrac{\partial A_x}{\partial y}\right) \hat{k} \\
+          \\
+          \\
+          =\left(-x cos(z)+2x cos(z)\right)\hat{i}+\left(y cos(z)\right) \hat{j}+\left(-2 sin(z)\right) \hat{k}
         $
       }
     
