@@ -1,0 +1,93 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{mathtools}
+\usepackage[thinc]{esdiff}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+    \center
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm]
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm]
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Three}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill
+
+  \end{titlepage}
+
+  \textbf{Part A}
+  \begin{enumerate}
+    \item  Using the general formula for the gradient in generalized curvilinear coordinates, derive the expression for the gradient in cylindrical polar coordinates (shown in table 10.2 of the textbook)
+
+
+    \item  Using the general formula for the divergence in generalized curvilinear coordinates, derive the expression for the divergence in spherical polar coordinates (shown in table 10.3 of the textbook).
+
+
+    \item  Using the general formula for the Laplacian of a scalar field in generalized curvilinear coordinates, derive the expression for the Laplacian in spherical polar coordinates (shown in table 10.3 of the textbook). It is recommended that you memorize the result. 
+
+
+    \item Refer to the notion of metric discussed in Theory segment 9.  Generalize the expression of the metric matrix for the case where the basis vectors of the curvilinear coordinate system are not mutually orthogonal.  [Hint: take the expression for  $d\mathbf{r}$, eq. (10.57) of the textbook, and calculate the expression of $d\mathbf{r} \cdot d\mathbf{r}$ for the most general case.]
+
+
+    \item Derive the expression of the metric for cartesian coordinates. Comment on the results as adequate.
+    
+  \end{enumerate}
+
+
+  \textbf{Part A}
+  \begin{enumerate}
+    \item  Perform the scalar field path integral, $\bigints_A^B xy ds$, where $A=(0,0)$ and $B=(1,1/2)$ over each of the following three paths:
+      \begin{enumerate}
+      \item Along the x-axis to $(1, 0)$ and then up to $B$
+      \item Up the y-axis to $(0, 1/2)$ and then over to $B$
+
+      \item Along the curve $y = x^2/2$ 
+      \end{enumerate}
+
+    \item  Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice. 
+
+    \item  Do the same integrals as in exercise above, for $\mathbf{V}=y \mathbf{\hat i} - x \mathbf{\hat j}$. 
+
+  \end{enumerate}
+
+\end{document}
