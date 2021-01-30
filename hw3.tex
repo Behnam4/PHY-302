@@ -14,7 +14,7 @@
 \usepackage{mathtools}
 \usepackage[thinc]{esdiff}
 
-\definecolor{hwColor}{HTML}{AD53BA}
+\definecolor{hwColor}{HTML}{C14A96}
 
 \begin{document}
 
@@ -23,8 +23,6 @@
     \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
     \center
-
-
 
     \textsc{\LARGE Arizona State University}\\[1.5cm]
 
@@ -57,13 +55,93 @@
 
   \textbf{Part A}
   \begin{enumerate}
-    \item  Using the general formula for the gradient in generalized curvilinear coordinates, derive the expression for the gradient in cylindrical polar coordinates (shown in table 10.2 of the textbook)
+    \item Using the general formula for the gradient in generalized curvilinear coordinates, derive the expression for the gradient in cylindrical polar coordinates (shown in table 10.2 of the textbook)
+
+    \textcolor{hwColor}{
+      Relationship between cartesian and cylindrical coordinates: \\
+      \\
+      $
+        \begin{cases}
+          x=\rho ~ cos(\phi) \\
+          y=\rho ~ sin(\phi) \\
+          z=z
+        \end{cases}
+        \Longleftrightarrow \begin{cases}
+          \rho = \sqrt{x^2+y^2} \\
+          \phi = arctan(\dfrac{y}{x}) \\
+          z=z
+        \end{cases} \\
+        \\
+        \\
+        \overrightarrow{r}=x \hat{i}+y \hat{j}+z \hat{k}=\rho ~ cos(\phi) \hat{j}+\rho ~ sin(\phi) \hat{j}+z \hat{k} \\
+        \\
+        \overrightarrow{dr}=\dfrac{\partial \overrightarrow{r}}{\partial \rho} ~ d\rho+\dfrac{\partial \overrightarrow{r}}{\partial \phi} ~ d\phi+\dfrac{\partial \overrightarrow{r}}{\partial z} ~ dz=d\rho ~ e_{\rho}+d\phi ~ e_{\phi}+dz ~ e_z=d\rho ~ \hat{e}_{\rho}+\rho ~ d\phi ~ \hat{e}_{\phi}+dz ~ \hat{e_z} \\
+        \\
+        \\
+        \begin{cases}
+          \hat{e}_{\rho}=e_{\rho}=\dfrac{\dfrac{\partial \overrightarrow{r}}{\partial \rho}}{|\dfrac{\partial \overrightarrow{r}}{\partial \rho}|}=cos(\phi) ~ \hat{i}+sin(\phi) ~ \hat{j} \\
+          \\
+          \hat{e}_{\phi}=\dfrac{1}{\rho}e_{\phi}=\dfrac{\dfrac{\partial \overrightarrow{r}}{\partial \phi}}{|\dfrac{\partial \overrightarrow{r}}{\partial \phi}|}=-sin(\phi) ~ \hat{i}+cos(\phi) ~ \hat{j}  \\
+          \\
+          \hat{e}_z=e_z=\dfrac{\dfrac{\partial \overrightarrow{r}}{\partial z}}{|\dfrac{\partial \overrightarrow{r}}{\partial z}|}=\hat{k}  \\
+        \end{cases} \\
+        \\
+        \dfrac{\partial \rho}{\partial y}=\dfrac{y}{\sqrt{x^2+y^2}}=\dfrac{\rho ~ sin(\phi)}{\rho}=sin(\phi), ~~
+        \dfrac{\partial \rho}{\partial x}=\dfrac{x}{\sqrt{x^2+y^2}}=\dfrac{\rho ~ cos(\phi)}{\rho}=cos(\phi) \\
+        \\
+        \\
+        \dfrac{\partial \phi}{\partial x}=-\dfrac{y}{x^2}\dfrac{1}{1+(\dfrac{y}{x})^2}=-\dfrac{y}{x^2+y^2}=-\dfrac{\rho ~ sin(\phi)}{\rho^2}=-\dfrac{sin(\phi)}{\rho} \\
+        \\
+        \dfrac{\partial \phi}{\partial y}=\dfrac{1}{x}\dfrac{1}{1+(\dfrac{y}{x})^2}=\dfrac{x}{x^2+y^2}=\dfrac{\rho ~ cos(\phi)}{\rho^2}=\dfrac{cos(\phi)}{\rho} \\
+      $ 
+    }
+
+    \pagebreak
+
+    \textcolor{hwColor}{
+      The unit vector conversation from Cartesian to Cylindrical: \\
+      \\
+      $
+        \hat{i}=cos(\phi) ~ \hat{e}_{\rho}-sin(\phi) ~ \hat{e}_{\phi}, ~~~~ \hat{j}=sin(\phi) ~ \hat{e}_{\rho}+cos(\phi) ~ \hat{e}_{\phi}
+        \\
+        \\
+        \dfrac{\partial }{\partial x}=\dfrac{\partial }{\partial \rho}\dfrac{\partial \rho}{\partial x}+\dfrac{\partial }{\partial \phi}\dfrac{\partial \phi}{\partial x}, ~~~ \dfrac{\partial }{\partial y}=\dfrac{\partial }{\partial \rho}\dfrac{\partial \rho}{\partial y}+\dfrac{\partial }{\partial \phi}\dfrac{\partial \phi}{\partial y} \\
+        \\
+        \overrightarrow{\nabla}=\dfrac{\partial}{\partial x} \hat{i}+\dfrac{\partial}{\partial y}\hat{j}+\dfrac{\partial}{\partial z}\hat{k} \\
+        \\
+        \\
+        =\left(\dfrac{\partial }{\partial \rho}\dfrac{\partial \rho}{\partial x}+\dfrac{\partial }{\partial \phi}\dfrac{\partial \phi}{\partial x}\right)\left(cos(\phi) ~ \hat{e}_{\rho}-sin(\phi) ~ \hat{e}_{\phi}\right) \\
+        +\left(\dfrac{\partial }{\partial \rho}\dfrac{\partial \rho}{\partial y}+\dfrac{\partial }{\partial \phi}\dfrac{\partial \phi}{\partial y}\right)\left(sin(\phi) ~ \hat{e}_{\rho}+cos(\phi) ~ \hat{e}_{\phi}\right) \\
+        +\dfrac{\partial}{\partial z}\hat{e}_z
+        \\
+        \\
+        \\
+        \\
+        =\left(\dfrac{\partial}{\partial \rho} cos(\phi)+\dfrac{\partial}{\partial \phi}\dfrac{-sin(\phi)}{\rho}\right)\left(cos(\phi) ~ \hat{e}_{\rho}-sin(\phi) ~ \hat{e}_{\phi}\right) \\
+        +\left(\dfrac{\partial}{\partial \rho} sin(\phi)+\dfrac{\partial}{\partial \phi}\dfrac{cos(\phi)}{\rho}\right)\left(sin(\phi) ~ \hat{e}_{\rho}+cos(\phi) ~ \hat{e}_{\phi}\right) \\
+        +\dfrac{\partial}{\partial z}\hat{e}_z \\
+        \\
+        \\
+        \\
+        \\
+        =cos^2(\phi) \dfrac{\partial}{\partial \rho}\hat{e}_{\rho}-cos(\phi) ~ sin(\phi) \dfrac{\partial}{\partial \rho} \hat{e}_{\phi}-\dfrac{sin(\phi) ~ cos(\phi)}{\rho} \dfrac{\partial}{\partial \phi}\hat{e}_{\rho}+\dfrac{sin^2(\phi)}{\rho} \dfrac{\partial}{\partial \phi} \hat{e}_{\phi} \\
+        +sin^2(\phi) \dfrac{\partial}{\partial \rho}\hat{e}_{\rho}+sin(\phi) ~ cos(\phi) \dfrac{\partial}{\partial \rho} \hat{e}_{\phi}+\dfrac{cos(\phi) ~ sin(\phi)}{\rho} \dfrac{\partial}{\partial \phi}\hat{e}_{\rho}+\dfrac{cos^2(\phi)}{\rho}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi} \\
+        \\
+        \\
+        \\
+        \\
+        =(sin^2(\phi)+cos^(\phi))\dfrac{\partial}{\partial \rho}\hat{e}_{\rho}+(sin^2(\phi)+cos^(\phi))\dfrac{1}{\rho}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi}+\dfrac{\partial}{\partial z}\hat{e}_z \\
+        \\
+        \\
+        \\
+        \Longrightarrow \overrightarrow{\nabla}=\dfrac{\partial}{\partial \rho}\hat{e}_{\rho}+\dfrac{1}{\rho}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi}+\dfrac{\partial}{\partial z}\hat{e}_z
+      $
+    }
+
+    \item Using the general formula for the divergence in generalized curvilinear coordinates, derive the expression for the divergence in spherical polar coordinates (shown in table 10.3 of the textbook).
 
 
-    \item  Using the general formula for the divergence in generalized curvilinear coordinates, derive the expression for the divergence in spherical polar coordinates (shown in table 10.3 of the textbook).
-
-
-    \item  Using the general formula for the Laplacian of a scalar field in generalized curvilinear coordinates, derive the expression for the Laplacian in spherical polar coordinates (shown in table 10.3 of the textbook). It is recommended that you memorize the result. 
+    \item Using the general formula for the Laplacian of a scalar field in generalized curvilinear coordinates, derive the expression for the Laplacian in spherical polar coordinates (shown in table 10.3 of the textbook). It is recommended that you memorize the result. 
 
 
     \item Refer to the notion of metric discussed in Theory segment 9.  Generalize the expression of the metric matrix for the case where the basis vectors of the curvilinear coordinate system are not mutually orthogonal.  [Hint: take the expression for  $d\mathbf{r}$, eq. (10.57) of the textbook, and calculate the expression of $d\mathbf{r} \cdot d\mathbf{r}$ for the most general case.]
@@ -84,9 +162,9 @@
       \item Along the curve $y = x^2/2$ 
       \end{enumerate}
 
-    \item  Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice. 
+    \item Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice. 
 
-    \item  Do the same integrals as in exercise above, for $\mathbf{V}=y \mathbf{\hat i} - x \mathbf{\hat j}$. 
+    \item Do the same integrals as in exercise above, for $\mathbf{V}=y \mathbf{\hat i} - x \mathbf{\hat j}$. 
 
   \end{enumerate}
 
