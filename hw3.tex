@@ -73,7 +73,7 @@
         \end{cases} \\
         \\
         \\
-        \overrightarrow{r}=x \hat{i}+y \hat{j}+z \hat{k}=\rho ~ cos(\phi) \hat{j}+\rho ~ sin(\phi) \hat{j}+z \hat{k} \\
+        \overrightarrow{r}=x \hat{i}+y \hat{j}+z \hat{k}=\rho ~ cos(\phi) \hat{i}+\rho ~ sin(\phi) \hat{j}+z \hat{k} \\
         \\
         \overrightarrow{dr}=\dfrac{\partial \overrightarrow{r}}{\partial \rho} ~ d\rho+\dfrac{\partial \overrightarrow{r}}{\partial \phi} ~ d\phi+\dfrac{\partial \overrightarrow{r}}{\partial z} ~ dz=d\rho ~ e_{\rho}+d\phi ~ e_{\phi}+dz ~ e_z=d\rho ~ \hat{e}_{\rho}+\rho ~ d\phi ~ \hat{e}_{\phi}+dz ~ \hat{e_z} \\
         \\
@@ -130,7 +130,7 @@
         \\
         \\
         \\
-        =(sin^2(\phi)+cos^(\phi))\dfrac{\partial}{\partial \rho}\hat{e}_{\rho}+(sin^2(\phi)+cos^(\phi))\dfrac{1}{\rho}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi}+\dfrac{\partial}{\partial z}\hat{e}_z \\
+        =(sin^2(\phi)+cos^2(\phi))\dfrac{\partial}{\partial \rho}\hat{e}_{\rho}+(sin^2(\phi)+cos^2(\phi))\dfrac{1}{\rho}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi}+\dfrac{\partial}{\partial z}\hat{e}_z \\
         \\
         \\
         \\
@@ -138,8 +138,67 @@
       $
     }
 
+    \pagebreak
+
     \item Using the general formula for the divergence in generalized curvilinear coordinates, derive the expression for the divergence in spherical polar coordinates (shown in table 10.3 of the textbook).
 
+      \textcolor{hwColor}{
+        $
+          \begin{cases}
+            x=r ~ sin(\theta) ~ cos(\phi) \\
+            y=r ~ sin(\theta) ~ sin(\phi) \\
+            z=r ~ cos(\theta)
+          \end{cases} \\
+          \\
+          \\
+          \overrightarrow{\textbf{r}}=x \hat{i}+y \hat{j}+z \hat{k}=r ~ sin(\theta) ~ cos(\phi) \hat{i}+r ~ sin(\theta) ~ sin(\phi) \hat{j}+r ~ cos(\theta) \hat{k} \\
+        $
+      }
+
+      \textcolor{hwColor}{
+        Let's find the derivative of $\textbf{r}$ with respect to $r, ~ \theta, ~ and ~ \phi$ respectively and divide each of the resulting vectors by
+        its modulus then we obtain the unit basis vectors. \\
+        \\
+        $
+          \begin{cases}
+            \hat{e}_r=sin(\theta) ~ cos(\phi) \hat{i}+sin(\theta) ~ sin(\phi) \hat{j}+cos(\theta) \hat{k} \\
+            \\
+            \hat{e}_{\theta}=cos(\theta) ~ cos(\phi) \hat{i}+cos(\theta) ~ sin(\phi) \hat{j}-sin(\theta) \hat{k} \\
+            \\
+            \hat{e}_{\phi}=-sin(\phi) \hat{i}+cos(\phi) \hat{j}
+          \end{cases} \\
+          \\
+          \\
+          \overrightarrow{d\textbf{r}}=dr ~ \hat{e}_r+r ~ d\theta ~ \hat{e}_{\theta}+r sin(\theta) ~ d\phi ~ \hat{e}_{\phi} \\
+          \\
+          \\
+          \overrightarrow{\nabla}=\hat{e}_r \dfrac{\partial}{\partial r}+\hat{e}_{\theta} \dfrac{1}{r} \dfrac{\partial}{\partial \theta}+\hat{e}_{\phi} \dfrac{1}{r ~ sin(\theta)} \dfrac{\partial}{\partial \phi} \\
+          \\ \hat{e}_{\theta}
+          \\
+          \overrightarrow{\nabla}.\overrightarrow{a}=\left(\dfrac{\partial}{\partial r} ~ \hat{e}_r+\dfrac{1}{r} \dfrac{\partial}{\partial \theta} ~\hat{e}_{\theta}+\dfrac{1}{r ~ sin(\theta)} \dfrac{\partial}{\partial \phi} ~\hat{e}_{\phi}\right).\overrightarrow{a}=\hat{e}_r ~\dfrac{\partial \overrightarrow{a}}{\partial r}+\hat{e}_{\theta} ~ \dfrac{1}{r} \dfrac{\partial \overrightarrow{a}}{\partial \theta}+\hat{e}_{\phi} ~\dfrac{1}{r sin(\theta)} \dfrac{\partial \overrightarrow{a}}{\partial \phi} \\
+          \\
+          \\
+          =\hat{e}_r\left[\dfrac{\partial a_r}{\partial r} \hat{e}_r+\dfrac{\partial a_{\theta}}{\partial r} \hat{e}_{\theta}+\dfrac{\partial a_{\phi}}{\partial r} \hat{e}_{\phi}+a_r \dfrac{\partial \hat{e}_r}{\partial r}+a_{\theta} \dfrac{\partial \hat{e}_{\theta}}{\partial r}+a_{\phi} \dfrac{\partial \hat{e}_{\phi}}{\partial r}\right] \\ \\
+          +\dfrac{\hat{e}_{\theta}}{r}\left[\dfrac{\partial a_r}{\partial \theta} \hat{e}_r+\dfrac{\partial a_{\theta}}{\partial \theta} \hat{e}_{\theta}+\dfrac{\partial a_{\phi}}{\partial \theta} \hat{e}_{\phi}+a_r \dfrac{\partial \hat{e}_r}{\partial \theta}+a_{\theta} \dfrac{\partial \hat{e}_{\theta}}{\partial \theta}+a_{\phi} \dfrac{\partial \hat{e}_{\phi}}{\partial \theta}\right] \\ \\ 
+          +\hat{e}_{\phi} \dfrac{1}{r ~ sin(\theta)}\left[\dfrac{\partial a_r}{\partial \phi} \hat{e}_r+\dfrac{\partial a_{\theta}}{\partial \phi} \hat{e}_{\theta}+\dfrac{\partial a_{\phi}}{\partial \phi} \hat{e}_{\phi}+a_r \dfrac{\partial \hat{e}_r}{\partial \phi}+a_{\theta} \dfrac{\partial \hat{e}_{\theta}}{\partial \phi}+a_{\phi} \dfrac{\partial \hat{e}_{\phi}}{\partial \phi}\right] \\
+          \\
+          \\
+          \\
+          \overrightarrow{\nabla}.\overrightarrow{a}=\hat{e}_r\left[\dfrac{\partial a_r}{\partial r} \hat{e}_r+\dfrac{\partial a_{\theta}}{\partial r} \hat{e}_{\theta}+\dfrac{\partial a_{\phi}}{\partial r} \hat{e}_{\phi}\right]+\dfrac{\hat{e}_{\theta}}{r}\left[\dfrac{\partial a_r}{\partial \theta} \hat{e}_r+\dfrac{\partial a_{\theta}}{\partial \theta} \hat{e}_{\theta}+\dfrac{\partial a_{\phi}}{\partial \theta} \hat{e}_{\phi}+ a_r \hat{e}_{\theta}+a_{\theta}(-\hat{e}_r)\right]   \\ \\ 
+          +\hat{e}_{\phi} \dfrac{1}{r ~ sin(\theta)} \left[\dfrac{\partial a_r}{\partial \phi} \hat{e}_r+\dfrac{\partial a_{\theta}}{\partial \phi} \hat{e}_{\theta}+\dfrac{\partial a_{\phi}}{\partial \phi} \hat{e}_{\phi}+a_r sin(\theta) \hat{e}_{\phi}+a_{\theta} cos(\theta) \hat{e}_{\theta}-a_{\phi}(\hat{e}_r sin(\theta)+\hat{e}_{\theta} cos(\theta))\right] \\ 
+          \\
+          \\
+          \\
+          =\dfrac{\partial a_r}{\partial r}+\left[\dfrac{1}{r sin(\theta)}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{a_r}{r}+\dfrac{a_r cos(\theta)}{r sin(\theta)}\right]+\left[\dfrac{1}{r} \dfrac{\partial a_{\theta}}{\partial \theta}+\dfrac{a_r}{r}\right] \\
+          \\
+          \\
+          =\dfrac{1}{r sin(\theta)}\dfrac{\partial a_{\phi}}{\partial \phi}+\left[\dfrac{1}{r} \dfrac{\partial a_{\theta}}{\partial \theta}+\dfrac{a_{\theta} cos(\theta)}{r sin(\theta)}\right]+\left[\dfrac{\partial a_r}{\partial r}+\dfrac{2 a_r}{r}\right] \\
+          \\
+          \\
+          \\
+          \Longrightarrow \overrightarrow{\nabla}.\overrightarrow{a}=\dfrac{1}{r^2}\dfrac{\partial}{\partial r}r^2 ~ a_r+\dfrac{1}{r ~ sin(\theta)} \dfrac{\partial }{\partial \theta}a_{\theta} ~ sin(\theta)+\dfrac{1}{r ~ sin(\theta)} \dfrac{\partial a_{\phi}}{\partial \phi}
+        $
+      }
 
     \item Using the general formula for the Laplacian of a scalar field in generalized curvilinear coordinates, derive the expression for the Laplacian in spherical polar coordinates (shown in table 10.3 of the textbook). It is recommended that you memorize the result. 
 
@@ -160,9 +219,16 @@
       \item Up the y-axis to $(0, 1/2)$ and then over to $B$
 
       \item Along the curve $y = x^2/2$ 
+
+      [Hint:  On each segment of the path,  decide whatdsis and expressyin terms ofxor viceversa.  
+      For example, on the first part of path (a), y is a constant, so thatds=dx.  
+      However,sincey= 0 on this path segment, the integrand vanishes.  On the second segment,ds=dyandx= 1.]
       \end{enumerate}
 
-    \item Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice. 
+    \item Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice.
+
+    (Hint:  The vector $ds$ is $ds=\hat{i}dx+\hat{j}dy=dx(\hat{i}+\dfrac{dy}{dx} \hat{j})$.  
+    You should obtain ordinary integrals over $x$ or $y$.  )
 
     \item Do the same integrals as in exercise above, for $\mathbf{V}=y \mathbf{\hat i} - x \mathbf{\hat j}$. 
 
