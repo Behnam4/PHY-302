@@ -278,6 +278,76 @@
 
     \item Refer to the notion of metric discussed in Theory segment 9.  Generalize the expression of the metric matrix for the case where the basis vectors of the curvilinear coordinate system are not mutually orthogonal.  [Hint: take the expression for  $d\mathbf{r}$, eq. (10.57) of the textbook, and calculate the expression of $d\mathbf{r} \cdot d\mathbf{r}$ for the most general case.]
 
+      \textcolor{hwColor}{
+        Let's define a set of 3 new variables that describe the position of a point in space.
+        Then, one can write equations that relate the cartesian coordinates to the new coordinates and vice versa\\
+        \\
+        $
+          \begin{cases}
+            x=x(u_1, u_2, u_3), ~~~~~~~~~~ u_1=u_1(x,y,z) \\
+            y=y(u_1, u_2, u_3), ~~~~~~~~~~ u_2=u_2(x,y,z) \\
+            z=z(u_1, u_2, u_3), ~~~~~~~~~~ u_3=u_3(x,y,z) \\
+          \end{cases}
+        $ \\
+        \\
+        The new vectors are chosen to be the derivatives of the position vector, properly normalized to unity: \\
+        \\
+        $
+          d\overrightarrow{r}=\dfrac{\partial \overrightarrow{r}}{\partial u_1}du_1+\dfrac{\partial \overrightarrow{r}}{\partial u_2}du_2+\dfrac{\partial \overrightarrow{r}}{\partial u_3}du_3 \\
+          \\
+          \\
+          \begin{cases}
+            \hat{e}_1=\dfrac{1}{h_1}\dfrac{\partial \overrightarrow{r}}{\partial u_1}
+            \\
+            \\
+            \hat{e}_2=\dfrac{1}{h_2}\dfrac{\partial \overrightarrow{r}}{\partial u_2}
+            \\
+            \\
+            \hat{e}_3=\dfrac{1}{h_3}\dfrac{\partial \overrightarrow{r}}{\partial u_3} 
+          \end{cases} ~~~~~~~~~~~~~~~~ \begin{cases}
+            h_1=|\dfrac{\partial \overrightarrow{r}}{\partial u_1}|
+            \\
+            \\
+            h_2=|\dfrac{\partial \overrightarrow{r}}{\partial u_2}|
+            \\
+            \\
+            h_3=|\dfrac{\partial \overrightarrow{r}}{\partial u_3}|
+          \end{cases}
+        $
+        \\
+        \\
+        \\
+        Now we can write $dr$ in terms of the new basis vectors. $d\overrightarrow{r}=h_1 ~ du_1 ~ \hat{e}_1+h_2 ~ du_2 ~ \hat{e}_2+h_3 ~ du_3 ~ \hat{e}_3$ \\
+        \\
+        $
+          d\overrightarrow{r}.d\overrightarrow{r}=\left(h_1 ~ du_1 ~ \hat{e}_1+h_2 ~ du_2 ~ \hat{e}_2+h_3 ~ du_3 ~ \hat{e}_3\right).\left(h_1 ~ du_1 ~ \hat{e}_1+h_2 ~ du_2 ~ \hat{e}_2+h_3 ~ du_3 ~ \hat{e}_3\right) \\
+          \\
+          =h_1 ~ du_1 ~ \hat{e}_1 h_1 ~ du_1 ~ \hat{e}_1+h_1 ~ du_1 ~ \hat{e}_1 h_2 ~ du_2 ~ \hat{e}_2+h_1 ~ du_1 ~ \hat{e}_1 h_3 ~ du_3 ~ \hat{e}_3 \\
+          \\
+          +h_2 ~ du_2 ~ \hat{e}_2 h_1 ~ du_1 ~ \hat{e}_1+h_2 ~ du_2 ~ \hat{e}_2 h_2 ~ du_2 ~ \hat{e}_2+h_2 ~ du_2 ~ \hat{e}_2 h_3 ~ du_3 ~ \hat{e}_3 \\
+          \\
+          +h_3 ~ du_3 ~ \hat{e}_3 h_1 ~ du_1 ~ \hat{e}_1+h_3 ~ du_3 ~ \hat{e}_3 h_2 ~ du_2 ~ \hat{e}_2+h_3 ~ du_3 ~ \hat{e}_3 h_3 ~ du_3 ~ \hat{e}_3 \\
+          \\
+          \\
+          d\overrightarrow{r}.d\overrightarrow{r}=\begin{pmatrix}
+            du_1 & du_2 & du_3
+          \end{pmatrix} \begin{pmatrix}
+            h^2_1 \hat{e}_1 \hat{e}_1 & h_1 h_2 \dfrac{1}{du_1} du_2 \hat{e}_1 \hat{e}_2 & h_1 h_3 \dfrac{1}{du_1} du_3 \hat{e}_1 \hat{e}_3 \\
+            \\
+            h_1 h_2 du_1 \dfrac{1}{du_2} \hat{e}_1 \hat{e}_2 & h^2_2 \hat{e}_2 \hat{e}_2 & h_2 h_3 \dfrac{1}{du_2} \hat{e}_2 \hat{e}_3 \\
+            \\
+            h_1 h_3 du_1 \dfrac{1}{du_3} \hat{e}_1 \hat{e}_3 & h_2 h_3 du_2 \dfrac{1}{du_3} \hat{e}_2 \hat{e}_3& h^2_3 \hat{e}_3 \hat{e}_3 \\
+          \end{pmatrix} \begin{pmatrix}
+            du_1 \\
+            du_2 \\
+            du_3
+          \end{pmatrix}
+        $
+        \\
+        \\
+        The metric is not diagonal and the three components of $dr$ along the unit vectors are not mutually orthogonal, otherwise the metric matrix
+        would have zeros everywhere except the main diagonal. 
+      }
 
     \item Derive the expression of the metric for cartesian coordinates. Comment on the results as adequate.
     
