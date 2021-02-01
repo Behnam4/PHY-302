@@ -351,10 +351,69 @@
 
     \item Derive the expression of the metric for cartesian coordinates. Comment on the results as adequate.
     
+    \textcolor{hwColor}{
+      $
+        \overrightarrow{r}=x \hat{i}+y\hat{j}+z\hat{k} \\
+        \\
+        d\overrightarrow{r}=\dfrac{\partial \overrightarrow{r}}{\partial x} dx+\dfrac{\partial \overrightarrow{r}}{\partial y} dy+\dfrac{\partial \overrightarrow{r}}{\partial z}dz \\
+        \\
+        \begin{cases}
+          \hat{e}_x=\dfrac{\dfrac{\partial \overrightarrow{r}}{\partial x}}{|\dfrac{\partial \overrightarrow{r}}{\partial x}|} \\
+          \\
+          \hat{e}_y=\dfrac{\dfrac{\partial \overrightarrow{r}}{\partial y}}{|\dfrac{\partial \overrightarrow{r}}{\partial y}|}  \\
+          \\
+          \hat{e}_z=\dfrac{\dfrac{\partial \overrightarrow{r}}{\partial z}}{|\dfrac{\partial \overrightarrow{r}}{\partial z}|}  \\
+        \end{cases} \\
+        \\
+      $
+      \\
+      \\
+      \\
+      A generic vector can be written in the new basis as: \\
+      \\
+      $\overrightarrow{r}=\alpha_1 \hat{e}_x+\alpha_2 \hat{e}_y+\alpha_3 \hat{e}_z$ where $\alpha_1=\overrightarrow{r}.\hat{e}_x, ~~ \alpha_2=\overrightarrow{r}.\hat{e}_y,$ and 
+      $\alpha_3=\overrightarrow{r}.\hat{e}_z$
+      \\
+      \\
+      \\
+      $
+        d\overrightarrow{r}.d\overrightarrow{r}=\left[x \hat{e}_x+y \hat{e}_y+z \hat{e}_z\right].\left[x \hat{e}_x+y \hat{e}_y+z \hat{e}_z\right] \\
+        \\
+        =xx\hat{e}_x\hat{e}_x+xy \hat{e}_x \hat{e}_y+xz \hat{e}_x \hat{e}_z+yx \hat{e}_x \hat{e}_y+yy\hat{e}_y \hat{e}_y+yz \hat{e}_y \hat{e}_z+zx \hat{e}_z \hat{e}_x+zy \hat{e}_y \hat{e}_z+zz \hat{e}_z \hat{e}_z
+      $
+      \\
+      For cartesian coordinate, we know that the basis vectors are orthogonal, hence: \\
+      \\
+      $
+        \begin{cases}
+          \hat{e}_x\hat{e}_y=\hat{e}_x\hat{e}_z=\hat{e}_y\hat{e}_z=0 \\
+          \\
+          \hat{e}_x\hat{e}_x=\hat{e}_y\hat{e}_y=\hat{e}_z\hat{e}_z=1
+        \end{cases} \\
+        \\
+        \\
+        d\overrightarrow{r}.d\overrightarrow{r}=xx\hat{e}_x+yy\hat{e}_y+zz\hat{e}_z \\
+        \\
+        \\
+        \begin{pmatrix}
+          xx & 0 & 0 \\
+          0 & yy & 0 \\
+          0 & 0 & zz
+        \end{pmatrix} \begin{pmatrix}
+          \hat{e}_x \\
+          \hat{e}_y \\
+          \hat{e}_z
+        \end{pmatrix}
+      $ \\
+      \\
+      The metric is diagonal and the three components of $dr$ along the unit vectors are mutually orthogonal.
+    }
+
+    
   \end{enumerate}
 
 
-  \textbf{Part A}
+  \textbf{Part B}
   \begin{enumerate}
     \item  Perform the scalar field path integral, $\bigints_A^B xy ds$, where $A=(0,0)$ and $B=(1,1/2)$ over each of the following three paths:
       \begin{enumerate}
