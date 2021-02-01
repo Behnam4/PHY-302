@@ -148,6 +148,10 @@
             x=r ~ sin(\theta) ~ cos(\phi) \\
             y=r ~ sin(\theta) ~ sin(\phi) \\
             z=r ~ cos(\theta)
+          \end{cases} \Longleftrightarrow \begin{cases}
+            r= \sqrt{x^2+y^2+z^2} \\
+            tan(\phi)=\dfrac{y}{x} \\
+            tan(\theta)=\dfrac{\sqrt{x^2+y^2}}{z}
           \end{cases} \\
           \\
           \\
@@ -202,6 +206,75 @@
 
     \item Using the general formula for the Laplacian of a scalar field in generalized curvilinear coordinates, derive the expression for the Laplacian in spherical polar coordinates (shown in table 10.3 of the textbook). It is recommended that you memorize the result. 
 
+      \textcolor{hwColor}{
+        $
+          \begin{cases}
+            x=r ~ sin(\theta) ~ cos(\phi) \\
+            y=r ~ sin(\theta) ~ sin(\phi) \\
+            z=r ~ cos(\theta)
+          \end{cases} \Longleftrightarrow \begin{cases}
+            r= \sqrt{x^2+y^2+z^2} \\
+            tan(\phi)=\dfrac{y}{x} \\
+            tan(\theta)=\dfrac{\sqrt{x^2+y^2}}{z}
+          \end{cases} \\
+          \\
+          \\
+          \overrightarrow{\textbf{r}}=x \hat{i}+y \hat{j}+z \hat{k}=r ~ sin(\theta) ~ cos(\phi) \hat{i}+r ~ sin(\theta) ~ sin(\phi) \hat{j}+r ~ cos(\theta) \hat{k} \\
+        $
+      }
+
+      \textcolor{hwColor}{
+        $
+          \begin{cases}
+            e_r=\dfrac{\partial \overrightarrow{r}}{\partial r}=sin(\theta) ~ cos(\phi) \hat{i}+sin(\theta) ~ sin(\phi) \hat{j}+cos(\theta) \hat{k} \\
+            \\
+            e_{\theta}=r ~ cos(\theta) ~ cos(\phi) \hat{i}+r ~ cos(\theta) ~ sin(\phi) \hat{j}-r ~ sin(\theta) \hat{k} \\
+            \\
+            e_{\phi}=\dfrac{\partial \overrightarrow{r}}{\partial \phi}=-r ~ sin(\theta) ~ sin(\phi) \hat{i}+r ~ sin(\theta) ~ cos(\phi) \hat{j}
+          \end{cases} \Longrightarrow \begin{cases}
+            \hat{e}_r=e_r \\
+            \hat{e}_{\theta}=\dfrac{1}{r} ~ e_{\theta} \\
+            \hat{e}_{\phi}=\dfrac{1}{r ~ sin(\theta)} ~ e_{\phi}
+          \end{cases}
+          \\
+          \\
+          \begin{cases}
+            \hat{e}_r.\overrightarrow{\nabla}=\dfrac{\partial \overrightarrow{r}}{\partial r}.\overrightarrow{\nabla}=\left[\dfrac{\partial x}{\partial r}\dfrac{\partial}{\partial x}+\dfrac{\partial y}{\partial r}\dfrac{\partial}{\partial y}+\dfrac{\partial z}{\partial r}\dfrac{\partial}{\partial z}\right]=\dfrac{\partial}{\partial r} \\
+            \\
+            \hat{e}_{\theta}.\overrightarrow{\nabla}=\dfrac{1}{r} \dfrac{\partial \overrightarrow{r}}{\partial r}.\overrightarrow{\nabla}=\dfrac{1}{r}\left[\dfrac{\partial x}{\partial r}\dfrac{\partial}{\partial x}+\dfrac{\partial y}{\partial r}\dfrac{\partial}{\partial y}+\dfrac{\partial z}{\partial r}\dfrac{\partial}{\partial z}\right]=\dfrac{1}{r}\dfrac{\partial}{\partial r} \\
+            \\
+            \hat{e}_{\phi}.\overrightarrow{\nabla}=\dfrac{1}{r ~ sin(\theta)}.\overrightarrow{\nabla}=\dfrac{1}{r ~ sin(\theta)}\dfrac{\partial}{\partial \phi} \\
+          \end{cases}
+          \\
+          \\
+          \\
+          \overrightarrow{\nabla}=\dfrac{\partial}{\partial r}\hat{e}_r+\dfrac{1}{r}\dfrac{\partial}{\partial \theta}\hat{e}_{\theta}+\dfrac{1}{r ~ sin(\theta)}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi} \\
+          \\
+          \\
+          \\
+          \overrightarrow{\nabla}.\overrightarrow{\nabla}=\left[\dfrac{\partial}{\partial r}\hat{e}_r+\dfrac{1}{r}\dfrac{\partial}{\partial \theta}\hat{e}_{\theta}+\dfrac{1}{r ~ sin(\theta)}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi}\right].\left[\dfrac{\partial}{\partial r}\hat{e}_r+\dfrac{1}{r}\dfrac{\partial}{\partial \theta}\hat{e}_{\theta}+\dfrac{1}{r ~ sin(\theta)}\dfrac{\partial}{\partial \phi}\hat{e}_{\phi}\right] \\
+          \\
+        $
+        By doing some partial derivative and alegbra, we have the following results: \\
+        \\
+        $
+          \begin{cases}
+            \dfrac{\partial}{\partial r} \hat{e}_r=0, ~~~~~ \dfrac{\partial}{\partial r} \hat{e}_{\theta}=0, ~~~~~ \dfrac{\partial}{\partial r}\hat{e}_{\phi}=0 \\
+            \\
+            \dfrac{\partial}{\partial \theta} \hat{e}_r=\hat{e}_{\theta}, ~~~~~ \dfrac{\partial}{\partial \theta} \hat{e}_{\theta}=-\hat{e}_{r}, ~~~~~ \dfrac{\partial}{\partial \theta}\hat{e}_{\phi}=0 \\
+            \\
+            \dfrac{\partial}{\partial \phi} \hat{e}_r=sin(\theta) \hat{e}_{\phi}, ~~~~~ \dfrac{\partial}{\partial \phi} \hat{e}_{\theta}=cos(\theta)\hat{e}_{\phi}, ~~~~~ \dfrac{\partial}{\partial \phi}\hat{e}_{\phi}=-(sin(\theta)\hat{e}_r+cos(\theta) \hat{e}_{\theta}) \\
+          \end{cases} \\
+          \\
+          \\
+          \\
+          \overrightarrow{\nabla}^2.\Phi=\dfrac{\partial^2}{\partial r^2} \Phi+\dfrac{1}{r}\dfrac{\partial}{\partial r} \Phi+\dfrac{1}{r^2}\dfrac{\partial^2}{\partial \theta^2} \Phi+\dfrac{sin(\theta)}{r ~ sin(\theta)}\dfrac{\partial }{\partial r}\Phi+\dfrac{1}{r^2}\dfrac{cos(\theta)}{sin(\theta)}\dfrac{\partial}{\partial \theta}\Phi+\dfrac{1}{r^2 ~ sin^2(\theta)}\dfrac{\partial^2}{\partial \phi^2}\phi \\
+          \\
+          \\
+          \\
+          \Longrightarrow \overrightarrow{\nabla}^2.\Phi=\dfrac{1}{r}\dfrac{\partial^2(r ~ \Phi)}{\partial r^2}+\dfrac{1}{r^2 ~ sin(\theta)}\dfrac{d}{d\theta}(sin(\theta)\dfrac{d\Phi}{d\theta})+\dfrac{1}{r^2 ~ sin^2(\theta)}\dfrac{\partial^2 \Phi}{\partial \phi^2}
+        $
+      }
 
     \item Refer to the notion of metric discussed in Theory segment 9.  Generalize the expression of the metric matrix for the case where the basis vectors of the curvilinear coordinate system are not mutually orthogonal.  [Hint: take the expression for  $d\mathbf{r}$, eq. (10.57) of the textbook, and calculate the expression of $d\mathbf{r} \cdot d\mathbf{r}$ for the most general case.]
 
