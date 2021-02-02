@@ -418,13 +418,70 @@
     \item  Perform the scalar field path integral, $\bigints_A^B xy ds$, where $A=(0,0)$ and $B=(1,1/2)$ over each of the following three paths:
       \begin{enumerate}
       \item Along the x-axis to $(1, 0)$ and then up to $B$
+
+        \textcolor{hwColor}{
+          $
+          \bigints_A^B f(x,y) ds=\bigints_{t=a}^{t=b} f(x(t), y(t)) ~ |\dfrac{d\overrightarrow{r}}{dt}| dt \\ \\
+            x=c_1+k_1, ~~ y=c_2+k_2t \\\
+            \
+            \begin{cases}
+              x(t=0): ~ 1=c_1+0 \Rightarrow c_1=1 ~~ and ~~ x(t=1): ~ 1=1+k_1(1) \Longrightarrow x=1 \\
+              \\
+              y(t=0): ~ 0=c_2+0 \Rightarrow c_2=0 ~~ and ~~ y(t=1): ~ \dfrac{1}{2}=0+k_2(1) \Longrightarrow y=\dfrac{1}{2}t
+            \end{cases} \\
+            \\
+            \\
+            \overrightarrow{r}(t)=\hat{i}+\dfrac{1}{2}t \hat{j} \Rightarrow \dfrac{d\overrightarrow{r}}{dt}=\dfrac{1}{2} \hat{j} \Longrightarrow |\dfrac{d\overrightarrow{r}}{dt}|=\dfrac{1}{2} \\
+            \\
+            \\
+            \bigints_{t=0}^{t=1} (1)(\dfrac{1}{2}t) ~ (\dfrac{1}{2}) dt=\dfrac{1}{8}
+          $
+        }
+
+      \pagebreak
+
       \item Up the y-axis to $(0, 1/2)$ and then over to $B$
 
-      \item Along the curve $y = x^2/2$ 
+        \textcolor{hwColor}{
+          $
+          \bigints_A^B f(x,y) ds=\bigints_{t=a}^{t=b} f(x(t), y(t)) ~ |\dfrac{d\overrightarrow{r}}{dt}| dt \\ \\
+            x=c_1+k_1, ~~ y=c_2+k_2t \\
+            \
+            \begin{cases}
+              x(t=0): ~ 0=c_1+0 \Rightarrow c_1=0 ~~ and ~~ x(t=1): ~ 1=k_1(1) \Longrightarrow x=t \\
+              \\
+              y(t=0): ~ \dfrac{1}{2}=c_2+0 \Rightarrow c_2=\dfrac{1}{2} ~~ and ~~ y(t=1): ~ \dfrac{1}{2}=\dfrac{1}{2}+k_2(1) \Longrightarrow y=\dfrac{1}{2}
+            \end{cases} \\
+            \\
+            \\
+            \overrightarrow{r}(t)=t\hat{i}+\dfrac{1}{2} \hat{j} \Rightarrow \dfrac{d\overrightarrow{r}}{dt}=\hat{i} \Longrightarrow |\dfrac{d\overrightarrow{r}}{dt}|=1 \\
+            \\
+            \\
+            \bigints_{t=0}^{t=1} (t)(\dfrac{1}{2}) ~ (1) dt=\dfrac{1}{4} \\
+          $
+        }
 
-      [Hint:  On each segment of the path,  decide whatdsis and expressyin terms ofxor viceversa.  
-      For example, on the first part of path (a), y is a constant, so thatds=dx.  
-      However,sincey= 0 on this path segment, the integrand vanishes.  On the second segment,ds=dyandx= 1.]
+      \item Along the curve $y = x^2/2$
+
+        \textcolor{hwColor}{
+          For this case, we can do trivial parametric equation meaning we call the dependent variable t in this case x. Hence, \\ \\ 
+          $
+            x=t \Rightarrow y=\dfrac{t^2}{2} \\
+            \\
+          $
+          Since we use the above method then $0\le t \le 1$ \\
+          \\
+          $
+            \overrightarrow{r}(t)=t\hat{i}+\dfrac{t^2}{2} \hat{j} \Rightarrow \dfrac{d\overrightarrow{r}}{dt}=\hat{i}+t\hat{j} \Longrightarrow |\dfrac{d\overrightarrow{r}}{dt}|=\sqrt{1+t^2}
+            \\
+            \\
+            \bigints_A^B f(x,y) ds=\bigints_{t=a}^{t=b} f(x(t), y(t)) ~ |\dfrac{d\overrightarrow{r}}{dt}| dt=\bigints_{t=0}^{t=1} (t)(\dfrac{t^2}{2}) ~ \sqrt{1+t^2} dt \\
+            \\
+            \\
+            =\dfrac{1}{2}\bigints_{t=0}^{t=1} t^3 ~ \sqrt{1+t^2} dt=\dfrac{\sqrt{2}+1}{15}
+          $
+        }
+
       \end{enumerate}
 
     \item Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice.
