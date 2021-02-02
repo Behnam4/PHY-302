@@ -99,7 +99,7 @@
     \pagebreak
 
     \textcolor{hwColor}{
-      The unit vector conversation from Cartesian to Cylindrical: \\
+      The unit vector converion from Cartesian to Cylindrical: \\
       \\
       $
         \hat{i}=cos(\phi) ~ \hat{e}_{\rho}-sin(\phi) ~ \hat{e}_{\phi}, ~~~~ \hat{j}=sin(\phi) ~ \hat{e}_{\rho}+cos(\phi) ~ \hat{e}_{\phi}
@@ -487,7 +487,29 @@
     \item Compute the vector path integral $\bigints_A^B \mathbf{V}\cdot d\mathbf{s}$, where $\mathbf{V}=y \mathbf{\hat i} + x \mathbf{\hat j}$, $A=(0,0)$, and $B=(1,1)$. Do the calculation for two different paths of your choice.
 
     (Hint:  The vector $ds$ is $ds=\hat{i}dx+\hat{j}dy=dx(\hat{i}+\dfrac{dy}{dx} \hat{j})$.  
-    You should obtain ordinary integrals over $x$ or $y$.  )
+    You should obtain ordinary integrals over $x$ or $y$. )
+
+      \textcolor{hwColor}{
+        \textbf{Path A: Up the Y-axis to (0,1) then over to (1,1)}: \\
+        \\
+        \\
+        $
+          \bigints_{A}^{B} \overrightarrow{V}.d\mathbf{s}=\bigints_{y=0}^{1} \overrightarrow{V}.d\overrightarrow{y}\Big|_{x=0}+\bigints_{x=0}^{1} \overrightarrow{V}.d\overrightarrow{x}\Big|_{y=1} \\
+          \\
+          =\bigints_{y=0}^{1} x dy\Big|_{x=0}+\bigints_{x=0}^{1} y dx \Big|_{y=1}=0+1=1 \\
+        $
+      }
+
+      \textcolor{hwColor}{
+        \textbf{Path B: Along the X-axis to (1,0) then up to (1,1)}: \\
+        \\
+        \\
+        $
+          \bigints_{A}^{B} \overrightarrow{V}.d\mathbf{s}=\bigints_{x=0}^{1} \overrightarrow{V}.d\overrightarrow{x}\Big|_{y=0}+\bigints_{y=0}^{1} \overrightarrow{V}.d\overrightarrow{y}\Big|_{x=1} \\
+          \\
+          =\bigints_{x=0}^{1} ydx\Big|_{y=0}+\bigints_{y=0}^{1} xdx \Big|_{x=1}=0+1=1 \\
+        $
+      }
 
     \item Do the same integrals as in exercise above, for $\mathbf{V}=y \mathbf{\hat i} - x \mathbf{\hat j}$. 
 
