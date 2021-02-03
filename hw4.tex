@@ -1,0 +1,87 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+    \center % Center everything on the page
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm] % Name of your university/college
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] % Major heading such as course name
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Four}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill % Fill the rest of the page with whitespace
+
+  \end{titlepage}
+
+  \begin{enumerate}
+    \item Consider the vector field 
+      $$
+      \mathbf{F}= \left(\frac{zx}{\sqrt{x^2 + y^2} }  , \frac{zy}{\sqrt{x^2 + y^2}}, \frac{1}{z^{3/4}} + \sqrt{x^2 + y^2} \right)~
+      $$
+      defined for $x\neq 0$, $y\neq 0$ and $z>0$. 
+      \begin{enumerate}
+        \item Compute the curl of $\mathbf{F}$.
+        \item Find a potential field corresponding to $\mathbf{F}$, i.e., a scalar field $\phi$ such that $\mathbf{F}=\mathbf{\nabla}\phi$ in the domain where $\mathbf{F}$ is defined. 
+      \end{enumerate}
+      (Hint: follow the example shown in class.)
+
+
+    \item Compute the flux of each of the following vector fields that penetrates a square area
+    of side 1 centered on the x-axis at $x=1$. The square's sides are parallel to the y- and z-axes.
+      \begin{enumerate}
+        \item $\mathbf{V}=xyz\mathbf{i}$.
+        \item $\mathbf{V}=y\mathbf{k}+z\mathbf{j}$.
+        \item $\mathbf{V}=\mathbf{r}$ (where $\mathbf{r}$ is the position vector )
+      \end{enumerate}
+      (Hint: Take the unit vector $\mathbf{\hat n}=\mathbf{j} \times \mathbf{k} = \mathbf{i}$ as the positive or ``outward" sense of the surface. Note that, for this exercise, $dS=dy dz$.)
+
+
+    \item Take $S$ to be the (closed) surface of a sphere of radius r centered at the origin. Compute the flux penetrating it radially outward for each of the following vector fields:
+      \begin{enumerate}
+        \item $\mathbf{V}=\mathbf{r}$ ;
+        \item $\mathbf{V}=2 \mathbf{r}/r^3$ (where $r=|\mathbf{r}|$); 
+        \item $\mathbf{V}=yz\mathbf{i}+zx\mathbf{j}+xy\mathbf{k}$.
+      \end{enumerate}
+      (Hint: What is the simplest way of expressing the orthogonal unit vector $\mathbf{\hat n}$ for this surface? In part (c) you will want to use Spherical Polar coordinates, but do not waste time rewriting $\mathbf{V}$. Make judicious use of scalar products.)
+
+  \end{enumerate}
+
+\end{document}
