@@ -59,6 +59,34 @@
       defined for $x\neq 0$, $y\neq 0$ and $z>0$. 
       \begin{enumerate}
         \item Compute the curl of $\mathbf{F}$.
+
+          \textcolor{hwColor}{
+            The curl of a vector field measures the rotation or spinning effect. \\
+            \\
+            $
+              curl ~ F(x,y,z)=\overrightarrow{\nabla} ~ \times ~ F(x,y,z)=\begin{vmatrix}
+                \hat{i} & \hat{j} & \hat{k} \\
+                \\
+                \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+                \\
+                \dfrac{zx}{\sqrt{x^2+y^2}} & \dfrac{zy}{\sqrt{x^2+y^2}} & \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2}
+              \end{vmatrix}
+              \\
+              \\
+              \\
+              =\hat{i}\left[\dfrac{\partial}{\partial y}(\dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2})-\dfrac{\partial}{\partial z}(\dfrac{zy}{\sqrt{x^2+y^2}})\right] \\ \\   
+              -\hat{j}\left[\dfrac{\partial}{\partial x}(\dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2})-\dfrac{\partial}{\partial z}(\dfrac{zx}{\sqrt{x^2+y^2}})\right] \\ \\
+              +\hat{k}\left[\dfrac{\partial}{\partial x}(\dfrac{zy}{\sqrt{x^2+y^2}})-\dfrac{\partial}{\partial y}(\dfrac{zx}{\sqrt{x^2+y^2}})\right] \\ \\
+              \\
+              \\
+              =\hat{i}\left[\dfrac{y}{\sqrt{x^2+y^2}}-\dfrac{y}{\sqrt{x^2+y^2}}\right] \\ \\
+              -\hat{j}\left[\dfrac{x}{\sqrt{x^2+y^2}}-\dfrac{x}{\sqrt{x^2+y^2}}\right] \\ \\
+              +\hat{k}\left[-\dfrac{xyz}{(x^2+y^2)^{3/2}}+\dfrac{xyz}{(x^2+y^2)^{3/2}}\right] \\ \\
+              \\
+              \overrightarrow{\nabla} ~ \times ~ F(x,y,z)=0
+            $
+          } 
+
         \item Find a potential field corresponding to $\mathbf{F}$, i.e., a scalar field $\phi$ such that $\mathbf{F}=\mathbf{\nabla}\phi$ in the domain where $\mathbf{F}$ is defined. 
       \end{enumerate}
       (Hint: follow the example shown in class.)
