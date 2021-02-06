@@ -5,6 +5,7 @@
 \usepackage{import}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{bigints} 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{float}
@@ -83,11 +84,29 @@
               -\hat{j}\left[\dfrac{x}{\sqrt{x^2+y^2}}-\dfrac{x}{\sqrt{x^2+y^2}}\right] \\ \\
               +\hat{k}\left[-\dfrac{xyz}{(x^2+y^2)^{3/2}}+\dfrac{xyz}{(x^2+y^2)^{3/2}}\right] \\ \\
               \\
-              \overrightarrow{\nabla} ~ \times ~ F(x,y,z)=0
+              \overrightarrow{\nabla} ~ \times ~ F(x,y,z)=0 \\ \\
             $
+            Since $\mathbf{curl ~ F=0}$, then we can say the above vector field is conservative.
           } 
 
-        \item Find a potential field corresponding to $\mathbf{F}$, i.e., a scalar field $\phi$ such that $\mathbf{F}=\mathbf{\nabla}\phi$ in the domain where $\mathbf{F}$ is defined. 
+        \item Find a potential field corresponding to $\mathbf{F}$, i.e., a scalar field $\phi$ such that $\mathbf{F}=\mathbf{\nabla}\phi$ in the domain where $\mathbf{F}$ is defined.
+
+          \textcolor{hwColor}{
+            suppose $F$ is a vector field. If there exists a scalar function $f$, so that $\overrightarrow{\nabla}f=F, ~ F$ is 
+            conservative and we call $f$ a potential. Assume a potential exists, let's find it. \\ \\
+            $
+              \overrightarrow{\nabla}=F \Rightarrow ~ <f_x, f_y, f_z>=<\dfrac{zx}{\sqrt{x^2+y^2}}, \dfrac{zy}{\sqrt{x^2+y^2}}, \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2}> \\ 
+              \\
+              \begin{cases}
+                f_x=\dfrac{zx}{\sqrt{x^2+y^2}} \Rightarrow \bigints \dfrac{zx}{\sqrt{x^2+y^2}} dx+h(y,z)\\
+                \\
+                f_y=\dfrac{zy}{\sqrt{x^2+y^2}} \Rightarrow \bigints \dfrac{zy}{\sqrt{x^2+y^2}} dy+h(x,z) \\
+                \\
+                f_z=\dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2} \Rightarrow \bigints \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2} dz+h(x,y)
+              \end{cases}
+            $
+          }
+
       \end{enumerate}
       (Hint: follow the example shown in class.)
 
