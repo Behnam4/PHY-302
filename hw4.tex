@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{flexisym}
+\usepackage{amssymb}
 \usepackage{bigints} 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -152,13 +153,53 @@
 
     \item Compute the flux of each of the following vector fields that penetrates a square area
     of side 1 centered on the x-axis at $x=1$. The square's sides are parallel to the y- and z-axes.
+
+      \textcolor{hwColor}{
+        The rate of flow (amount/volume of flow across the surface) is called the \textbf{Flux}. \\
+        \\
+        $F.\hat{n} ds \Rightarrow$ Vector field.Normal at any point on surface $\times$ Really small piece of surface (area) \\ \\
+        $
+          \bigints_{S}\bigints F.ds=\bigints_{S} \bigints F.\hat{n} ds 
+        $ called the \textbf{Flux} integral. In other words \textbf{Flux}=$(F.\hat{n}) \times$ Area. The dot product basically takes
+        the component of the vector field that is parallel to $\hat{n}$ and so perpendicular to
+        the plane and discards the other component. Finally, we multiply by the area. \\
+      }
+
       \begin{enumerate}
         \item $\mathbf{V}=xyz\mathbf{i}$.
+
+          \textcolor{hwColor}{
+            Imagine that the vector field is a fluid flowing through space, then the flux of the field through an area is the amount of "fluid"
+            flowing through that area. Now, in this case the area we are flowing through is $L^2$ (Assume $L$ is length of the sides of the square).
+            \\
+            \\
+            \textbf{Flux}=$\left[(xyz \hat{i}).(\hat{n})\right] L^2=\left[(xyz ~ \hat{i}).(\hat{i})\right]L^2=xyzL^2$ where $x=1$. \\
+            \\
+            $\therefore$ \textbf{Flux}$=yzL^2$
+          }
+
         \item $\mathbf{V}=y\mathbf{k}+z\mathbf{j}$.
+
+          \textcolor{hwColor}{
+            \textbf{Flux}=$\left[(z \hat{j}+y\hat{k}).(\hat{n})\right] L^2=\left[(z \hat{j}+y\hat{k}).(\hat{i})\right] L^2$ \\
+            \\
+            $\therefore$ \textbf{Flux}$=0$
+          }
+
         \item $\mathbf{V}=\mathbf{r}$ (where $\mathbf{r}$ is the position vector)
+
+          \textcolor{hwColor}{
+            Assume the position vector is: $r=|\mathbf{r}|=\sqrt{x^2+y^2+y^2} \Rightarrow \mathbf{r}=x \hat{i}+y \hat{j}+z \hat{k}$ \\
+            \\
+            \textbf{Flux}=$\left[(x \hat{i}+y \hat{j}+z \hat{k}).(\hat{n})\right] L^2=\left[(x \hat{i}+y \hat{j}+z \hat{k}).(\hat{i})\right] L^2=x L^2$ \\
+            \\
+            Since $x=1 ~$ $\therefore$ \textbf{Flux}=$L^2$ 
+          }
+
       \end{enumerate}
       (Hint: Take the unit vector $\mathbf{\hat n}=\mathbf{j} \times \mathbf{k} = \mathbf{i}$ as the positive or ``outward" sense of the surface. Note that, for this exercise, $dS=dy dz$.)
 
+    \pagebreak
 
     \item Take $S$ to be the (closed) surface of a sphere of radius r centered at the origin. Compute the flux penetrating it radially outward for each of the following vector fields:
       \begin{enumerate}
