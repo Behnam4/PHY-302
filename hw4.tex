@@ -5,6 +5,7 @@
 \usepackage{import}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{flexisym}
 \usepackage{bigints} 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -86,7 +87,7 @@
               \\
               \overrightarrow{\nabla} ~ \times ~ F(x,y,z)=0 \\ \\
             $
-            Since $\mathbf{curl ~ F=0}$, then we can say the above vector field is conservative.
+            Since $\mathbf{curl ~ F=0}$, then we can say $\mathbf{F}$ is conservative.
           } 
 
         \item Find a potential field corresponding to $\mathbf{F}$, i.e., a scalar field $\phi$ such that $\mathbf{F}=\mathbf{\nabla}\phi$ in the domain where $\mathbf{F}$ is defined.
@@ -95,15 +96,53 @@
             suppose $F$ is a vector field. If there exists a scalar function $f$, so that $\overrightarrow{\nabla}f=F, ~ F$ is 
             conservative and we call $f$ a potential. Assume a potential exists, let's find it. \\ \\
             $
-              \overrightarrow{\nabla}=F \Rightarrow ~ <f_x, f_y, f_z>=<\dfrac{zx}{\sqrt{x^2+y^2}}, \dfrac{zy}{\sqrt{x^2+y^2}}, \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2}> \\ 
+              \overrightarrow{\nabla} \phi=F \Rightarrow ~ <\dfrac{\partial \phi}{\partial x}, \dfrac{\partial \phi}{\partial y}, \dfrac{\partial \phi}{\partial z}>=<\dfrac{zx}{\sqrt{x^2+y^2}}, \dfrac{zy}{\sqrt{x^2+y^2}}, \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2}> \\ 
               \\
               \begin{cases}
-                f_x=\dfrac{zx}{\sqrt{x^2+y^2}} \Rightarrow \bigints \dfrac{zx}{\sqrt{x^2+y^2}} dx+h(y,z)\\
+                \dfrac{\partial \phi}{\partial x}=\dfrac{zx}{\sqrt{x^2+y^2}} ~~~~ \mathbf{(A)}\\
                 \\
-                f_y=\dfrac{zy}{\sqrt{x^2+y^2}} \Rightarrow \bigints \dfrac{zy}{\sqrt{x^2+y^2}} dy+h(x,z) \\
+                \dfrac{\partial \phi}{\partial y}=\dfrac{zy}{\sqrt{x^2+y^2}} ~~~~ \mathbf{(B)}\\
                 \\
-                f_z=\dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2} \Rightarrow \bigints \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2} dz+h(x,y)
-              \end{cases}
+                \dfrac{\partial \phi}{\partial z}=\dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2} ~~~~ \mathbf{(C)}\\ \\
+              \end{cases} \\
+            $
+            The integral of $\dfrac{\partial \phi}{\partial x}$ we respect to $x$ is: \\ \\
+            $
+              \phi=\bigints \dfrac{zx}{\sqrt{x^2+y^2}} dx, u=x^2+y^2 \Rightarrow dx=\dfrac{du}{2x} \\
+              \\
+              =\dfrac{z}{2} \left[\dfrac{u^{\dfrac{1}{2}}}{\dfrac{1}{2}}\right] \Rightarrow \phi=z\sqrt{x^2+y^2}+h(y,z) \\ \\
+            $
+            \rule{15cm}{1pt}
+            Now let's find the partial of $\phi$ with respect to $y$. \\
+            \\
+            $\dfrac{\partial \phi}{\partial y}=\dfrac{\partial (z\sqrt{x^2+y^2}+h(y,z))}{\partial y}=\dfrac{yz}{\sqrt{x^2+y^2}}+h_y(y,z)$ \\ \\
+            By equating $\dfrac{zy}{\sqrt{x^2+y^2}}$ from $\mathbf{(B)}$ we have: \\
+            \\
+            $
+              \dfrac{zy}{\sqrt{x^2+y^2}}=\dfrac{yz}{\sqrt{x^2+y^2}}+h_y(y,z) \Rightarrow  h_y(y,z)=0 ~~~~ \mathbf{(D)} \\
+              \\
+              \bigints h_y(y,z) dy=w(z) ~~~~ \mathbf{(E)}
+            $ \\ \\
+            Now considering $\mathbf{(D)} ~ and ~ \mathbf{(E)} \Rightarrow \phi=z\sqrt{x^2+y^2}+h(y,z)$ we can rewrite $\phi$ as: \\
+            \\
+            $
+              \phi=z\sqrt{x^2+y^2}+w(z) \\
+            $
+            \rule{15cm}{1pt}
+            Let's do the same thing one more time. Taking the partial derivative of $\phi$ with respect to $z$: \\
+            \\
+            $
+              \dfrac{\partial \phi}{\partial z}=\dfrac{\partial (z\sqrt{x^2+y^2}+w(z))}{\partial z}=\sqrt{x^2+y^2}+w^{\prime}(z) \\ \\
+            $
+            Now it's time to equate $\mathbf{(C)}$ with what we found for $\dfrac{\partial \phi}{\partial z}$. \\
+            \\
+            $
+              \dfrac{1}{z^{3/4}}+\sqrt{x^2+y^2}=\sqrt{x^2+y^2}+w^{\prime}(z) \Rightarrow w^{\prime}(z)=\dfrac{1}{z^{3/4}} \\
+              \\
+              w(z)=\bigints \dfrac{1}{z^{3/4}} dz=4z^{\dfrac{1}{4}} \\
+              \\
+              \\
+              \Longrightarrow \phi=z\sqrt{x^2+y^2}+4z^{\dfrac{1}{4}}+C
             $
           }
 
@@ -116,7 +155,7 @@
       \begin{enumerate}
         \item $\mathbf{V}=xyz\mathbf{i}$.
         \item $\mathbf{V}=y\mathbf{k}+z\mathbf{j}$.
-        \item $\mathbf{V}=\mathbf{r}$ (where $\mathbf{r}$ is the position vector )
+        \item $\mathbf{V}=\mathbf{r}$ (where $\mathbf{r}$ is the position vector)
       \end{enumerate}
       (Hint: Take the unit vector $\mathbf{\hat n}=\mathbf{j} \times \mathbf{k} = \mathbf{i}$ as the positive or ``outward" sense of the surface. Note that, for this exercise, $dS=dy dz$.)
 
