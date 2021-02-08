@@ -202,10 +202,46 @@
     \pagebreak
 
     \item Take $S$ to be the (closed) surface of a sphere of radius r centered at the origin. Compute the flux penetrating it radially outward for each of the following vector fields:
+      
+      \textcolor{hwColor}{
+        The equation of a sphere of radius r centered at the origin ($a=0, ~ b=0, ~ c=0$) is: \\
+        \\
+        $
+          (x-a)^2+(y-b)^2+(z-c)^2=r^2 \Rightarrow x^2+y^2+z^2=r^2 \\ \\
+        $ 
+        For a closed surface The divergence theorem states that the surface integral of a vector field $\overrightarrow{F}=P \hat{i}+Q \hat{j}+R \hat{k}$, which is called the flux 
+        through the surface, is equal to the volume integral of the divergence over the region inside the surface. \\
+        \\
+        $$\iiint_T \overrightarrow{\nabla}.F dv=\iiint_T \left[\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}\right] dv$$
+      }
+
       \begin{enumerate}
-        \item $\mathbf{V}=\mathbf{r}$ ;
-        \item $\mathbf{V}=2 \mathbf{r}/r^3$ (where $r=|\mathbf{r}|$); 
-        \item $\mathbf{V}=yz\mathbf{i}+zx\mathbf{j}+xy\mathbf{k}$.
+        \item $\mathbf{V}=\mathbf{r}$;
+        
+          \textcolor{hwColor}{
+            $\mathbf{r}=x \hat{i}+y \hat{j}+z \hat{k}, ~~ \overrightarrow{\nabla}\mathbf{r}=1+1+1=3 \\ \\$
+            \textbf{Flux}=$\iiint_T 3dv=\bigints_{\theta=0}^{\theta=2 \pi} \bigints_{\phi=0}^{\phi=\pi} \bigints_{\theta=0}^{\theta=r} 3 \rho^2 ~ sin(\phi) ~ d\rho ~ d\phi ~ d\theta$ \\ \\
+            $
+              =\bigints_{\theta=0}^{\theta=2 \pi} \bigints_{\phi=0}^{\phi=\pi} r^3 sin(\phi) ~ d\phi ~ d\theta=\bigints_{\theta=0}^{\theta=2 \pi}  2r^3 ~ d\theta=2r^3.2\pi \\
+              \\
+              \\
+              \Longrightarrow 
+            $
+            \textbf{Flux}=$4\pi r^3$
+          }
+
+        \item $\mathbf{V}=2 \mathbf{r}/r^3$ (where $r=|\mathbf{r}|$);
+
+          \textcolor{hwColor}{
+            Behnam was here.
+          }
+        
+        \item $\mathbf{V}=yz\mathbf{i}+zx\mathbf{j}+xy\mathbf{k}$;
+
+          \textcolor{hwColor}{
+            Behnam was here.
+          }
+
       \end{enumerate}
       (Hint: What is the simplest way of expressing the orthogonal unit vector $\mathbf{\hat n}$ for this surface? In part (c) you will want to use Spherical Polar coordinates, but do not waste time rewriting $\mathbf{V}$. Make judicious use of scalar products.)
 
