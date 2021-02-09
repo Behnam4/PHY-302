@@ -54,6 +54,7 @@
 
   \end{titlepage}
 
+  \textbf{Part A}
   \begin{enumerate}
     \item Consider the vector field 
       $$
@@ -245,6 +246,70 @@
       \end{enumerate}
       (Hint: What is the simplest way of expressing the orthogonal unit vector $\mathbf{\hat n}$ for this surface? In part (c) you will want to use Spherical Polar coordinates, but do not waste time rewriting $\mathbf{V}$. Make judicious use of scalar products.)
 
+  \end{enumerate}
+
+  \pagebreak
+
+  \textbf{Part B}
+  \begin{enumerate}
+    \item Use Stokes' theorem to compute the surface integral of the normal component of the curl of
+    $$
+    \mathbf{F}= (x+y) \mathbf{i} + (y -x) \mathbf{j} + z^3 \mathbf{k}
+    $$
+    over the upper half of the unit sphere (i.e. the sphere of radius 1 centered at the origin.) \\
+    (Hint: The curve in question is the unit circle in the $x$-$y$ plane. Use the azimuthal angle, $\phi$, to describe the circle and the integrand.)
+
+      \textcolor{hwColor}{
+        Stokes' theorem is a generalization of Green's theorem. This theorem is used when a curve is not on a plane.  \\
+        \\
+        $
+          \oint_C \overrightarrow{F}.d\overrightarrow{r}=\iint_S ~ curl ~ \overrightarrow{F}.d\overrightarrow{S}=\iint_S ~ curl ~ \overrightarrow{F}.\hat{n} ~ ds \\
+          \\
+          curl ~ \overrightarrow{F}=\overrightarrow{\nabla} \times \overrightarrow{F}=\begin{vmatrix}
+            \hat{i} & \hat{j} & \hat{k} \\
+            \\
+            \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+            \\
+            x+y & y-x & z^3 
+          \end{vmatrix}=\hat{i}(0-0)-\hat{j}(0-0)+\hat{k}(-1-1)=-2\hat{k} \\
+          \\
+          \\
+          \Rightarrow curl ~ \overrightarrow{F}=-2\hat{k} \\ \\
+        $
+        The equation of the unit sphere of radius r centered at the origin is $x^2+y^2+z^2=1$ and the upper half of the unit sphere is
+        where $z\geq 0$. \\
+        \\
+        Normal vectors to the surface be pointing outwards at any particular point and that satisfies the right hand rule that
+        when you take your finger and go along the boundary the normal would be sticking upwards which in this case is $\hat{k}$. \\ \\  
+        $
+          \iint_S ~ curl ~ \overrightarrow{F}.\overrightarrow{n} ~ ds \\ \\
+          \\
+          \overrightarrow{n} ds=\dfrac{\overrightarrow{\nabla}(x^2+y^2+z^2)}{|\overrightarrow{\nabla}(x^2+y^2+z^2)\hat{k}|}ds=\dfrac{2x \hat{i}+2y\hat{j}+2z\hat{z}}{|2z|} \\
+          \\
+          \iint_S ~ curl ~ \overrightarrow{F}.\overrightarrow{n} ~ ds=\iint_R ~ \left[(-2\hat{k}).(\dfrac{2x \hat{i}+2y\hat{j}+2z\hat{k}}{|2z|})\right]dA=\iint_R ~ -\dfrac{4z}{|2z|}dA=\iint_R ~ -2dA \\ \\
+        $
+        The region $R$ is the portion above the circle of unit 1 and it's got an area of $\pi r^2=\pi (1)^2=\pi$, hence: \\
+        \\
+        $
+          \Longrightarrow \iint_R ~ -\dfrac{4z}{|2z|}dA=\iint_R ~ -2dA=-2\pi
+        $
+      }
+
+    \pagebreak
+
+    \item The differential form of Maxwell's third equation (Ampere's law) is (leaving out the displacement current)
+      $\mathbf{\nabla}\times \mathbf{B} = \mu_0\mathbf{J}$,
+      where $\mathbf{J}$ is the current density. Use Stokes' theorem to rewrite this in the well-known integral form.\\
+      (Hint: The ``well-known integral form" of Ampere's law  is  $\int_{\mathcal C} \mathbf{B}\cdot d\mathbf{s} = \mu_0 I$, where $I$ is the net current linked by a closed curve ${\mathcal C}$; refer to your introductory physics books.)
+
+
+
+    \item Using Gauss theorem, show that, if $\Phi$ is a scalar field,
+    $$        
+    \int_{\mathcal S}\Phi d{\mathbf S}=\int_{V} (\mathbf{\nabla} \Phi) dV .
+    $$
+    (the integral on the left side is over a closed surface, $\mathcal S$; the integral on the right side is over the volume $V$ enclosed by the surface  $\mathcal S$). \\
+    (Hint: Apply Gauss theorem to the vector $\mathbf{A} = \Phi\mathbf{C}$, where $\mathbf{C}$ is an arbitrary constant vector, and use one of the properties of Table 10.1 of the textbook.)
   \end{enumerate}
 
 \end{document}
