@@ -298,11 +298,21 @@
     \pagebreak
 
     \item The differential form of Maxwell's third equation (Ampere's law) is (leaving out the displacement current)
-      $\mathbf{\nabla}\times \mathbf{B} = \mu_0\mathbf{J}$,
-      where $\mathbf{J}$ is the current density. Use Stokes' theorem to rewrite this in the well-known integral form.\\
-      (Hint: The ``well-known integral form" of Ampere's law  is  $\int_{\mathcal C} \mathbf{B}\cdot d\mathbf{s} = \mu_0 I$, where $I$ is the net current linked by a closed curve ${\mathcal C}$; refer to your introductory physics books.)
+    $\mathbf{\nabla}\times \mathbf{B} = \mu_0\mathbf{J}$,
+    where $\mathbf{J}$ is the current density. Use Stokes' theorem to rewrite this in the well-known integral form.\\
+    (Hint: The ``well-known integral form" of Ampere's law  is  $\int_{\mathcal C} \mathbf{B}\cdot d\mathbf{s} = \mu_0 I$, where $I$ is the net current linked by a closed curve ${\mathcal C}$; refer to your introductory physics books.)
 
-
+      \textcolor{hwColor}{
+        $
+          \oint_C \overrightarrow{F}.d\overrightarrow{r}=\iint_S ~ curl ~ \overrightarrow{F}.d\overrightarrow{S} \\ \\
+          \iint_S curl ~ \overrightarrow{B}.d\overrightarrow{S}=\oint \overrightarrow{B}.d\overrightarrow{l} \\
+          \\
+          \\
+          \Rightarrow \iint_S \mu_0 \overrightarrow{J}.d\overrightarrow{S}=\oint \overrightarrow{B}.d\overrightarrow{l} \\ \\ \\
+        $
+        We know that $\iint_S \overrightarrow{J}.d\overrightarrow{S}$ gives us $I$. Hence, we have: \\ \\
+        $\oint \overrightarrow{B}.d\overrightarrow{l}=\mu_0 ~ I$ which is the “well-known integral form” of Ampere’s law.
+      }
 
     \item Using Gauss theorem, show that, if $\Phi$ is a scalar field,
     $$        
