@@ -320,6 +320,21 @@
     $$
     (the integral on the left side is over a closed surface, $\mathcal S$; the integral on the right side is over the volume $V$ enclosed by the surface  $\mathcal S$). \\
     (Hint: Apply Gauss theorem to the vector $\mathbf{A} = \Phi\mathbf{C}$, where $\mathbf{C}$ is an arbitrary constant vector, and use one of the properties of Table 10.1 of the textbook.)
+
+      \textcolor{hwColor}{
+        Two vectors $\overrightarrow{a}$ and $\overrightarrow{b} \in R^n$ are equal to each other if and only if for all vectors $\overrightarrow{q} \in R^n$, 
+        $\overrightarrow{q}.\overrightarrow{a}=\overrightarrow{q}.\overrightarrow{b}$ \\ \\ 
+        For any constant $C$, we have: \\ \\
+        $
+          \overrightarrow{k}\left[\bigints \overrightarrow{\nabla}\phi dv \right]=\bigints \overrightarrow{\nabla}.(\phi \overrightarrow{k})dv=\bigints \phi \overrightarrow{k}.dS=\overrightarrow{k}\left[\bigints \phi dS\right] \\ \\
+        $
+        The first equality holds since $\overrightarrow{k}.\overrightarrow{\nabla}\phi=\overrightarrow{\nabla}.(\phi \overrightarrow{k})-\phi(\overrightarrow{\nabla}.\overrightarrow{k})$. Moreover, $\overrightarrow{k}$
+        is a constant vector, $\overrightarrow{\nabla}.\overrightarrow{k}=0$. Hence, $\overrightarrow{k}.\overrightarrow{\nabla}\phi=\overrightarrow{\nabla}.(\phi \overrightarrow{k})$. Therefore, \\ \\ \\
+        $
+          \bigints \overrightarrow{\nabla}\phi dv=\bigints \phi ds
+        $
+      }
+      
   \end{enumerate}
 
 \end{document}
