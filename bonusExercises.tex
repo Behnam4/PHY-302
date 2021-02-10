@@ -1,0 +1,98 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+    \center % Center everything on the page
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm] % Name of your university/college
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] % Major heading such as course name
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Class 8 Bonus Exercises}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill % Fill the rest of the page with whitespace
+
+  \end{titlepage}
+
+  \begin{enumerate}
+    \item Consider the surface $\Sigma$ defined as: \\
+      $$\begin{cases}
+        x^2+y^2+z^2=4 \\
+        z \leq \sqrt{3}
+      \end{cases}$$ \\
+      (see figure). Let $C$ be the curve that bounds the surface (i.e., the rim of the "cup" in the figure). \\
+      \\
+      \begin{center}
+        \includegraphics[height=7cm, width=10cm]{first.png}
+      \end{center}
+
+      Consider also the vector field:
+
+      $$\mathbf{F}=zx \hat{x}+zy \hat{y}+z^2 \hat{z}$$
+      \begin{enumerate}
+        \item Calculate $\overrightarrow{\nabla} \times \mathbf{F}$.
+        
+        \item Calculate the path integral $I=\oint_C \mathbf{F} ~ . ~ ds$ using Stokes theorem and the surface $\Sigma$.
+        Consider the vector normal to $\Sigma$ to be oriented outwards.
+      \end{enumerate}
+
+    \item Consider the vector field $\mathbf{F}=(z+y) \hat{x}+z\hat{y}+(z+x)\hat{z}$. Consider also a frustum of cone, defined as:
+    $$\begin{cases}
+      z^2=x^2+y+2 \\
+      1\leq z \leq 4.
+    \end{cases}$$ 
+    (see figure). Let us call $V$ the volume of this solid. Also, let $S$ be the closed surface enclosing the volume:
+    $S=S_1\bigcup S_2 \bigcup S_3$, where $S_1$ is the flat bottom $(z=1)$, $S_2$ is the curved surface, and $S_3$ is the flat top $(z=4)$.
+    \begin{enumerate}
+      \item Calculate the flux $\Phi=\bigints_S \mathbf{F} ~ . ~ d\mathbf{S}$ using the appropriate boundary theorem (Gauss’
+      theorem or Stokes theorem? Think carefully). [Hint: use cylindrical coordinates]
+      
+      \item Find the unit vector orthogonal to the surface $S_2$ and pointing out of the volume $V$. 
+    \end{enumerate}
+
+    \begin{center}
+      \includegraphics[height=7cm, width=10cm]{second.png}
+    \end{center}
+  \end{enumerate}
+
+\end{document}
