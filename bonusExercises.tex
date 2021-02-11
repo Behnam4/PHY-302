@@ -71,10 +71,69 @@
       $$\mathbf{F}=zx \hat{x}+zy \hat{y}+z^2 \hat{z}$$
       \begin{enumerate}
         \item Calculate $\overrightarrow{\nabla} \times \mathbf{F}$.
+
+          \textcolor{hwColor}{
+            $
+              \overrightarrow{\nabla} \times \mathbf{F}=\begin{vmatrix}
+                \hat{i} & \hat{j} & \hat{k} \\
+                \\
+                \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+                \\
+                zx & zy & z^2
+              \end{vmatrix}=\left[\dfrac{\partial}{\partial y}z^2-\dfrac{\partial}{\partial z}zy\right]\hat{i}+\left[\dfrac{\partial}{\partial x}z^2-\dfrac{\partial}{\partial z}zx\right]\hat{j}+\left[\dfrac{\partial}{\partial x} zy-\dfrac{\partial}{\partial y}zx\right]\hat{k} \\
+              \\
+              \\
+              \therefore \overrightarrow{\nabla} \times \mathbf{F}=-y \hat{i}-x\hat{j}
+            $
+          }
+
+        \pagebreak
         
         \item Calculate the path integral $I=\oint_C \mathbf{F} ~ . ~ ds$ using Stokes theorem and the surface $\Sigma$.
         Consider the vector normal to $\Sigma$ to be oriented outwards.
+
+          \textcolor{hwColor}{
+            Since we are given a line integral and told to use Stokes' theorem, we need to compute a surface integral. \\ \\
+            Stokes' theorem is a generalization of Green's theorem. This theorem is used when a curve is not on a plane. \\
+            \\
+            $
+              \oint_C \overrightarrow{\mathbf{F}}.d\overrightarrow{s}=\iint_S ~ curl ~ \overrightarrow{\mathbf{F}}.d\overrightarrow{S}=\iint_S ~ (curl ~ \overrightarrow{\mathbf{F}}.\hat{n}) ~ ds \\
+              \\
+              curl ~ \overrightarrow{\mathbf{F}}=\overrightarrow{\nabla} \times \overrightarrow{\mathbf{F}}=-y \hat{i}-x\hat{j} \\
+              \\
+            $
+            The sphere and the plane $z=\sqrt{3}$ intersect on a circle: \\
+            \\
+            $x^2+y^2+(\sqrt{3})^2=4 ~~ \Rightarrow ~~ x^2+y^2=1$ \\ \\
+            By parameterizing it we have the following: \\
+            \\
+            $
+              \begin{cases}
+                x=rcos(\theta) \\
+                y=rsin(\theta) \\
+                z=1
+              \end{cases} \\ \\
+              \overrightarrow{s}(r,\theta)=rcos(\theta)\hat{i}+rsin(\theta)\hat{j}+\hat{k} \\
+              \\
+              \hat{n}ds=d\overrightarrow{\mathbf{S}}=(\overrightarrow{s_r} \times \overrightarrow{s_\theta}) d\theta dr \\
+              \\
+              \\
+              \overrightarrow{s_r} \times \overrightarrow{s_\theta}=\begin{vmatrix}
+                \hat{i} & \hat{j} & \hat{k} \\
+                \\
+                cos(\theta) & sin(\theta) & 0 \\
+                \\
+                -rsin(\theta) & rcos(\theta) & 0
+              \end{vmatrix}=\hat{i}(0-0)+\hat{j}(0-0)+\hat{k}(r cos^2(\theta)+rsin^2(\theta))=\hat{k} \\
+              \\
+              \\
+              \bigints_{r=0}^{r=1} \bigints_{\theta=0}^{\theta=2 \pi} \overrightarrow{\nabla} \times \overrightarrow{\mathbf{F}}.\hat{n}ds=\bigints_{r=0}^{r=1} \bigints_{\theta=0}^{\theta=2 \pi} (-y \hat{i}-x\hat{j}).(\hat{k}) ~ d\theta dr=0
+            $
+          }
+
       \end{enumerate}
+
+    \pagebreak
 
     \item Consider the vector field $\mathbf{F}=(z+y) \hat{x}+z\hat{y}+(z+x)\hat{z}$. Consider also a frustum of cone, defined as:
     $$\begin{cases}
