@@ -80,10 +80,10 @@
                 \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
                 \\
                 zx & zy & z^2
-              \end{vmatrix}=\left[\dfrac{\partial}{\partial y}z^2-\dfrac{\partial}{\partial z}zy\right]\hat{i}+\left[\dfrac{\partial}{\partial x}z^2-\dfrac{\partial}{\partial z}zx\right]\hat{j}+\left[\dfrac{\partial}{\partial x} zy-\dfrac{\partial}{\partial y}zx\right]\hat{k} \\
+              \end{vmatrix}=\left[\dfrac{\partial}{\partial y}z^2-\dfrac{\partial}{\partial z}zy\right]\hat{i}-\left[\dfrac{\partial}{\partial x}z^2-\dfrac{\partial}{\partial z}zx\right]\hat{j}+\left[\dfrac{\partial}{\partial x} zy-\dfrac{\partial}{\partial y}zx\right]\hat{k} \\
               \\
               \\
-              \therefore \overrightarrow{\nabla} \times \mathbf{F}=-y \hat{i}-x\hat{j}
+              \therefore \overrightarrow{\nabla} \times \mathbf{F}=-y \hat{i}+x\hat{j}
             $
           }
 
@@ -99,7 +99,7 @@
             $
               \oint_C \overrightarrow{\mathbf{F}}.d\overrightarrow{s}=\iint_S ~ curl ~ \overrightarrow{\mathbf{F}}.d\overrightarrow{S}=\iint_S ~ (curl ~ \overrightarrow{\mathbf{F}}.\hat{n}) ~ ds \\
               \\
-              curl ~ \overrightarrow{\mathbf{F}}=\overrightarrow{\nabla} \times \overrightarrow{\mathbf{F}}=-y \hat{i}-x\hat{j} \\
+              curl ~ \overrightarrow{\mathbf{F}}=\overrightarrow{\nabla} \times \overrightarrow{\mathbf{F}}=-y \hat{i}+x\hat{j} \\
               \\
             $
             The sphere and the plane $z=\sqrt{3}$ intersect on a circle: \\
@@ -124,10 +124,13 @@
                 cos(\theta) & sin(\theta) & 0 \\
                 \\
                 -rsin(\theta) & rcos(\theta) & 0
-              \end{vmatrix}=\hat{i}(0-0)+\hat{j}(0-0)+\hat{k}(r cos^2(\theta)+rsin^2(\theta))=\hat{k} \\
+              \end{vmatrix}=\hat{i}(0-0)-\hat{j}(0-0)+\hat{k}(r cos^2(\theta)+rsin^2(\theta))=\hat{k} \\
               \\
               \\
-              \bigints_{r=0}^{r=1} \bigints_{\theta=0}^{\theta=2 \pi} \overrightarrow{\nabla} \times \overrightarrow{\mathbf{F}}.\hat{n}ds=\bigints_{r=0}^{r=1} \bigints_{\theta=0}^{\theta=2 \pi} (-y \hat{i}-x\hat{j}).(\hat{k}) ~ d\theta dr=0
+              \bigints_{r=0}^{r=1} \bigints_{\theta=0}^{\theta=2 \pi} \overrightarrow{\nabla} \times \overrightarrow{\mathbf{F}}.\hat{n}ds=\bigints_{r=0}^{r=1} \bigints_{\theta=0}^{\theta=2 \pi} (-y \hat{i}+x\hat{j}).(\hat{k}) ~ d\theta dr=0 \\
+              \\
+              \\
+              \therefore \oint_C \overrightarrow{\mathbf{F}}.d\overrightarrow{s}=\iint_S ~ curl ~ \overrightarrow{\mathbf{F}}.d\overrightarrow{S}=0
             $
           }
 
