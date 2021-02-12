@@ -149,12 +149,61 @@
       \item Calculate the flux $\Phi=\bigints_S \mathbf{F} ~ . ~ d\mathbf{S}$ using the appropriate boundary theorem (Gauss’
       theorem or Stokes theorem? Think carefully). [Hint: use cylindrical coordinates]
       
-      \item Find the unit vector orthogonal to the surface $S_2$ and pointing out of the volume $V$. 
+      \item Find the unit vector orthogonal to the surface $S_2$ and pointing out of the volume $V$.
     \end{enumerate}
 
     \begin{center}
       \includegraphics[height=7cm, width=10cm]{second.png}
     \end{center}
+
+    \textcolor{hwColor}{
+      \textbf{(a)} \\
+      \\
+      The rate of flow (amount/volume of flow across the surface) is called the \textbf{Flux}. \\
+      \\
+      Since we have a closed vector field, we want to  use the Gauss' theorem. \\ \\ 
+      $
+        \Phi=\bigints_S \mathbf{F} ~ . ~ d\mathbf{S}=\bigints \bigints \bigints_V \left[\overrightarrow{\nabla}.\overrightarrow{\mathbf{F}}\right] dV=\bigints \bigints \bigints_V \left[\dfrac{\partial F_x}{\partial x}+\dfrac{\partial F_y}{\partial y}+\dfrac{\partial F_z}{\partial z}\right] dV \\ \\
+        \\
+        =\bigints \bigints \bigints_V \left[0+0+1\right] dV=\bigints \bigints \bigints_V \left[0+0+1\right] dV=\bigints_{1}^{4} \bigints_{0}^{2\pi} \bigints_{0}^{z} r ~ dr ~ d\phi ~ dz \\
+        \\
+        \\
+         \therefore \Phi=\bigints_S \mathbf{F} ~ . ~ d\mathbf{S}=21 \pi
+      $
+    }
+
+    \textcolor{hwColor}{
+      \textbf{(b)} \\
+      \\
+      We have the position vector as $\mathbf{r}=rcos(\phi) \hat{i}+rsin(\phi) \hat{j}+r\hat{k}$. \\
+      \\
+      $
+        \overrightarrow{n}=\dfrac{\partial \mathbf{r}}{\partial r} \times \dfrac{\partial \mathbf{r}}{\partial \phi}=\left[cos(\phi)\hat{i}+sin(\phi)\hat{j}+\hat{k}\right] \times \left[-rsin(\phi)\hat{i}+rcos(\phi)\hat{j}\right]=        \begin{vmatrix}
+          \hat{i} & \hat{j} & \hat{k} \\
+          \\
+          cos(\phi) & sin(\phi) & 1 \\
+          \\
+          -rsin(\phi) & rcos(\phi) & 0
+        \end{vmatrix} \\
+        \\
+        \\
+        =\left[0-rcos(\phi)\right]\hat{i}-\left[0+rsin(\phi)\right]\hat{j}+\left[rcos^2(\phi)+rsin^2(\phi)\right]\hat{k}=-rcos(\phi)\hat{i}-rsin(\phi)\hat{j}+r\hat{k} \\
+        \\
+        \\
+        \Longrightarrow \overrightarrow{n}=-rcos(\phi)\hat{i}-rsin(\phi)\hat{j}+r\hat{k} \\ \\ \\
+      $
+      Now we can find the unit normal vector easily: \\
+      \\
+      \\
+      $
+        \hat{n}=\dfrac{\overrightarrow{n}}{|\overrightarrow{n}|}=\dfrac{-rcos(\phi)\hat{i}-rsin(\phi)\hat{j}+r\hat{k}}{\sqrt{r^2cos^2(\phi)+r^2sin^2(\phi)+r^2}}=\dfrac{\sqrt{2}}{2}\left[-cos(\phi) \hat{i}-sin(\phi) \hat{j}+\hat{k}\right] \\ \\ \\
+      $
+      What we found is an inward normal vector but we are asked to find the unit vector poiting outwards. By negating the $z$ direction we have the wanted result. \\
+      \\
+      $
+        \hat{n}=\dfrac{\sqrt{2}}{2}\left[-cos(\phi) \hat{i}-sin(\phi) \hat{j}-\hat{k}\right]
+      $
+    }
   \end{enumerate}
 
 \end{document}
