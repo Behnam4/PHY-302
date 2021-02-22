@@ -58,24 +58,80 @@
   \begin{enumerate}
     \item  Derive the expression for the Dirac Delta in spherical polar coordinates (see lecture for a similar example): 
       $$
-      \delta^{(3)}(\mathbf{r}-\mathbf{r_0})=\frac{1}{r^2} \delta(r - r_0) \delta(\cos \theta - \cos \theta_0) \delta(\phi - \phi_0).
+      \delta^{(3)}(\mathbf{r}-\mathbf{r_0})=\frac{1}{r^2} \delta(r - r_0) \delta(\cos \theta - \cos \theta_0) \delta(\varphi - \varphi_0).
       $$
     Here $\mathbf{r}$ is the position vector and $r=|\mathbf{r}|$. The symbols with the 0 subscript refer to a fixed point in space. 
 
-    \item  Use the Heaviside step function to write the function: 
+      \textcolor{hwColor}{
+        The Dirac Delta is defined by: \\
+        \\
+        $
+          \bigints_{V} f(\mathbf{r}) \delta(\mathbf{r}-\mathbf{r}_0)dv=\begin{cases}
+            f(\mathbf{r}_0) ~~~~ $if$ ~~ P_0(x_0, y_0, z_0) $ is in $ V. \\
+            \\
+            0 ~~~~~~~~~~ $if$ ~~ P_0(x_0, y_0, z_0) $ is not in $ V. 
+          \end{cases} \\ \\
+        $
+        There is no restriction in the number of dimensions involved and $f(\mathbf{r})$ can be a scalar function or a
+        vector function. However, it is rather obvious that $f(\mathbf{r})$ must be defined at the point $P_0(x_0, y_0, z_0)$. If
+        the function $f(\mathbf{r})$ is a constant, e.g., unity, then one sees that the delta is normalized. As a result, it is
+        customary to speak of the delta as a symbolic representation for a unit source. However, the source is of
+        a unit magnitude in the sense that the integral of the delta over the coordinates involved is unity. If we
+        consider a three dimensional orthogonal curvilinear coordinate system with coordinates $(\xi_1, \xi_2, \xi_3)$ and
+        scale factors: \\
+        \\
+        $
+          u_i=\left[(\dfrac{\partial }{\partial \xi_i})^2+(\dfrac{\partial }{\partial \xi_i})^2+(\dfrac{\partial }{\partial \xi_i})^2\right]^{\dfrac{1}{2}} \\ \\
+        $
+        then one expresses the Dirac delta $\delta^{(3)}(\mathbf{r}-\mathbf{r}_0)=\dfrac{\partial(\xi_1-\xi_{10})}{u_1} \dfrac{\partial(\xi_2-\xi_{20})}{u_2} \dfrac{\partial(\xi_3-\xi_{30})}{u_3}$ \\
+        \\
+        In spherical polar coordinates: $\xi_1=r, ~ \xi_2=\theta, ~ \xi_3=\varphi$, we have: \\
+        \\
+        $x=r sin(\theta) cos(\varphi), ~ y=r sin(\theta) sin(\varphi), ~ z=r cos(\theta)$ and $u_1=1, ~ u_2=r, u_3=rsin(\theta),$ \\ \\ 
+        $d\mathbf{V}=r^2 sin(\theta) dr d\theta d\varphi$. And the corresponding Dirac Delta is given by: \\
+        \\
+        $
+          \delta^{(3)}(\mathbf{r}-\mathbf{r}_0)=\dfrac{1}{r^2 sin(\theta)} \delta(\mathbf{r}-\mathbf{r}_0) \delta(\theta-\theta_0) \delta(\varphi-\varphi_0) ~~~~~~ \mathbf{(A)}
+        $
+        \\ \\
+        \rule{15cm}{1pt}
+        \\
+        \\
+        We are halfway done. Now let's have: \\
+        \\
+        $
+          f(\theta)=cos(\theta)-cos(\theta_0) \Rightarrow \delta(f(\theta))=\dfrac{\delta(\theta-\theta_0)}{|\dfrac{df}{d\theta}|}=\dfrac{\delta(\theta-\theta_0)}{sin(\theta)} \\
+          \\
+          \therefore \delta\left[cos(\theta)-cos(\theta_0)\right]=\dfrac{\delta(\theta-\theta_0)}{sin(\theta)} \Longrightarrow \delta(\theta-\theta_0)=\delta\left[cos(\theta)-cos(\theta_0)\right] sin(\theta) ~~~~~~ \mathbf{(B)} \\ \\
+        $
+        and now it is time to plug in $\mathbf{B}$ into $\mathbf{A}$. We have: \\
+        \\
+        \\
+        $
+          \delta^{(3)}(\mathbf{r}-\mathbf{r}_0)=\dfrac{1}{r^2 sin(\theta)} \delta(\mathbf{r}-\mathbf{r}_0) \delta(\theta-\theta_0) \delta(\varphi-\varphi_0) \\
+          \\
+          =\dfrac{1}{r^2 sin(\theta)} \delta(\mathbf{r}-\mathbf{r}_0) \delta\left[cos(\theta)-cos(\theta_0)\right] sin(\theta) \delta(\varphi-\varphi_0) \\
+          \\
+          \\
+          \\
+          \therefore \delta^{(3)}(\mathbf{r}-\mathbf{r}_0)=\dfrac{1}{r^2} \delta(\mathbf{r}-\mathbf{r}_0) ~ \delta(cos(\theta)-cos(\theta_0)) ~ \delta(\varphi-\varphi_0)
+        $
+      }
+
+
+    \item Use the Heaviside step function to write the function: 
       $$
       f(x)= 
-      \begin{cases}
-      0 ~~{\rm  if}~x<-\pi \\
-      \cos x ~~{\rm  if}~-\pi<x<\pi \\
-      0 ~~{\rm  if}~x>\pi0 \\
-      
-      \end{cases}
+        \begin{cases}
+          0 ~~{\rm  if}~x<-\pi \\
+          \cos x ~~{\rm  if}~-\pi<x<\pi \\
+          0 ~~{\rm  if}~x>\pi0 \\
+        \end{cases}
       $$
     as a single expression.  
 
 
-    \item prove that the derivative of the Dirac Delta is odd, in other words: $\delta^\prime(-x)=-\delta^\prime(x)$. 
+    \item Prove that the derivative of the Dirac Delta is odd, in other words: $\delta^\prime(-x)=-\delta^\prime(x)$. 
   \end{enumerate}
 
   \textbf{Part B}
