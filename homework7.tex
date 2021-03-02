@@ -58,9 +58,23 @@
   \nabla^2 \psi = \frac{1}{v^2} \frac{\partial ^2 \psi}{\partial t^2}
   $$
 
+  \textcolor{hwColor}{
+    The method of separation of variables relies upon the assumption that a function of the form $u(x,t)=\phi(x) G(t)$. 
+    will be a solution to a linear homogeneous partial differential equation in $x$ and $t$. This is called a product solution
+    and provided the boundary conditions are also linear and homogeneous this will also satisfy the boundary conditions.
+    The method of Separation of Variables cannot always be used and even when it can be used 
+    it will not always be possible to get much past the first step in the method. \\
+  }
+
+  \textcolor{hwColor}{
+    This strategy can also be used to solve PDEs in cylindrical polar
+    coordinates; $u(\rho, \phi)=R(\rho) \Phi(\phi)$. Then we need to substitute this potential solution into our original PDE, and see
+    if we can determine what form $R(\rho)$ and $\Phi(\phi)$ should take.
+  }
+
   \begin{enumerate}
     \item Using the method of the separation of the variables illustrated in class, start solving this equation in (cylindrical) polar coordinates. Your variables will be $\rho$, $\phi$ and $t$, so $\psi=\psi(\rho, 
-    \phi, t)$.  Obtain  three separate differential equations for the three functions of each variable. 
+    \phi, t)$. Obtain  three separate differential equations for the three functions of each variable. 
 
     \item Discuss any constraints on the sign or values of the separation constants. (Hint: consider that your solution should be single valued for $\phi \rightarrow \phi+ 2\pi$, as explained in class). 
 
