@@ -59,7 +59,7 @@
   $$
 
   \textcolor{hwColor}{
-    The method of separation of variables relies upon the assumption that a function of the form $u(x,t)=\phi(x) G(t)$. 
+    The method of separation of variables relies upon the assumption that a function of the form $u(x,t)=\phi(x) G(t)$, 
     will be a solution to a linear homogeneous partial differential equation in $x$ and $t$. This is called a product solution
     and provided the boundary conditions are also linear and homogeneous this will also satisfy the boundary conditions.
     The method of Separation of Variables cannot always be used and even when it can be used 
@@ -67,14 +67,81 @@
   }
 
   \textcolor{hwColor}{
-    This strategy can also be used to solve PDEs in cylindrical polar
-    coordinates; $u(\rho, \phi)=R(\rho) \Phi(\phi)$. Then we need to substitute this potential solution into our original PDE, and see
+    This strategy can also be used to solve PDEs in cylindrical polar coordinates;
+    $u(\rho, \phi)=R(\rho) \Phi(\phi)$. Then we need to substitute this potential solution into our original PDE, and see
     if we can determine what form $R(\rho)$ and $\Phi(\phi)$ should take.
   }
 
   \begin{enumerate}
     \item Using the method of the separation of the variables illustrated in class, start solving this equation in (cylindrical) polar coordinates. Your variables will be $\rho$, $\phi$ and $t$, so $\psi=\psi(\rho, 
-    \phi, t)$. Obtain  three separate differential equations for the three functions of each variable. 
+    \phi, t)$. Obtain  three separate differential equations for the three functions of each variable.
+
+      \textcolor{hwColor}{
+        Let's remind ourselves the Laplacian in polar coordinates (3-D). \\
+        \\
+        $
+          \overrightarrow{\nabla}^2 \varPhi=\dfrac{1}{\rho} \dfrac{\partial}{\partial \rho}\left(\rho \dfrac{\partial \varPhi}{\partial \rho}\right)+\dfrac{1}{\rho^2} \dfrac{\partial^2 \varPhi}{\partial \phi^2}+\dfrac{\partial^2 \varPhi}{\partial z^2} \\ \\  
+        $
+        The vertical displacement of the membrane of a circular drum is described by: \\
+        \\
+        $
+          \dfrac{\partial^2 \psi}{\partial t^2}=v^2  \overrightarrow{\nabla}^2 \psi \\
+          \\
+          RHS: \\ \\
+          v^2\left(\dfrac{1}{\rho}(\dfrac{\partial}{\partial \rho}\rho \dfrac{\partial \psi}{\partial \rho}+\rho \dfrac{\partial^2 \psi}{\partial \rho^2})+\dfrac{1}{\rho^2}\dfrac{\partial^2 \psi}{\partial \phi^2}\right)
+          =v^2\left(\dfrac{1}{\rho} \dfrac{\partial \psi}{\partial \rho}+\dfrac{\partial^2 \psi}{\partial \rho^2}+\dfrac{1}{\rho^2} \dfrac{\partial^2 \psi}{\partial \phi^2}\right) \\
+          \\
+          \\
+          \\
+          \therefore \dfrac{\partial^2 \psi}{\partial t^2}=v^2\left(\dfrac{1}{\rho} \dfrac{\partial \psi}{\partial \rho}+\dfrac{\partial^2 \psi}{\partial \rho^2}+\dfrac{1}{\rho^2} \dfrac{\partial^2 \psi}{\partial \phi^2}\right)=0 \Longrightarrow -\dfrac{1}{v^2}\psi_{tt}+\left(\rho^{-1} \psi_{\rho}+\psi_{\rho \rho}+\rho^{-2} \psi_{\phi \phi}\right)=0 \\ \\ 
+        $
+        For $\psi(\rho, \phi, t)$ the assumption is that a function of the form $\mathcal{R}(\rho) \Phi(\phi) \mathcal{T}(t)$ is a solution. Hence, let's just plug them into our partial differential equation. \\
+        \\
+        $
+          -\dfrac{1}{v^2}(\mathcal{R}(\rho) \Phi(\phi) \mathcal{T}(t))_{tt}+\rho^{-1} (\mathcal{R}(\rho) \Phi(\phi) \mathcal{T}(t))_{\rho}+(\mathcal{R}(\rho) \Phi(\phi) \mathcal{T}(t))_{\rho \rho}+\rho^{-2} (\mathcal{R}(\rho) \Phi(\phi) \mathcal{T}(t))_{\phi \phi}=0 \\
+          \\
+          \mathcal{R}_{\rho \rho} \Phi \mathcal{T}+\mathcal{R}_{\rho} \Phi \mathcal{T}+\mathcal{R} \Phi_{\phi \phi} \mathcal{T} \rho^{-2}-\dfrac{1}{v^2}\mathcal{R} \Phi \mathcal{T}_{tt}=0 \\ \\
+        $
+        Now by dividing both sides, we can simplify this result. which we will end up with: \\
+        \\
+        $
+          \dfrac{\mathcal{R}_{\rho \rho}}{\mathcal{R}}+\dfrac{\mathcal{R}_{\rho}}{\rho \mathcal{R}}+\dfrac{1}{\rho^2} \dfrac{\Phi_{\phi \phi}}{\Phi}=\dfrac{1}{v^2}\dfrac{\mathcal{T}_{tt}}{\mathcal{T}} \\ \\
+        $
+        Now we are getting somewhere (hopefully $\ddot\smile$). \\
+        \\
+        We seek to obtain three separate differential equations for the three functions of each variable. Hence, let's equate each side to a constant. \\ \\ 
+        $
+          \begin{cases}
+            \dfrac{\mathcal{R}_{\rho \rho}}{\mathcal{R}}+\dfrac{\mathcal{R}_{\rho}}{\rho \mathcal{R}}+\dfrac{1}{\rho^2} \dfrac{\Phi_{\phi \phi}}{\Phi}=-\mathcal{A} \\
+            \\
+            \dfrac{1}{v^2}\dfrac{\mathcal{T}_{tt}}{\mathcal{T}}=-\mathcal{B} 
+          \end{cases} \Rightarrow \begin{cases}
+            \Phi_{\phi \phi}+\mathcal{A}\Phi=0 \\
+            \\
+            \mathcal{T}_{tt}+\mathcal{B}\mathcal{T}v^2=0
+          \end{cases} \\ \\
+        $
+        If we plugin the two constants into our PDE, then we get: \\
+        \\
+        $
+          \dfrac{\mathcal{R}_{\rho \rho}}{\mathcal{R}}+\dfrac{\mathcal{R}_{\rho}}{\rho \mathcal{R}}+\dfrac{1}{\rho^2} \dfrac{\Phi_{\phi \phi}}{\Phi}=\dfrac{1}{v^2}\dfrac{\mathcal{T}_{tt}}{\mathcal{T}} \Rightarrow \mathcal{R}_{\rho \rho}+\rho^{-1}\mathcal{R}_{\rho}+\mathcal{R} \mathcal{A}-\rho^{-2} \mathcal{B}\mathcal{R}=0 \\
+          \\
+          \\
+          \begin{cases}
+            \Phi_{\phi \phi}+\mathcal{A}\Phi=0 \\
+            \\
+            \mathcal{T}_{tt}+\mathcal{B}\mathcal{T}v^2=0 \\
+            \\
+            \mathcal{R}_{\rho \rho}+\rho^{-1}\mathcal{R}_{\rho}+\mathcal{R} \mathcal{A}-\rho^{-2} \mathcal{B}\mathcal{R}=0
+          \end{cases} ~ or ~  \begin{cases}
+            \Phi^{''}+\mathcal{A}\Phi=0 \\
+            \\
+            \mathcal{T}^{''}+\mathcal{B}\mathcal{T}v^2=0 \\
+            \\
+            \mathcal{R}^{''}+\rho^{-1}\mathcal{R}^{'}+\mathcal{R} \mathcal{A}-\rho^{-2} \mathcal{B}\mathcal{R}=0
+          \end{cases}
+        $
+      }
 
     \item Discuss any constraints on the sign or values of the separation constants. (Hint: consider that your solution should be single valued for $\phi \rightarrow \phi+ 2\pi$, as explained in class). 
 
