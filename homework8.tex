@@ -1,0 +1,86 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+    \center
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm]
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] 
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Eight}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill
+
+  \end{titlepage}
+
+  \textbf{Part A}
+  \begin{enumerate}
+    \item Fill the missing steps in sec. 18.5 of the textbook. Starting from eq. (18.74) go as far as proving eqs. (18.77) and (18.78).  
+
+
+    \item Continue filling in the steps starting with eq. (18.78) and go as far as proving eq. (18.79) (upper line only). 
+    
+    
+    \item Prove the result at the bottom of the page 606 of the textbook, i.e., that for $\nu$ integer, $J_{-\nu }(x)=(-1)^\nu J_{\nu }(x)$. \\
+    (Hint: Start with the series expression for $J_{-\nu }(x)$, which is given by Eq. 18.79 of the textbook where you have to replace $\nu \rightarrow -\nu$. Note that if $k$ is a non-negative integer, then $(-1)^k \Gamma(-k) = \infty$, see fig. 18.9 of the textbook. Eliminate those terms from the sum that equal zero because of this, and then change the summation variable.)
+    
+  \end{enumerate}
+
+
+  \textbf{Part B}
+  \begin{enumerate}
+    \item For a system in spherical polar coordinates, the radial part of Laplace's equation is
+    $$r^2 \dfrac{d^2 R}{dr^2}+2r \dfrac{dR}{dr}+\left[k^2r^2-n(n+1)\right]R=0$$
+    Using the method shown in class (class 16, example segment on transforming a second order differential equation into Bessel's equation), find it solution in terms of two linearly independent Bessel functions. (Note: write your solution in terms of one Bessel function of the first kind and one Bessel function of the second kind). 
+
+
+    \item Using the series expression of the Bessel function $J_{\nu}$, prove eq. (18.93) of the textbook. 
+
+
+    \item Using a graphing tool of your choice (e.g., Wolfram alpha, where all you need is a browser), plot $J_4$ and $J_5$, and verify that the $n-$th root of $J_5$ is always larger than the $n-$th root of $J_4$ (for the same $n$; do not count $x=0$ as a root).  In other words, that $\zeta_{4n}<\zeta_{5n}$ for all $n$. (include the graph in your submission; it will suffice to check the result for $n=1,2,3,4$). 
+
+
+  \end{enumerate}
+
+\end{document}
