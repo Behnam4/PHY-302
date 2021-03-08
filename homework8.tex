@@ -74,6 +74,130 @@
     $$r^2 \dfrac{d^2 R}{dr^2}+2r \dfrac{dR}{dr}+\left[k^2r^2-n(n+1)\right]R=0$$
     Using the method shown in class (class 16, example segment on transforming a second order differential equation into Bessel's equation), find it solution in terms of two linearly independent Bessel functions. (Note: write your solution in terms of one Bessel function of the first kind and one Bessel function of the second kind). 
 
+      \textcolor{hwColor}{
+        Let's start off by talking a bit about Bessel functions. They are solutions $y(x)$ of
+        Bessel's differential equation. \\
+        $$x^2 \dfrac{d^2 y}{dx^2}+x \dfrac{dy}{dx}+\left(x^2-\alpha^2\right)y=0$$ \\
+        \\
+        $$y(x)=W ~ J_{\alpha}+V ~ Y_{\alpha}$$
+        \\
+        Even though $\alpha$ and $-\alpha$ produce the same differential equation, it is conventional to 
+        define different Bessel functions for these two values in such a way that the Bessel functions 
+        are mostly smooth functions of $\alpha$. \\
+        \\
+        The most important cases are when $\alpha$ is an \textbf{integer} or \textbf{half-integer}. Bessel functions for integer 
+        $\alpha$ are also known as cylinder functions or the cylindrical harmonics because they appear in the solution 
+        to Laplace's equation in cylindrical coordinates. Spherical Bessel functions with half-integer $\alpha$ are obtained 
+        when the Helmholtz equation is solved in spherical coordinates. \\
+        \\
+        \textbf{Bessel functions of the first kind:} $J_{\alpha}$ \\
+        Bessel functions of the first kind, denoted as $J_{\alpha}(x)$, are solutions of Bessel's differential equation. 
+        For integer or positive $\alpha$, Bessel functions of the first kind are finite at the origin (x = 0); while for negative 
+        non-integer $\alpha$, Bessel functions of the first kind diverge as x approaches zero.
+        \\
+        \\
+        \\
+        \textbf{Bessel functions of the second kind:} $Y_{\alpha}$ \\
+        The Bessel functions of the second kind, denoted by $Y_{\alpha}(x)$, are solutions of the Bessel differential equation
+        that have a singularity at the origin (x = 0) and are multivalued. \\ \\
+      }
+
+
+      \textcolor{hwColor}{
+        For a Bessel's equation like this $u^2 \dfrac{d^2 f}{du^2}+u\dfrac{df}{du}+\left(u^2-m^2\right)f=0$, we have: \\
+        \\
+        $
+          u=Kx^{\beta}, ~~~~ y(x)=x^{\alpha} f(u) \\ \\
+          \begin{cases}
+            \dfrac{dy}{dx}=\dfrac{d}{dx}\left(x^{\alpha f}\right)=\alpha x^{\alpha-1}+x^{\alpha} \dfrac{df}{du} \dfrac{du}{dx} \\
+            \\
+            \dfrac{du}{dx}=\dfrac{d}{dx}\left(C x^{\beta}\right)=\beta Cx^{\beta -1}
+          \end{cases} \longrightarrow
+          \dfrac{dy}{dx}=x^{\alpha-1} \left[\alpha f+\beta C x^{\alpha} \dfrac{df}{du}\right] \\
+          \\
+          \\
+          \dfrac{d^2 f}{du^2} \times \dfrac{du}{dx}=\dfrac{d}{dx} \left(\dfrac{df}{du}\right)=\dfrac{d}{du} \left(\dfrac{df}{du}\right) \times \dfrac{du}{dx}
+          \Longrightarrow \dfrac{1}{\beta C x^{\beta -1}} \dfrac{d}{dx} \left(\dfrac{df}{du}\right) \\
+          \\
+          \dfrac{d^2 f}{du^2}=\dfrac{1}{\left(\beta C\right)^2 x^{2 \beta+\alpha}} \left(\alpha(\alpha+\beta)y+(1-2\alpha-\beta)x\dfrac{dy}{dx}+x^2\dfrac{d^2 y}{dx^2}\right) \\
+          \\
+          \\
+          \dfrac{1}{\left(\beta C\right)^2 x^{2 \beta+\alpha}} \left(\alpha(\alpha+\beta)y+(1-2\alpha-\beta)x\dfrac{dy}{dx}+x^2\dfrac{d^2 y}{dx^2}\right)
+          +\dfrac{C x^{\beta}}{\beta C x^{\alpha+\beta}} \left[x \dfrac{dy}{dx}-\alpha y\right]
+          +\left[C^2 x^{2\beta}-m^2\right]\dfrac{y}{x^{\alpha}}=0 \\ \\
+        $
+        This reduces to: \\
+        \\
+        $
+          x^2 \dfrac{d^2 y}{dx^2}+\left(1-2 \alpha\right)x\dfrac{dy}{dx}+\left[\alpha^2+\beta^2\left(C^2 x^{2\beta}-m^2\right)\right]y=0
+        $ \\
+        \\
+        This equation gives us three parameters $\left(\alpha, ~~ \beta, ~~ and ~~ C\right)$ that we can use to transform our second-order differential equations.
+        the goal is to transform the given differntial equation into a Bessel's equation form. Hence, \\
+        \\
+        \\
+        $
+          \begin{cases}
+            x^2 \dfrac{d^2 y}{dx^2}+\left(1-2 \alpha\right)x\dfrac{dy}{dx}+\left[\alpha^2+\beta^2\left(C^2 x^{2\beta}-m^2\right)\right]y=0 \\
+            \\
+            r^2 \dfrac{d^2 R}{dr^2}+2r \dfrac{dR}{dr}+\left[k^2r^2-n(n+1)\right]R=0
+          \end{cases} \Rightarrow 1-2 \alpha=2 \Rightarrow \alpha=-\dfrac{1}{2}
+        $ \\
+        \\ 
+        \\
+        Now, therefore: \\
+        \\
+        $
+          r^2 \dfrac{d^2 R}{dr^2}+2r \dfrac{dR}{dr}+\left[\dfrac{1}{4}+\beta^2\left(C^2 x^{2\beta}-m^2\right)\right]R=0
+        $ \\
+        \\
+        By equating, $\left[\dfrac{1}{4}+\beta^2\left(C^2 x^{2\beta}-m^2\right)\right]R$ to the given P.D.E, we get: \\
+        \\
+        $
+          \left[\dfrac{1}{4}+\beta^2\left(C^2 x^{2\beta}-m^2\right)\right]R=\left[k^2r^2-n(n+1)\right]R \Longrightarrow 
+          \dfrac{1}{4}+\beta^2\left(C^2 x^{2\beta}-m^2\right)=k^2r^2-n(n+1) \\
+          \\
+          \\
+          \therefore ~~ \dfrac{1}{4}+\beta^2 C^2 x^{2\beta}-\beta^2 m^2=k^2r^2-n(n+1) \\
+          \\
+        $
+        Asssuming $\beta=1$ we have $\dfrac{1}{4}+C^2 x^2-m^2=k^2r^2-n(n+1)$.\\ \\
+        $
+          m^2-\dfrac{1}{4}=n(n+1) \\
+          \\
+          \therefore ~~ m=\pm \left(n+\dfrac{1}{2}\right) ~~~.
+        $ (Note: $k^2 r^2=C^2 x^2$) \\
+        \\
+        We are almost done since we found all the three parameters: \\
+        \\
+        $
+          \begin{cases}
+            \alpha=-\dfrac{1}{2} \\
+            \\
+            \beta=1 \\
+            \\
+            C=\pm k \\
+            \\
+            m=\left(n+\dfrac{1}{2}\right)
+          \end{cases}
+        $
+        \\
+        \\
+        \\
+        As we mentioned earlier the solution for the given differential equation is $ y(x)=x^{\alpha} f(u)$, therefore: \\
+        \\
+        $
+          y(x)=y(x)=x^{\alpha} f(u)=W x^{\alpha} J_m \left(K x^{\beta}\right)+V x^{\alpha} Y_m \left(Kx^{\beta}\right) \\
+          \\
+          =W x^{-\dfrac{1}{2}} J_{m} \left(K x\right)+V x^{-\dfrac{1}{2}} Y_{m} \left(Kx\right) \\
+          \\
+          \\
+          \\
+          \therefore ~~~~ y(x)=W x^{-\dfrac{1}{2}} J_{n+\dfrac{1}{2}} \left(K x\right)+V x^{-\dfrac{1}{2}} Y_{n+\dfrac{1}{2}} \left(Kx\right) \\
+          \\
+        $
+        $W$ and $V$ can be determined by boundry conditions.
+      }
 
     \item Using the series expression of the Bessel function $J_{\nu}$, prove eq. (18.93) of the textbook. 
 
