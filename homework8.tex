@@ -201,6 +201,32 @@
 
     \item Using the series expression of the Bessel function $J_{\nu}$, prove eq. (18.93) of the textbook. 
 
+      \textcolor{hwColor}{
+        $
+          \dfrac{d}{dx} \left(x^{-v} \mathcal{J}_{v}(x)\right)=-x^{-v} \mathcal{J}_{v+1}(x) \\
+          \\
+          \\
+          =\dfrac{d}{dx}\left[x^{-v}\sum_{n=0}^{\infty} \dfrac{(-1)^n}{n!\Gamma\left(1+v+n\right) }(\dfrac{x}{2})^{2n+v}\right]=\sum_{n=0}^{\infty} \dfrac{(-1)^n}{n!\Gamma\left(1+v+n\right)} \dfrac{d}{dx}\left(\dfrac{x^{2n}}{2^{2n+v}}\right) \\
+          \\
+          \\
+          =\sum_{n=0}^{\infty} \dfrac{(-1)^n}{n!\Gamma\left(1+v+n\right)} \dfrac{1}{2^{2n+v}}\dfrac{d}{dx}\left(x^{2n}\right)=\sum_{n=0}^{\infty} \dfrac{(-1)^n}{n!\Gamma\left(1+v+n\right)} \dfrac{2n}{2^{2n+v}}x^{2n-1} \\
+          \\
+          \\
+          =\sum_{n=0}^{\infty} \dfrac{(-1)^n}{n!\Gamma\left(1+v+n\right)} \dfrac{n}{2^{2n+v-1}}x^{2n-1}=\sum_{n=0}^{\infty} \dfrac{(-1)^n}{(n-1)!\Gamma\left(1+v+n\right)} \dfrac{1}{2^{2n+v-1}}x^{2n-1} \\
+          \\
+          \\
+          =x^{-v}\sum_{n=0}^{\infty} \dfrac{(-1)^n}{(n-1)!\Gamma\left(1+v+n\right)} \left(\dfrac{x}{2}\right)^{2n+v-1} \\
+          \\
+          \\
+          =x^{-v}\sum_{n=0}^{\infty} \dfrac{(-1)^n}{((u+1)-1)!\Gamma\left(1+v+(u+1)\right)} \left(\dfrac{x}{2}\right)^{2(u+1)+v-1}=-x^{-v}  \mathcal{J}_{v+1}(x) \\
+          \\
+          \\
+          \\
+          \\
+          \therefore ~~~  \dfrac{d}{dx} \left(x^{-v} \mathcal{J}_{v}(x)\right)=-x^{-v} \mathcal{J}_{v+1}(x)
+        $
+      }
+
 
     \item Using a graphing tool of your choice (e.g., Wolfram alpha, where all you need is a browser), plot $J_4$ and $J_5$, and verify that the $n-$th root of $J_5$ is always larger than the $n-$th root of $J_4$ (for the same $n$; do not count $x=0$ as a root).  In other words, that $\zeta_{4n}<\zeta_{5n}$ for all $n$. (include the graph in your submission; it will suffice to check the result for $n=1,2,3,4$). 
 
