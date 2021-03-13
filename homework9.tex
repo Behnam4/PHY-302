@@ -157,8 +157,130 @@
           $
         }
 
-      \item Using the method of the separation of the variables, find the general solution of the equation above.  Using the method illustrated in class 16, show that the general solution involves Bessel functions. Find the chain's natural frequencies of oscillation. 
-      %  Impose that at $t=0$ the chain starts moving from rest. 
+      \item Using the method of the separation of the variables, find the general solution of the equation above.  Using the method illustrated in class 16, 
+      show that the general solution involves Bessel functions. Find the chain's natural frequencies of oscillation.
+      
+      
+        \textcolor{hwColor}{
+          \\
+          The method of separation of variables relies upon the assumption that a function of the form
+          $u(x,y)=\Phi(x)Y(y)$, will be a solution to a linear homogeneous partial differential equation in $x$
+          and $y$. This is called a product solution and provided the boundary conditions are also linear and
+          homogeneous this will also satisfy the boundary conditions. The method of Separation of Variables
+          cannot always be used and even when it can be used it will not always be possible to get much past
+          the first step in the method. \\
+          \\
+          This is what we found in section \textbf{(a)}. We guess that a potential solution is $X(y,t)=Y(y)\Phi(t)$. Hence, \\
+          \\
+          $
+            \dfrac{\partial }{\partial y} \left(y\dfrac{\partial X}{\partial y} \right)=\dfrac{1}{g}\dfrac{\partial^2 X}{\partial t^2}
+            \Rightarrow \dfrac{\partial X}{\partial y}+y\dfrac{\partial^2 X}{\partial y^2}=\dfrac{1}{g}\dfrac{\partial^2 X}{\partial t^2} 
+            \\
+            \\
+            \dfrac{\partial}{\partial y}\left[Y(y)\Phi(t)\right]+y\dfrac{\partial^2}{\partial y^2} \left[Y(y)\Phi(t)\right]=\dfrac{1}{g}\dfrac{\partial^2}{\partial t^2} \left[Y(y)\Phi(t)\right] \\
+            \\
+            \\
+            \Phi(t) \dfrac{\partial}{\partial y}\left[Y(y)\right]+y\Phi(t) \dfrac{\partial^2}{\partial y^2} \left[Y(y)\right]=\dfrac{Y(y)}{g}\dfrac{\partial^2}{\partial t^2} \left[\Phi(t)\right] \\
+            \\
+            \\
+          $
+          To make our work easier, let's use some alias: \\
+          \\
+          $
+            \begin{cases}
+              \dfrac{\partial}{\partial y}\left[Y(y)\right]=Y_y \\
+              \\
+              \dfrac{\partial^2}{\partial y^2} \left[Y(y)\right]=Y_{yy} \\
+              \\
+              \dfrac{\partial^2}{\partial t^2} \left[\Phi(t)\right]=\Phi_{tt}
+            \end{cases} \\
+            \\
+            \\
+            \Phi Y_y+y\Phi Y_{yy}=\dfrac{Y}{g}\Phi_{tt} \Rightarrow
+            \dfrac{\Phi Y_y+y\Phi Y_{yy}}{Y \Phi}=\dfrac{\dfrac{Y}{g}\Phi_{tt}}{Y \Phi}
+            \Rightarrow \dfrac{Y_y}{Y}+\dfrac{y}{Y} Y_{yy}=\dfrac{1}{g} \dfrac{\Phi_{tt}}{\Phi} \\ \\ \\
+          $
+          \rule{15cm}{1pt} \\
+          \\
+          \textbf{R.H.S:} \\ \\
+          If $\dfrac{1}{g} \dfrac{\Phi_{tt}}{\Phi}=-\alpha^2$, then $\Phi_{tt}+g \alpha^2 \Phi=0$. \\
+          \\
+          \\
+          $
+            \therefore ~~~ \Phi=Acos\left[\alpha \sqrt{g}t\right]+B sin\left[\alpha \sqrt{g}t\right]
+          $ \\
+          \\
+          \rule{15cm}{1pt} \\
+          \\
+          \textbf{L.H.S:} \\ \\
+          $
+            \dfrac{Y_y}{Y}+\dfrac{y}{Y} Y_{yy}=-\alpha^2 \Rightarrow yY_{yy}+Y_y+\alpha^2 Y=0 \Rightarrow y^2 Y_{yy}+y Y_y+y \alpha^2 Y=0 \\ \\
+            \\
+            \\
+          $
+          So far so Nooice, now it is time to \textbf{transform our second-order differential equation into a Bessel’s equation}. \\ \\
+          \\
+          \\
+          \textbf{A quick review:} \\
+          \\
+          The Bessel functions of the second kind, denoted by $Y_{\alpha}(x)$, are solutions of 
+          the Bessel differential equation that have a singularity at the origin $(x = 0)$ and are multivalued.
+          For a Bessel’s equation like this $$u^2 \dfrac{d^2 f}{du^2}+u\dfrac{df}{du}+\left(u^2-m^2\right)=0$$
+          When $u=Kx^{\beta}, ~~ y(x)=x^{\alpha} f(u)$, we have:
+          $$x^2 \dfrac{d^2 y}{dx^2}+(1-2\alpha)x\dfrac{dy}{dx}+\left[\alpha^2 +\beta^2\left(C^2 x^{2\beta}-m^2\right)\right]y=0$$
+          \\
+          \\
+          This equation gives us three parameters ($\alpha$, $\beta$, and $C$) that we can use to transform our
+          second-order differential equations. the goal is to transform the given differntial equation into
+          a Bessel’s equation form. \\
+          \\
+          $
+            \begin{cases}
+              y^2 Y_{yy}+y Y_y+y \alpha^2 Y=0 \\
+              \\
+              y^2 Y^{''}+\left(1-2a\right)y Y^{'}+\left[a^2+b^2\left(C^2 y^{2b}-m^2\right)\right]Y=0
+            \end{cases} \Longrightarrow \begin{cases}
+              a=0 \\
+              \\
+              m=0 \\
+              \\
+              b=\dfrac{1}{2} \\
+              \\
+              C=2 \alpha
+            \end{cases} \\
+            \\
+            \\
+          $
+          So we can write the solution as: \\
+          \\
+          $
+            Y(y)=W Y_1(y)+M Y_2(y)=W y^0 \mathcal{J}_m(cy^b) +M y^0 \mathcal{Y}_m(cy^b) \\
+            \\
+            \\
+            \therefore ~~~ Y(y)=W \mathcal{J}_0(2 \alpha \sqrt{y}) +M \mathcal{Y}_0(2 \alpha \sqrt{y})
+          $
+          \\
+          \rule{15cm}{1pt} \\
+          \\
+          Alright, time to wrap up what have found so far: \\
+          \\
+          $
+            X(y,t)=Y(y)\Phi(t)=\left[W \mathcal{J}_0(2 \alpha \sqrt{y}) +M \mathcal{Y}_0(2 \alpha \sqrt{y})\right] \times \left[Acos\left[\alpha \sqrt{g}t\right]+B sin\left[\alpha \sqrt{g}t\right]\right] \\
+            \\
+            =\mathcal{J}_0(2 \alpha \sqrt{y}) Acos\left[\alpha \sqrt{g}t\right]+B sin\left[\alpha \sqrt{g}t\right] \\
+            \\
+            \\
+          $
+          \\
+          \\
+          Our final solution is: \\
+          \\
+          \\
+          $
+            \therefore ~~~~ \sum\limits_{n=0}^{\infty} \mathcal{J}_0(2 \alpha_n \sqrt{y}) A_n cos\left[\alpha_n \sqrt{g}t\right]+B_n sin\left[\alpha_n \sqrt{g}t\right]
+          $
+        }
+
     \end{enumerate}
     
     
