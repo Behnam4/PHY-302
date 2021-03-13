@@ -1,0 +1,94 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+    \center % Center everything on the page
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm] % Name of your university/college
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] % Major heading such as course name
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Nine}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill % Fill the rest of the page with whitespace
+
+  \end{titlepage}
+
+  \textbf{Part A}
+  \begin{enumerate}
+
+    \item  A heavy flexible chain of length $l$ and weight $w$ ($w=Mg$, with $M$ the mass of the string, and $g$ the acceleration of gravity) hangs vertically. The string has constant mass per unit length, $\mu$.  Its lower end is free to move. Consider the displacement $X(y,t)$ of the string with respect to its equilibrium position, where $y$ is a coordinate along the string, and $t$ is time. Set $y=0$ to coincide with the bottom of the chain.  
+    \begin{enumerate}
+    \item {\bf Bonus: } Newton's second law of dynamics, prove that $X(y,t)$ is described by the following differential equation: 
+    \begin{equation}
+    \frac{\partial}{\partial y}\left( y\frac{\partial X}{\partial y} \right) = \frac{1}{g} \frac{\partial^2 X}{\partial t^2}.
+    \label{eq:chainEOM}
+    \end{equation}
+    
+    
+    (assume small oscillations, i.e., that each particle of the chain oscillates in a horizontal line. You will need to use some approximations involving trigonometric functions, similarly to what is usually done for the problem of a horizontal vibrating string) 
+    
+    \item Using the method of the separation of the variables, find the general solution of the equation above.  Using the method illustrated in class 16, show that the general solution involves Bessel functions. Find the chain's natural frequencies of oscillation. 
+    %  Impose that at $t=0$ the chain starts moving from rest. 
+    \end{enumerate}
+    
+    
+  \end{enumerate}
+
+
+  \textbf{Part B}
+  \begin{enumerate}
+    \item  Derive the equation at the top of page 578 of the textbook (non-numbered equation immediately before eq. (18.2)). 
+    
+    
+    \item  starting from the expression of the Legendre equation, compute its Wronskian (see textbook, sec. 16.1 for a refresher on the Wronskian). Discuss the value(s) of $x$ for which the solutions to Legendre's equation may be undefined (hint: what values of $x$ are problematic for the Wronskian function?).
+    
+    
+    \item  Compute the Wronskians for the pairs, $P_0$ and $Q_0$, and $P_1$ and $Q_1$ (their expressions are given in the textbook). Are they what you expected?
+    
+    
+    \item consider the orthogonality property of Legendre Polynomials, eq. (18.12). Verify it explicitly (by direct computation) for the pairs $(P_2,P_3 )$ and $(P_2,P_4)$. 
+    
+  \end{enumerate}
+
+\end{document}
