@@ -58,18 +58,107 @@
   \begin{enumerate}
 
     \item  A heavy flexible chain of length $l$ and weight $w$ ($w=Mg$, with $M$ the mass of the string, and $g$ the acceleration of gravity) hangs vertically. The string has constant mass per unit length, $\mu$.  Its lower end is free to move. Consider the displacement $X(y,t)$ of the string with respect to its equilibrium position, where $y$ is a coordinate along the string, and $t$ is time. Set $y=0$ to coincide with the bottom of the chain.  
-    \begin{enumerate}
-    \item {\bf Bonus: } Newton's second law of dynamics, prove that $X(y,t)$ is described by the following differential equation: 
-    \begin{equation}
-    \frac{\partial}{\partial y}\left( y\frac{\partial X}{\partial y} \right) = \frac{1}{g} \frac{\partial^2 X}{\partial t^2}.
-    \label{eq:chainEOM}
-    \end{equation}
-    
-    
-    (assume small oscillations, i.e., that each particle of the chain oscillates in a horizontal line. You will need to use some approximations involving trigonometric functions, similarly to what is usually done for the problem of a horizontal vibrating string) 
-    
-    \item Using the method of the separation of the variables, find the general solution of the equation above.  Using the method illustrated in class 16, show that the general solution involves Bessel functions. Find the chain's natural frequencies of oscillation. 
-    %  Impose that at $t=0$ the chain starts moving from rest. 
+      \begin{enumerate}
+        \item {\bf Bonus: } Newton's second law of dynamics, prove that $X(y,t)$ is described by the following differential equation: 
+      \begin{equation}
+      \frac{\partial}{\partial y}\left( y\frac{\partial X}{\partial y} \right) = \frac{1}{g} \frac{\partial^2 X}{\partial t^2}.
+      \label{eq:chainEOM}
+      \end{equation}
+      
+      
+      (assume small oscillations, i.e., that each particle of the chain oscillates in a horizontal line. You will need to use some approximations involving trigonometric functions, similarly to what is usually done for the problem of a horizontal vibrating string) 
+      
+        \textcolor{hwColor}{
+          \\
+          \includegraphics[height=5cm, width=9cm]{one.jpg}
+          \\
+          In order to derive the equation of motion, we will invoke Newton’s second law, which states that
+          the sum of the forces acting on a body is equal to its mass times its acceleration. Mathematically
+          this is written as 
+          $$\sum \mathbf{F}=m\mathbf{a}$$ \\
+          \\
+          For this problem we will choose the coordinate system as shown in the figure, 
+          so there are two equations of significance. \\
+          \\
+          $$\sum \mathbf{F}_x=m\mathbf{a}_x$$ \\
+          $$\sum \mathbf{F}_y=m\mathbf{a}_y$$ 
+          \\
+          We got two forces acting on this chain, $\mathbf{T}$ at $y$ and $\mathbf{T}$ 
+          at $y+\Delta y$.
+          The motion of the chain is entirely in the x-direction, which means there is no vertical component of acceleration
+          $(a_y=0)$.
+          \\
+          \\
+          \textbf{Y-Direction:} \\ \\
+          $
+            \mathbf{F}_y=m\mathbf{a}_y=-T(y) cos(\theta_y)+T(y+\Delta y) cos(\theta_{y+\Delta y})=0 \\
+            \\
+            =-T(y) \dfrac{1}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}+T(y+\Delta y)\dfrac{1}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}=0 \\
+            \\
+            \\
+            T(y) \dfrac{1}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}=T(y+\Delta y)\dfrac{1}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}} \\ \\
+          $
+          \textbf{Note:} Since we are considering an infinitesimal element of the chain, the two angles are pretty small, hence 
+          $\theta_{y+\Delta y} \approx \theta_y =\theta$. \\
+          \\
+          $
+            \therefore ~~~ T(y) \dfrac{1}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}=T(y+\Delta y)\dfrac{1}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}} ~~~ \surd
+          $
+          \\
+          \\
+          \rule{15cm}{1pt}
+          \\
+          \\
+          \textbf{X-Direction:} \\ \\
+          $
+            \mathbf{F}_x=m\mathbf{a}_x=-T(y) sin(\theta)+T(y+\Delta y) sin(\theta) \\
+            \\
+            =-T(y) \dfrac{\dfrac{\partial X}{\partial y}}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}+T(y+\Delta y)  \dfrac{\dfrac{\partial X}{\partial y}}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}=m a_x \\
+            \\
+          $
+          \\
+          Understand that $a_x=\dfrac{\partial^2 X}{\partial t^2}$ the acceleration at a specific point on the chain at time $t$. 
+          To get the force we therefore have to multiply it by a tiny bit of mass $\Delta m$. As we know mass is density times
+          length, so this can be written in terms of arc length, $s$, as $\Delta m=\mu \Delta s$. Newton’s second law in the X-Direction is thus: \\
+          \\
+          $
+            -T(y) \dfrac{\dfrac{\partial X}{\partial y}}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}+T(y+\Delta y)  \dfrac{\dfrac{\partial X}{\partial y}}{\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2}}=\bigints dm \dfrac{\partial^2 X}{\partial t^2}=\bigints \mu ds \dfrac{\partial^2 X}{\partial t^2} \\
+            \\
+          $
+          \\
+          \textbf{Attention:} $\sqrt{1^2+(\dfrac{\partial X}{\partial y})^2} \approx 1$ since $\dfrac{\partial X}{\partial y}$ is the
+          the slope of an infinitesimal displacement. This allows us to simplify the above equation as:\\
+          \\
+          \\
+          $
+            -T(y) \dfrac{\partial X}{\partial y}+T(y+\Delta y) \dfrac{\partial X}{\partial y}=\bigints \mu ds \dfrac{\partial^2 X}{\partial t^2} \\
+            \\
+          $
+          Based on our assumption for this problem, the tension on the chain depends on the mass of the chain. We can integrate the length 
+          of chain with respect to its mass per unit length to find its mass and then if we multiple the result by gravity, We 
+          end up getting the weight: \\
+          \\
+          $$T(y)=\bigints_{0}^{y} \sqrt{1^2+(\dfrac{\partial X}{\partial y}})^2 \mu g=y \mu g$$ \\
+          \\
+          \\
+          $
+            \bigints \dfrac{\partial }{\partial y} \left(T \dfrac{\partial X}{\partial y} \right) dy=\bigints \mu ds \dfrac{\partial^2 X}{\partial t^2}=\dfrac{\partial^2 X}{\partial t^2} \mu \bigints  \sqrt{1^2+(\dfrac{\partial X}{\partial y}})^2  dy=\dfrac{\partial^2 X}{\partial t^2} \mu \bigints dy \\ \\
+            \\
+            \bigints \dfrac{\partial }{\partial y} \left(T \dfrac{\partial X}{\partial y} \right) dy=\dfrac{\partial^2 X}{\partial t^2} \mu \bigints dy \\
+            \\
+            \\
+            \dfrac{\partial }{\partial y} \left(y \mu g \dfrac{\partial X}{\partial y} \right)=\dfrac{\partial^2 X}{\partial t^2} \mu 
+            \Rightarrow \mu g  \dfrac{\partial }{\partial y} \left(y\dfrac{\partial X}{\partial y} \right)=\dfrac{\partial^2 X}{\partial t^2} \mu
+            \\
+            \\
+            \\
+            \\
+            \therefore ~~~~ \dfrac{\partial }{\partial y} \left(y\dfrac{\partial X}{\partial y} \right)=\dfrac{1}{g}\dfrac{\partial^2 X}{\partial t^2} ~~~ \surd
+          $
+        }
+
+      \item Using the method of the separation of the variables, find the general solution of the equation above.  Using the method illustrated in class 16, show that the general solution involves Bessel functions. Find the chain's natural frequencies of oscillation. 
+      %  Impose that at $t=0$ the chain starts moving from rest. 
     \end{enumerate}
     
     
