@@ -333,6 +333,44 @@
 
     \item Starting from the expression of the Legendre equation, compute its Wronskian (see textbook, sec. 16.1 for a refresher on the Wronskian). Discuss the value(s) of $x$ for which the solutions to Legendre's equation may be undefined (hint: what values of $x$ are problematic for the Wronskian function?).
     
+      \textcolor{hwColor}{
+        The Legendre differential equation is the second-order ordinary differential equation
+        $$(1-x^2)\dfrac{d^2 y}{dx^2}-2x\dfrac{dy}{dx}+\ell(\ell+1)y=0$$
+        We can rewrite it as \\
+        \\
+        $
+        \begin{cases}
+          \dfrac{d^2 y}{dx^2}- \dfrac{2x}{(1-x^2)}\dfrac{dy}{dx}+\dfrac{\ell(\ell+1)}{(1-x^2)}y=0 \\
+          \\
+          y^{''}+p(x)y^'+q(x)y=0 ~~~~ $Equation $(16.1)$$
+        \end{cases}
+        $
+        \\
+        \\
+        \\
+        By comparing the two we have
+        \\
+        \\
+        $
+        \begin{cases}
+          p(x)=-\dfrac{2x}{(1-x^2)}\\
+          \\
+          q(x)=\dfrac{\ell(\ell+1)}{(1-x^2)}
+        \end{cases}
+        $
+        Now we can use equation $(16.4)$: \\
+        \\
+        \\
+        $
+          W(x)=C ~ exp \{-\bigints_{}^{x} p(x) dx\}=C ~ exp \{\bigints_{}^{x} \dfrac{2x}{(1-x^2)} dx\}=C ~ \{ln(1-x^2)\} \\
+          \\
+          \\
+          \therefore ~~~ W(x)=C\dfrac{1}{1-x^2} ~ \surd \\
+          \\
+          \\ 
+        $
+        As we can $\pm 1$ will mess with the the Wronskian function.
+      }
     
     \item Compute the Wronskians for the pairs, $P_0$ and $Q_0$, and $P_1$ and $Q_1$ (their expressions are given in the textbook). Are they what you expected?
     
