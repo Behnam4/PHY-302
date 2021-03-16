@@ -407,7 +407,35 @@
     \item Consider the orthogonality property of Legendre Polynomials, eq. (18.12). Verify it explicitly (by direct computation) for the pairs $(P_2,P_3 )$ and $(P_2,P_4)$. 
     
       \textcolor{hwColor}{
-        Here
+        Equation $(18.2)$ from the textbook: 
+        $$\bigints_{-1}^{+1} P_{\ell}(x) P_k(x) dx=0$$ 
+        \\
+        From the textbook page 578 we have: \\ \\
+        $
+          \begin{cases}
+            P_2(x)=\dfrac{1}{2} \left(3x^2-1\right) \\
+            \\
+            P_3(x)=\dfrac{1}{2}\left(5x^3-3x\right) \\
+            \\
+            P_4(x)=\dfrac{1}{8} \left(35x^4-30x^2+3\right)
+          \end{cases} \\
+          \\
+          \\
+          \bigints_{-1}^{+1} P_{2}(x) P_3(x) dx=\bigints_{-1}^{+1} \dfrac{1}{2} \left(3x^2-1\right) \dfrac{1}{2}\left(5x^3-3x\right) dx=\dfrac{1}{4} \bigints_{-1}^{+1} \left(15x^4-14x^3+3x\right) \\
+          \\
+          \\
+          \therefore ~~~ \bigints_{-1}^{+1} P_{2}(x) P_3(x) dx=0 ~ \surd \\
+          \\
+          \\
+          \rule{15cm}{1pt}
+          \\
+          \\
+          \bigints_{-1}^{+1} P_{2}(x) P_4(x) dx=\bigints_{-1}^{+1} \dfrac{1}{2} \left(3x^2-1\right)\dfrac{1}{8} \left(35x^4-30x^2+3\right) dx=\dfrac{1}{16} \bigints_{-1}^{+1} \left(105x^6-125x^4+39x^2-3\right)dx \\
+          \\
+          \\
+          \\
+          \therefore ~~~ \bigints_{-1}^{+1} P_{2}(x) P_4(x) dx=0 ~ \surd
+        $
       }
 
 
