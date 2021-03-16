@@ -198,27 +198,21 @@
             \\
             \Phi Y_y+y\Phi Y_{yy}=\dfrac{Y}{g}\Phi_{tt} \Rightarrow
             \dfrac{\Phi Y_y+y\Phi Y_{yy}}{Y \Phi}=\dfrac{\dfrac{Y}{g}\Phi_{tt}}{Y \Phi}
-            \Rightarrow \dfrac{Y_y}{Y}+\dfrac{y}{Y} Y_{yy}=\dfrac{1}{g} \dfrac{\Phi_{tt}}{\Phi} \\ \\ \\
+            \Rightarrow g\left[\dfrac{Y_y}{Y}+\dfrac{y}{Y} Y_{yy}\right]=\dfrac{\Phi_{tt}}{\Phi} \\ \\ \\
           $
           \rule{15cm}{1pt} \\
           \\
           \textbf{R.H.S:} \\ \\
-          If $\dfrac{1}{g} \dfrac{\Phi_{tt}}{\Phi}=-\alpha^2$, then $\Phi_{tt}+g \alpha^2 \Phi=0$. \\
-          \\
-          \\
           $
-            \therefore ~~~ \Phi=Acos\left[\alpha \sqrt{g}t\right]+B sin\left[\alpha \sqrt{g}t\right]
-          $ \\
-          \\
+          \dfrac{\Phi_{tt}}{\Phi}=\omega^2 \Longrightarrow \Phi(t)=A ~ cos(\omega t)+B ~ sin(\omega t) \\ \\
+          $
           \rule{15cm}{1pt} \\
           \\
           \textbf{L.H.S:} \\ \\
           $
-            \dfrac{Y_y}{Y}+\dfrac{y}{Y} Y_{yy}=-\alpha^2 \Rightarrow yY_{yy}+Y_y+\alpha^2 Y=0 \Rightarrow y^2 Y_{yy}+y Y_y+y \alpha^2 Y=0 \\ \\
-            \\
-            \\
+            g\left[\dfrac{Y_y}{Y}+\dfrac{y}{Y} Y_{yy}\right]=-\omega^2 \Longrightarrow y^2 Y_{yy}+yY_y+y\dfrac{\omega^2}{g}Y=0 \\ \\
           $
-          So far so Nooice, now it is time to \textbf{transform our second-order differential equation into a Bessel’s equation}. \\ \\
+          Now it is time to \textbf{transform our second-order differential equation into a Bessel’s equation}. \\ \\
           \\
           \\
           \textbf{A quick review:} \\
@@ -236,17 +230,11 @@
           \\
           $
             \begin{cases}
-              y^2 Y_{yy}+y Y_y+y \alpha^2 Y=0 \\
+              y^2 Y_{yy}+yY_y+y\dfrac{\omega^2}{g}Y=0 \\
               \\
               y^2 Y^{''}+\left(1-2a\right)y Y^{'}+\left[a^2+b^2\left(C^2 y^{2b}-m^2\right)\right]Y=0
             \end{cases} \Longrightarrow \begin{cases}
-              a=0 \\
-              \\
-              m=0 \\
-              \\
-              b=\dfrac{1}{2} \\
-              \\
-              C=2 \alpha
+              C=\dfrac{2 \omega}{\sqrt{g}}
             \end{cases} \\
             \\
             \\
@@ -257,7 +245,7 @@
             Y(y)=W Y_1(y)+M Y_2(y)=W y^0 \mathcal{J}_m(cy^b) +M y^0 \mathcal{Y}_m(cy^b) \\
             \\
             \\
-            \therefore ~~~ Y(y)=W \mathcal{J}_0(2 \alpha \sqrt{y}) +M \mathcal{Y}_0(2 \alpha \sqrt{y})
+            \therefore ~~~ Y(y)=W mathcal{J}_0 \left(2 \omega \sqrt{\dfrac{y}{g}}\right)+M \mathcal{Y}_0 \left(2 \omega \sqrt{\dfrac{y}{g}}\right) ~ \surd \\
           $
           \\
           \rule{15cm}{1pt} \\
@@ -265,20 +253,32 @@
           Alright, time to wrap up what have found so far: \\
           \\
           $
-            X(y,t)=Y(y)\Phi(t)=\left[W \mathcal{J}_0(2 \alpha \sqrt{y}) +M \mathcal{Y}_0(2 \alpha \sqrt{y})\right] \times \left[Acos\left[\alpha \sqrt{g}t\right]+B sin\left[\alpha \sqrt{g}t\right]\right] \\
-            \\
-            =\mathcal{J}_0(2 \alpha \sqrt{y}) Acos\left[\alpha \sqrt{g}t\right]+B sin\left[\alpha \sqrt{g}t\right] \\
-            \\
-            \\
+            X(y,t)=Y(y)\Phi(t)=\left[W \mathcal{J}_0 \left(2 \omega \sqrt{\dfrac{y}{g}}\right)+M \mathcal{Y}_0 \left(2 \omega \sqrt{\dfrac{y}{g}}\right)\right] \times \left[A ~ cos(\omega t)+B ~ sin(\omega t)\right] \\
           $
           \\
           \\
-          Our final solution is: \\
+          By applying our initial condition $(X(y,0)=0)$, we get: \\
           \\
           \\
           $
-            \therefore ~~~~ \sum\limits_{n=0}^{\infty} \mathcal{J}_0(2 \alpha_n \sqrt{y}) A_n cos\left[\alpha_n \sqrt{g}t\right]+B_n sin\left[\alpha_n \sqrt{g}t\right]
+            \therefore ~~~~ \sum\limits_{n=0}^{\infty} ~ B_n \mathcal{J}_0 \left(2 \omega_n \sqrt{\dfrac{y}{g}}\right) sin(\omega t) \\ \\
           $
+          \\
+          \\
+          \\
+          \\
+          \\
+          \\
+          We are ready to find the natural frequency of the chain: \\
+          \\
+          $
+            X(L,t)=0 ~~ \Longrightarrow X(l,t)=\sum\limits_{n=0}^{\infty} ~ B_n \mathcal{J}_0 \left(2 \omega_n \sqrt{\dfrac{L}{g}}\right) sin(\omega t)=0 \Longrightarrow \mathcal{J}_0 \left(2 \omega_n \sqrt{\dfrac{L}{g}}\right)=0 \\
+            \\
+            \\
+            \\
+            \therefore ~~~ \omega=\dfrac{1}{2} \sqrt{\dfrac{g}{L}}  \\ \\
+          $
+          Note: We need to multiply the above result by zeros of the roots of $\mathcal{J}_0$.
         }
 
     \end{enumerate}
@@ -286,6 +286,7 @@
     
   \end{enumerate}
 
+  \pagebreak
 
   \textbf{Part B}
   \begin{enumerate}
