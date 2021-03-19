@@ -1,0 +1,98 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+    \center % Center everything on the page
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm] % Name of your university/college
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] % Major heading such as course name
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Ten}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill % Fill the rest of the page with whitespace
+
+  \end{titlepage}
+
+  \textbf{Part A}
+  \begin{enumerate}
+
+    \item Expand the generating function of the Legendre Polynomials  to derive the first three Legendre Polynomials. 
+    (Hint:  It is probably easiest here to compute the first three terms in the Taylor?s series expansion. One could also use the binomial expansion for  $[1 -( 2hx - h^2 ) ]^{-1/2}$, but keeping track of the terms would be more complicated.)
+
+
+    \item  Show that the generating function in Eq. 18.15 of the textbook is consistent with Legendre's equation.
+    (Hint: Take the appropriate first and second derivatives of both sides of Eq. 18.15 (middle and right expressions), and arrange a combination of the left-hand-side results that will vanish.  You should get to a point where it becomes clear that the $P_l(x)$ that appear in Eq. 18.15 indeed satisfy Legendre equation.)
+
+    \item The Legendre Polynomials enter quite naturally into expressions for the electrical or gravitational potentials of
+    point sources through the inverse distance factor,
+    \begin{equation}
+    \frac{1}{| {\mathbf r}_s -{\mathbf r}_f |}
+    \end{equation}
+
+    Let $x$ be the cosine of the angle between ${\mathbf r}_s$ and ${\mathbf r}_f$ , and show that
+    \begin{equation}
+    \frac{1}{| {\mathbf r}_s -{\mathbf r}_f |} = \frac{1}{r_{>}} \sum^{\infty}_{n=0} \left( \frac{r_{<}}{r_{>}}\right)^n P_n(x)
+    \end{equation}
+    where $r_{<}$ ($ r_{>}$ ) is the lesser (greater) of $|{\mathbf r}_s|$ and $|{\mathbf r}_f|$.
+
+    (Hint: Write $| {\mathbf r}_s -{\mathbf r}_f |$ as $\sqrt{({\mathbf r}_s -{\mathbf r}_f )\cdot ({\mathbf r}_s -{\mathbf r}_f )}=\sqrt{|{\mathbf r}_s|^2 +|{\mathbf r}_f |^2 -2 {\mathbf r}_s \cdot {\mathbf r}_f }$ and compare with eq. 18.15. Apply convergence requirements in order to assign the  $r_{<}$ and  $ r_{>}$ notation) 
+
+        
+    
+  \end{enumerate}
+
+  \pagebreak
+
+  \textbf{Part B}
+  \begin{enumerate}
+    \item Show that, if $P_l(x)$ is the Legendre Polynomial of order $l$, then $P^m_l(x)$  as given in Eq. 18.32 of the textbook satisfies
+    the associated Legendre equation. (Hint:  Substitute directly into the associated Legendre equation, and use the product rule of differentiation. Then differentiate Legendre?s equation $m$ times and compare). 
+
+
+    \item Show, using Eq. 18.33, that
+    $Y^{-m}_l (\theta, \phi) = (-1)^m Y^{m\ast }_l (\theta, \phi) $, 
+    where $Y^{-m}_l (\theta, \phi)$ is the complex conjugate of $Y^{m\ast }_l (\theta, \phi)$.
+  \end{enumerate}
+
+\end{document}
