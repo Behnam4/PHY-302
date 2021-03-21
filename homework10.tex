@@ -60,6 +60,9 @@
     \item Expand the generating function of the Legendre Polynomials  to derive the first three Legendre Polynomials. 
     (Hint:  It is probably easiest here to compute the first three terms in the Taylor's series expansion. One could also use the binomial expansion for  $[1 -( 2hx - h^2 ) ]^{-1/2}$, but keeping track of the terms would be more complicated.)
 
+      \textcolor{hwColor}{
+        Behnam was here
+      }
 
     \item  Show that the generating function in Eq. 18.15 of the textbook is consistent with Legendre's equation.
     (Hint: Take the appropriate first and second derivatives of both sides of Eq. 18.15 (middle and right expressions), and arrange a combination of the left-hand-side results that will vanish.  You should get to a point where it becomes clear that the $P_l(x)$ that appear in Eq. 18.15 indeed satisfy Legendre equation.)
@@ -70,10 +73,111 @@
         This equation is valid for $|h|<1$ and $|x|<1$. The function on the left is called the generating function for the 
         Legendre polynomials because all of them appear as the coefficients in the power series expansion. To prove the
         above equation, we note the left side is an analytic function of $x$ for $|x|<1$, which means that it has a power series expansion.
-        $$G(x,h)=\sum\limits_{\ell=0}^{\infty} Q_n(h) h^n$$
+        $$G(x,h)=\sum\limits_{n=0}^{\infty} Q_n(h) h^n$$
         Explicit differentiation of $G(x,h)$ shows that it satisfies the PDE 
-        $$\left[G_z(1-z^2)\right]_z+x\left[xG\right]_{xx}=0$$
-        Here.....
+        $$\left[G_x(1-x^2)\right]_x+x\left[xG\right]_{xx}=0$$
+        Plugging the expansion into this PDE, we find that \\
+        $$\sum\limits_{n=0}^{\infty} \left[\left(1-z^2\right) Q^'_n(x) \right]^' t^n+\sum\limits_{n=0}^{\infty} n \left(n+1\right) Q_n(x) h^n=0$$
+        Because the coefficients must match, we must have
+        $$\left[\left(1-x^2\right) Q^'_n(x) \right]^'+n \left(n+1\right) Q_n(x)=0$$
+        So $Q_n$ satisfies Legendre’s differential equation! \\
+        \\
+        On the other hand, putting $z=1$ in the definition of $G(x,h)$, we have
+        $$G(1,h)=\left(1-2h+h^2\right)^{-1/2}=\left(1-h\right)^{-1}=\sum\limits_{n=0}^{\infty} h^n$$
+        so that $Q_n(1)=1$. This determines which solution of Legendre’s equation $Q_n$ is, namely $Q_n \equiv P_n$. 
+        This proves $G(x,h)=\left(1-2xh+h^2\right)^{-\dfrac{1}{2}}=\sum\limits_{n=0}^{\infty} P_n(x) h^n$.
+        \\
+        \\
+        \rule{15cm}{1pt}
+        \\
+        \\
+        Another way to approach this problem is \\
+        \\
+        $G(x,h)=\left(1-2xh+h^2\right)^{-\dfrac{1}{2}}=\sum\limits_{n=0}^{\infty} P_n(x) h^n \\$
+        \\
+        \\
+        \textbf{L.H.S:} \\ \\
+        $
+        \begin{cases}
+          \dfrac{\partial G}{\partial x}=h\left(1-2xh+h^2\right)^{-3/2} \\
+          \\
+          \dfrac{\partial G}{\partial h}=\left(x-h\right)\left(1-2xh+h^2\right)^{-3/2}
+        \end{cases}
+        $ \\
+        \\
+        \\
+        \textbf{R.H.S:} \\ \\
+        $
+          \begin{cases}
+            \dfrac{\partial G}{\partial x}=\sum\limits_{n=0}^{\infty} P^'_n h^n \\
+            \\
+            \dfrac{\partial G}{\partial h}=\sum\limits_{n=0}^{\infty} n P_n h^{n-1} h^'
+          \end{cases} \\
+          \\
+          \\
+          \\
+          \Longrightarrow \dfrac{\partial G}{\partial x}=h\left(1-2xh+h^2\right)^{-3/2}=\sum\limits_{n=0}^{\infty} P^'_n h^n \\
+          \\
+          \\
+          h \left(1-2xh+h^2\right)^{-1/2} \left(1-2xh+h^2\right)^{-1}=\sum\limits_{n=0}^{\infty} P^'_n h^n \\
+          \\
+          \\
+          h \sum\limits_{n=0}^{\infty} P_n(x) h^n=\left(1-2xh+h^2\right) \sum\limits_{n=0}^{\infty} P^'_n h^n \\
+          \\
+          \\
+          \therefore ~~~ \sum\limits_{n=0}^{\infty} P_n h^n= \sum\limits_{n=0}^{\infty} P^'_n h^{n-1}-2x \sum\limits_{n=0}^{\infty} P^'_n h^n+\sum\limits_{n=0}^{\infty} P^'_n h^{n+1} ~~~~~ \mathbf{(A)} \\ \\
+          \\
+        $
+          Dividing $\dfrac{\partial G}{\partial h}$ by $\dfrac{\partial G}{\partial x}$: \\
+          \\
+          \\
+          $
+            \dfrac{\left(x-h\right)\left(1-2xh+h^2\right)^{-3/2}=\sum\limits_{n=0}^{\infty} n P_n h^{n-1} h^'}{h\left(1-2xh+h^2\right)^{-3/2}=\sum\limits_{n=0}^{\infty} P^'_n h^n} \\
+            \\
+            \\
+            \Longrightarrow \left(x-h\right) \sum\limits_{n=0}^{\infty} P^'_n h^n=h \sum\limits_{n=0}^{\infty}n P_n h^{n-1} 
+            \Longrightarrow x \sum\limits_{n=0}^{\infty}P^'_n h^n-\sum\limits_{n=0}^{\infty}P^'_n n h^{n+1} =\sum\limits_{n=0}^{\infty} n P_n h^n ~~~~~ \mathbf{(B)} \\
+            \\
+            \\
+            \\
+            \mathbf{(A)}-\mathbf{(B)}= 
+            \left[-\sum\limits_{n=0}^{\infty} P_n h^n+\sum\limits_{n=0}^{\infty} P^'_n h^{n-1}-2x \sum\limits_{n=0}^{\infty} P^'_n h^n+\sum\limits_{n=0}^{\infty} P^'_n h^{n+1}\right]
+            -
+            \left[x \sum\limits_{n=0}^{\infty}P^'_n h^n-\sum\limits_{n=0}^{\infty}P^'_n n h^{n+1}-\sum\limits_{n=0}^{\infty} n P_n h^n\right]
+            \\
+            \\
+            \\
+            \\
+            \Longrightarrow \left[P_n-P^'_{n+1}+2xP^'_n-P^'_{n-1}\right]-\left[xP^'_n-P^'_{n-1}-nP^'_n\right]=P_n-P^'_{n+1}+xP^'_n+nP_n=0 \\
+            \\
+            \\
+            \therefore ~~~ P_n(1+n)=P^'_{n+1}-xP^'_n ~~~ \surd
+          $ \\
+          \\
+          \\
+          Setting $n$ to $n-1$: \\
+          \\
+          \\
+          $
+            \left(n P_{n-1}-P^'_n+xP^'_{n-1}\right)+\left(x^2 P^'_n-xP^'_{n-1}-xnP_n\right) \\
+            \\
+            \\
+            \\
+            \therefore ~~~ (1-x^2)P^'_n-n(P_{n-1}-xP_n)=0 ~~~ \surd
+            \\
+            \\
+            \\
+            \dfrac{\partial}{\partial x}\left[(1-x^2)P^'_n-n(P_{n-1}-xP_n)\right]
+            =\left[(1-x^2)P^{''}_n-2xP^'_n\right]
+            +n\left[\left(P^'_{n-1}-xP^'_n\right)-P_n\right] \\
+            \\
+            \\
+            \\
+            \therefore ~~~ (1-x^2)P^{''}_n-2xP^'_n+n P_n(1+n)=0 ~~~ \surd
+          $
+          \\
+          \\
+          What we found statisfies the legendre’s differential equation. $(1-x^2)y^{''}-2xy^'+\ell (\ell+1)y=0$
       }
 
     \item The Legendre Polynomials enter quite naturally into expressions for the electrical or gravitational potentials of
