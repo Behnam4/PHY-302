@@ -328,7 +328,79 @@
 
       \textcolor{hwColor}{
         From the textbook we have equation 18.32 as: 
-        $$P^m_{\ell}$$
+        $$P^m_{\ell}=(1-x^2)^{m/2} \dfrac{d^m P_{\ell}}{dx^m}$$
+        Also from the textbook, the associated Legendre (Equation 18.28) is 
+        $$(1-x^2)y^{''}-2xy^'+\left[\ell (\ell+1)-\dfrac{m^2}{1-x^2}\right]y=0$$
+        \\
+        \\
+        Rewriting 18.28: \\
+        \\
+        $
+          (1-x^2)P^{''}_{\ell}-2xP^'_{\ell}+\left[\ell (\ell+1)-\dfrac{m^2}{1-x^2}\right]y=0 ~~~~~ \mathbf{(A)} \\
+          \\
+          \\
+          \begin{cases}
+            w=1-x^2 \\
+            \\
+            k=\dfrac{m}{2}
+          \end{cases} \Rightarrow P_{\ell}=q^n \mu \\
+          \\
+          \\
+          \dfrac{d P_{\ell}}{dx}=\mu (q^n)^'+q^n \mu^'=g^n \mu^'-mx\mu q^{n-1} ~~~ \surd
+          \\
+          \\
+          \\
+          \dfrac{d^2 P_{\ell}}{dx^2}=\dfrac{d}{dx} \left[\dfrac{d P_{\ell}}{dx}\right]=\dfrac{d}{dx}\left[g^n \mu^'-mx\mu q^{n-1} \right] \\
+          \\
+          \\
+          =\left[-mx q^{n-1} \mu^' +q^n \mu^{''}\right]-\left[ (mx)^' q^{n-1} \mu +mx \mu(q^{n-1})^' - mx \mu ^'q^{n-1} \right] \\
+          \\
+          \\
+          =-mx \mu^' q^{n-1}+q^n \mu^{''}-mx \mu q^{n-1}+2mx^2 \mu \left(\dfrac{m}{2}-1\right) q^{n-1}-mx \mu^' q^{n-1}
+        $
+        Doing a bit of algebra we have: \\
+        \\
+        \\
+        $
+          \therefore ~~~ \dfrac{d^2 P_{\ell}}{dx^2}=q^n \left[-2mxq^{-1} \mu^' -m q^{-1} \mu +\mu^{''}-2mx^2 q^{-2} \mu+m^2 x^2 q^{-2} \mu\right] \\ \\
+        $
+        \\
+        \\
+        We can rewrite \textbf{(A)} as (set be the coefficient of $P_{\ell}$ as $\gamma$)
+        \\
+        \\
+        $q P^{''}-2xP^'+ \gamma P=0  ~~~~~ \mathbf{(B)}$ \\
+        \\
+        \\
+        Now that we have both $\dfrac{d P_{\ell}}{dx}$ and $\dfrac{d^2 P_{\ell}}{dx^2}$, we can plug them into \textbf{(B)}.
+        \\
+        \\
+        $
+          q q^n \left[-2mxq^{-1} \mu^' -m q^{-1} \mu +\mu^{''}-2mx^2 q^{-2} \mu+m^2 x^2 q^{-2} \mu\right] \\ 
+          -2x \left[g^n \mu^'-mx\mu q^{n-1}\right]+\gamma q^n \mu=0 
+          \\
+          \\
+          \\
+          q^n \left[q \mu^{''}-2mx \mu^' -m \mu-2mx^2 q^{-1} \mu+m^2 x^2 q^{-1} \mu \right]-2x \left[g^n \mu^'-mx\mu q^{n-1}\right]+\gamma q^n \mu=0 \\
+          \\
+          \\
+          q \mu^{''}-2mx \mu^'-m \mu-2mx^2 q^{-1} \mu+m^2 x^2 q^{-1} \mu-2x \mu^'+2mx^2 q^{-1} \mu+\gamma \mu=0 \\
+          \\
+          \\
+          \mu^{''} q-2x \mu^' (m+1)+(m^2 x^2 q^{-1}-m+\gamma) \mu=0 
+          \\
+          \\
+          \\
+          \mu^{''} q-2x \mu^' (m+1)+\left[-m^2 q^{-1} (1-x^2)-m+\ell(\ell+1)\right] \mu=0 \\
+          \\
+          \\
+          \\
+          \therefore ~~~ q \mu^{''}-2x(m+1) \mu^'+\left[(\ell-m)(\ell++1)\right] \mu=0 ~~~ \surd
+        $
+        \\
+        \\
+        \\
+        What we just found is has the same format as the \textbf{\emph{Then differentiateLegendre’s equationmtimes and compare}}. 
       }
 
     \item Show, using Eq. 18.33, that
