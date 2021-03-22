@@ -334,6 +334,35 @@
     \item Show, using Eq. 18.33, that
     $Y^{-m}_l (\theta, \phi) = (-1)^m Y^{m\ast }_l (\theta, \phi) $, 
     where $Y^{-m}_l (\theta, \phi)$ is the complex conjugate of $Y^{m\ast }_l (\theta, \phi)$.
+
+      \textcolor{hwColor}{
+        From the textbook we have equation 18.33 as:
+        $$P^{-m}_{\ell}(x)=(-1)^m \dfrac{(\ell-m)!}{(\ell+m)!} P^m_{\ell}(x)$$ 
+        \\
+        \\
+        \\
+        The spherical harmonics $Y^m_{\ell}(\theta,\phi)$ are defined as
+        $$
+          Y^m_{\ell}(\theta,\phi)=(-1)^m \left[ \dfrac{2\ell+1}{4\pi} \dfrac{(\ell-m)!}{(\ell+m)!} \right]^{\dfrac{1}{2}} P^m_{\ell} ~ cos\theta ~ exp(im \phi)
+        $$ 
+        \\
+        \\
+        \\
+        $
+          Y^{-m}_{\ell}(\theta,\phi)=(-1)^m \left[ \dfrac{2\ell+1}{4\pi} \dfrac{(\ell+m)!}{(\ell-m)!} \right]^{\dfrac{1}{2}} \left[(-1)^m \dfrac{(\ell-m)!}{(\ell+m)!} P^m_{\ell}(x)\right] ~ cos\theta ~ exp(-im \phi) \\
+          \\
+          \\
+          =(-1)^m (-1)^m \left[ \dfrac{2\ell+1}{4\pi} \dfrac{(\ell+m)!}{(\ell-m)!} \dfrac{\left[(\ell-m)!\right]^2}{\left[(\ell+m)!\right]^2} \right]^{\dfrac{1}{2}}  P^m_{\ell}(x) ~ cos\theta ~ exp(-im \phi) \\
+          \\
+          \\
+          =(-1)^m (-1)^m \left[ \dfrac{2\ell+1}{4\pi} \dfrac{(\ell-m)!}{(\ell+m)!} \right]^{\dfrac{1}{2}}  P^m_{\ell}(x) ~ cos\theta ~ exp(-im \phi) \\
+          \\
+          \\
+          \\
+          \therefore ~~~ Y^{-m}_{\ell}(\theta,\phi)=(-1)^m Y^{m \ast}_{\ell}(\theta,\phi) ~~~ \surd
+        $
+      }
+
   \end{enumerate}
 
 \end{document}
