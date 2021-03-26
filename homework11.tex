@@ -1,0 +1,100 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+    \center % Center everything on the page
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm] % Name of your university/college
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm] % Major heading such as course name
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Eleven}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill % Fill the rest of the page with whitespace
+
+  \end{titlepage}
+
+  \textbf{Part A}
+  \begin{enumerate}
+
+    \item  Prove the \emph{completeness relationship}, eq. (18.51) of the textbook. (Hint: treat the Dirac Delta like you would treat a generic function, and write it in the basis of the Spherical Harmonics). 
+    
+    
+    \item  Prove that the differential equation that has $\sin( k x)$ and $\cos(k x)$ as solutions (with $k$ a constant) is a Sturm-Liouville equation. 
+    
+    
+    \item Consider a system of three point-like electric charges, with charges $q_i$ and positions $\vec r_i$ ($i=1,2,3$), as follows:
+    % (see figure): 
+    $q_1=+Q$, $\vec r_1=(0,0,d)$; $q_2=+Q$, $\vec r_2=(d,0,0)$; $q_3=-Q$, $\vec r_3=(0,0,0)$.   
+    
+    \begin{enumerate}
+    \item Calculate the ``outer" monopole moment of the given system of charges. 
+    
+    \item Calculate the ``outer" dipole moment for $m=0$. 
+    
+    
+    \end{enumerate}
+    (Hint: follow the example shown in class). 
+    
+  \end{enumerate}
+
+  \textbf{Part B}
+  \begin{enumerate}
+
+    \item Using the definition of analytic function, determine which of the complex functions below are analytic: 
+    
+    \begin{enumerate}
+      \item $F(x,y)=x^2+2ixy+y^2$;
+      \item  $F(x,y)=x^2-y^2$;
+      \item  $F(x,y)=x^2-2ixy-y^2$;
+      \item  $F(x,y)=x^2+2ixy-y^2$;
+      \item  $F(x,y)=e^x(\cos y+i \sin y)$;
+      \item  $F(x,y)=e^y(\cos x+i \sin x)$.
+    \end{enumerate}
+    
+    \item Apply the Cauchy Riemann conditions to the complex functions in the Exercise 1 above.
+    
+    
+  \end{enumerate}
+
+\end{document}
