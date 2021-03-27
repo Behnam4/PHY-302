@@ -57,10 +57,46 @@
   \textbf{Part A}
   \begin{enumerate}
 
-    \item  Prove the \emph{completeness relationship}, eq. (18.51) of the textbook. (Hint: treat the Dirac Delta like you would treat a generic function, and write it in the basis of the Spherical Harmonics). 
+    \item Prove the \emph{completeness relationship}, eq. (18.51) of the textbook. (Hint: treat the Dirac Delta like you would treat a generic function, and write it in the basis of the Spherical Harmonics). 
     
+      \textcolor{hwColor}{
+        \\
+        We need to write down the equation $(18.51)$ from the textbook.
+        $$\sum\limits_{n=0} Y^m_{\ell}(\Omega) ~ Y^{m*}_{\ell}(\Omega^')=\delta(\Omega-\Omega^')$$
+        From page 594 of the textbook we have \begin{itemize}
+          \item $\delta(\Omega-\Omega^')=0$ if $\Omega$
+          \item $\bigints_{4 \pi} \delta(\Omega) d\Omega=1$
+        \end{itemize}
+        Since we are told, we can treat the Dirac Delta like we would treat a generic function in the he S.H. ,
+        then let's treat it as an arbitrary function. Then we plug in the dirac to get the closure relationship.\\
+        \\
+        $
+          f(\Omega)=\delta(\Omega-\Omega^') \equiv \delta(cos(\theta)-cos(\theta^'))\delta(\phi-\phi^') \\
+          \\
+          \\
+          \therefore ~~~ \delta(\Omega-\Omega^')=\bigints\limits_{4 \pi} f(\Omega^') \sum\limits_{\ell m} Y^m_{\ell}(\Omega^') Y^m_{\ell}(\Omega) d\Omega^' \\
+          \\
+          \\
+          \therefore ~~~ =\bigints\limits_{4 \pi} \delta(cos(\theta)-cos(\theta^')) \delta(\phi-\phi^') \sum\limits_{\ell m} Y^m_{\ell}(\Omega^') Y^m_{\ell}(\Omega) d\phi ~ d(cos(\theta)) \\
+          \\
+          \\
+          \therefore ~~~ =\sum\limits_{\ell m} Y^m_{\ell}(\Omega^') Y^m_{\ell}(\Omega) \times \bigints\limits_{4 \pi} \delta(cos(\theta)-cos(\theta^')) \delta(\phi-\phi^') d\phi ~ d(cos(\theta))
+        $
+        \\
+        \\
+        The above integral equals to one, hence we have: \\
+        \\
+        \\
+        $
+          \therefore ~~~ \sum\limits_{\ell m} Y^m_{\ell}(\Omega^') Y^m_{\ell}(\Omega) \times 1
+          \\
+          \\
+          \\
+          \therefore \delta(\Omega-\Omega^')=\sum\limits_{\ell m} Y^m_{\ell}(\Omega^') Y^m_{\ell}(\Omega) ~~~ \surd
+        $ 
+      }
     
-    \item  Prove that the differential equation that has $\sin( k x)$ and $\cos(k x)$ as solutions (with $k$ a constant) is a Sturm-Liouville equation. 
+    \item Prove that the differential equation that has $\sin( k x)$ and $\cos(k x)$ as solutions (with $k$ a constant) is a Sturm-Liouville equation. 
     
     
     \item Consider a system of three point-like electric charges, with charges $q_i$ and positions $\vec r_i$ ($i=1,2,3$), as follows:
