@@ -68,13 +68,124 @@
     $q_1=+Q$, $\vec r_1=(0,0,d)$; $q_2=+Q$, $\vec r_2=(d,0,0)$; $q_3=-Q$, $\vec r_3=(0,0,0)$.   
     
     \begin{enumerate}
-    \item Calculate the ``outer" monopole moment of the given system of charges. 
-    
-    \item Calculate the ``outer" dipole moment for $m=0$. 
-    
+      \item Calculate the ``outer" monopole moment of the given system of charges. 
+      
+      \item Calculate the ``outer" dipole moment for $m=0$. 
     
     \end{enumerate}
     (Hint: follow the example shown in class). 
+
+    \includegraphics[height=10cm, width=12cm]{One.JPG}
+
+      \textcolor{hwColor}{
+        Let's start off with the multipole moment equation 
+        $$p^m_n=\bigints r^n_s \rho_Q(\overrightarrow{r_s}) Y^{m*}_n \left(\hat{r_s}\right) d^3 \overrightarrow{r_s}$$ \\
+        \\
+        \\
+        \begin{itemize}
+          \item $r_s$ refers to the magnitude of the vector pointing from the origin to the each piece of the source of the
+          electric potential in question. 
+          \item $\rho_Q(\overrightarrow{r_s})$ is the charge density of the source.
+          \item $Y^{m*}_n \left(\hat{r_s}\right)$ is the complex conjugate of a spherical harmonic. 
+        \end{itemize}
+      }
+
+      \textcolor{hwColor}{
+        \\
+        \\
+        $
+          \rho_Q(\overrightarrow{r_s})=Q \delta(x) \delta(y) \delta(z)+Q \delta(x+d) \delta(y) \delta(z)+Q \delta(x) \delta(y) \delta(z)
+        $
+        \\
+        \\
+        We want to use the three dimensional direct delta written in spherical polar form. 
+        Referencing Theory Segment 16, the spherical polar form of the
+        three-dimensional Dirac delta is 
+        \\
+        \\
+        $
+          \delta^3(\mathbf{r}-\mathbf{r_0})=\dfrac{1}{r^2_0} \delta(r-r_0) \delta(cos\theta-cos \theta_0) \delta(\phi-\phi_0)
+        $
+        \\
+        \\
+        Let's have the spherical polar coordinate of those three given points. \\
+        \\
+        $
+          \begin{cases}
+            r_1=<d,0,\phi_0> \\
+            \\
+            r_2=<d, \dfrac{\pi}{2}, 0> \\
+            \\
+            r_3=<0,0,0>
+          \end{cases} \\
+          \\
+          \\
+          \\
+          \rho_Q(\overrightarrow{r_s})= \\
+          Q \dfrac{1}{r^2_s} \delta(r_s-d) \delta(cos(\theta)-1) \delta(\phi-\phi_0) \\
+          +Q \dfrac{1}{r^2_s} \delta(r_s-d) \delta(cos(\theta)) \delta(\phi-\phi_0) \\
+          +Q \dfrac{1}{r^2_s} \delta(r_s) \delta(cos(\theta)-1) \delta(\phi-\phi_0) \\
+          \\
+          \\
+          \\
+          \therefore ~~~ \rho_Q(\overrightarrow{r_s})=Q \dfrac{1}{r^2_s} \delta(\phi-\phi_0) \left[
+            \delta(r_s-d) \delta(cos(\theta)-1) 
+            +\delta(r_s-d) \delta(cos(\theta)) 
+            + \delta(r_s) \delta(cos(\theta)-1)
+          \right] ~~~~ \surd
+          \\
+          \\
+          \\
+        $
+        The infinitesimal volume element, $d^3\overrightarrow{r_s}$ in spherical polar coordinates is: \\
+        \\
+        $
+          d^3\overrightarrow{r_s}=r^2_s dr_s sin(\theta)d\theta d\phi=r^2_s dr_s d(cos(\theta)) d\phi
+        $
+        \\
+        \\
+        Now, let’s plug in our volume element and our expression for $\rho_Q(\overrightarrow{r_s})$
+        into the equation for the multipole moments. \\
+        \\
+        \\
+        $
+          p^m_n=\bigints r^n_s \rho_Q(\overrightarrow{r_s}) Y^{m*}_n(\theta, \phi) \left(\hat{r_s}\right) d^3 \overrightarrow{r_s} \\
+          \\
+          \\
+          =\bigints r^n_s Q \dfrac{1}{r^2_s} \delta(\phi-\phi_0) \left[
+            \delta(r_s-d) \delta(cos(\theta)-1) 
+            +\delta(r_s-d) \delta(cos(\theta)) 
+            + \delta(r_s) \delta(cos(\theta)-1)
+          \right] Y^{m*}_n(\theta, \phi) \left(\hat{r_s}\right) r^2_s dr_s d(cos(\theta)) d\phi \\
+          \\
+          \\
+          \\
+          =Q r^n_s \bigints Y^{m*}_n(\theta, \phi) \delta(\phi-\phi_0) \left[
+            \delta(r_s-d) \delta(cos(\theta)-1) 
+            +\delta(r_s-d) \delta(cos(\theta)) 
+            + \delta(r_s) \delta(cos(\theta)-1)
+          \right] d(cos(\theta)) d\phi
+        $
+        \\
+        \\
+        Now, because we took $\phi_0$ to be arbitrary, \emph{any} choice of this angle must give
+        us the same result for $p^m_n$. In other words, the multipole moments must
+        be independent of $\phi_0$. However, we also know that the spherical harmonics
+        have non-trivial $\phi$ behavior, with the exception of the spherical harmonics for
+        which $m=0$. Next, since $\phi$ is completely arbitrary, we will choose $\phi_0=0$.
+        \\
+        \\
+        Substituting $m=0$ and $\phi_0=0$ and evaluating the integral: \\
+        \\
+        \\
+        $
+          p^m_n=Q d^n \bigints Y^{m*}_n(\theta, \phi) \delta(\phi-\phi_0) \left[
+            \delta(r_s-d) \delta(cos(\theta)-1) 
+            +\delta(r_s-d) \delta(cos(\theta)) 
+            + \delta(r_s) \delta(cos(\theta)-1)
+          \right] d(cos(\theta)) d\phi
+        $
+      }
     
   \end{enumerate}
 
@@ -85,11 +196,11 @@
     
     \begin{enumerate}
       \item $F(x,y)=x^2+2ixy+y^2$;
-      \item  $F(x,y)=x^2-y^2$;
-      \item  $F(x,y)=x^2-2ixy-y^2$;
-      \item  $F(x,y)=x^2+2ixy-y^2$;
-      \item  $F(x,y)=e^x(\cos y+i \sin y)$;
-      \item  $F(x,y)=e^y(\cos x+i \sin x)$.
+      \item $F(x,y)=x^2-y^2$;
+      \item $F(x,y)=x^2-2ixy-y^2$;
+      \item $F(x,y)=x^2+2ixy-y^2$;
+      \item $F(x,y)=e^x(\cos y+i \sin y)$;
+      \item $F(x,y)=e^y(\cos x+i \sin x)$.
     \end{enumerate}
     
     \item Apply the Cauchy Riemann conditions to the complex functions in the Exercise 1 above.
