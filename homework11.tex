@@ -98,9 +98,44 @@
     
     \item Prove that the differential equation that has $\sin( k x)$ and $\cos(k x)$ as solutions (with $k$ a constant) is a Sturm-Liouville equation. 
     
+      \textcolor{hwColor}{
+        The general form of the Sturm-Liouville equation is (page 564)
+        $$p(x) \dfrac{d^2 y}{dx^2}+r(x) \dfrac{dy}{dx}+q(x)y+\lambda \rho(x) y=0, ~~~~~ r(x)=\dfrac{dp(x)}{dx}, ~~~~ \mathbf{(A)}$$
+        \\
+        \\
+        For a simple harmonic $\dfrac{d^2y}{dx}+k^2 y=0, ~ \mathbf{(B)}$, we know that the general solution is 
+        $$y(x)=A ~ sin(kx)+B ~ cos(kx)$$ \\
+        By equating $\mathbf{(A)}$ and $\mathbf{(B)}$ we get the following result: \\
+        \\
+        $
+          \begin{cases}
+            p(x)=1 \\
+            \rho(x)=1 \\
+            q(x)=0 \\
+            \lambda=k^2
+          \end{cases}
+        $
+        \\
+        \\
+        Using the condition that $r(x)=p^'(x)$ it will be seen that the general Sturm-Liouville equation can also
+        be rewritten as $\left(p \dfrac{dy}{dx}\right)^'+qy+\lambda \rho y=0$.  
+        \\
+        \\
+        By plugging the above values into equation $(17.34)$ we have: \\
+        \\
+        \\
+        $
+          \left(1 \times \dfrac{dy}{dx}\right)^'+\left(0 \times y\right)+\left(k^2 \times 1 \times y\right)=0 \\
+          \\
+          \\
+          \therefore ~~~~ \dfrac{d^2}{dx^2}+k^2 y=0 ~~~ \surd
+        $
+        \\
+        \\
+        The O.D.E that we just presented is a demonstration of the Sturm-Liouville differential equation.  
+      }
     
     \item Consider a system of three point-like electric charges, with charges $q_i$ and positions $\vec r_i$ ($i=1,2,3$), as follows:
-    % (see figure): 
     $q_1=+Q$, $\vec r_1=(0,0,d)$; $q_2=+Q$, $\vec r_2=(d,0,0)$; $q_3=-Q$, $\vec r_3=(0,0,0)$.   
     
     \begin{enumerate}
