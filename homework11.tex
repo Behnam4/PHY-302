@@ -265,13 +265,88 @@
 
     \item Using the definition of analytic function, determine which of the complex functions below are analytic: 
     
+      \textcolor{hwColor}{
+        \\
+        From lecture and from page 826 of the textbook, we saw that we defined a function as analytic 
+        if it was single-valued and differentiable at all points in a domain $\mathcal{R}$ where we defined differentiability 
+        as the unique existence of the following expression (equation 24.1 in the textbook): \\
+        \\
+        $$f(z)=\lim\limits_{\Delta z \to 0} \left[\dfrac{f(z+\Delta z)-f(z)}{\Delta z}\right]$$
+      }
+    
     \begin{enumerate}
       \item $F(x,y)=x^2+2ixy+y^2$;
+
+        \textcolor{hwColor}{
+          $
+            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{ (x+ \Delta x)^2+2i(x+\Delta x)(y+\Delta y)+(y+\Delta y)^2- \left(x^2+2ixy+y^2\right)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{2\left(x \Delta x+y \Delta y\right)+\Delta x^2+\Delta y^2 +2i \left(y \Delta x+x \Delta y+\Delta x \Delta y \right)}{\Delta x+i \Delta y}\right]
+          $ \\
+          \\
+          \\
+          At this point, we are stuck - no matter what we do, we will not be able to get ridof the terms involving $\dfrac{\Delta y}{\Delta x}$,  hence it is not analytic. \\ \\ \\
+        }
+
       \item $F(x,y)=x^2-y^2$;
+
+        \textcolor{hwColor}{
+          $
+            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[     \right]
+          $
+        }
+
       \item $F(x,y)=x^2-2ixy-y^2$;
+
+        \textcolor{hwColor}{
+          $
+            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            ==\lim\limits_{\Delta x,\Delta y  \to 0} \left[     \right]
+          $
+        }
+  
       \item $F(x,y)=x^2+2ixy-y^2$;
+
+        \textcolor{hwColor}{
+          $
+            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            ==\lim\limits_{\Delta x,\Delta y  \to 0} \left[     \right]
+          $
+        }
+
       \item $F(x,y)=e^x(\cos y+i \sin y)$;
+
+        \textcolor{hwColor}{
+          $
+            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            ==\lim\limits_{\Delta x,\Delta y  \to 0} \left[     \right]
+          $
+        }
+
       \item $F(x,y)=e^y(\cos x+i \sin x)$.
+
+        \textcolor{hwColor}{
+          $
+            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            ==\lim\limits_{\Delta x,\Delta y  \to 0} \left[     \right]
+          $
+        }
+
     \end{enumerate}
     
     \item Apply the Cauchy Riemann conditions to the complex functions in the Exercise 1 above.
