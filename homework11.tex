@@ -134,7 +134,9 @@
         \\
         The O.D.E that we just presented is a demonstration of the Sturm-Liouville differential equation.  
       }
-    
+
+    \pagebreak
+
     \item Consider a system of three point-like electric charges, with charges $q_i$ and positions $\vec r_i$ ($i=1,2,3$), as follows:
     $q_1=+Q$, $\vec r_1=(0,0,d)$; $q_2=+Q$, $\vec r_2=(d,0,0)$; $q_3=-Q$, $\vec r_3=(0,0,0)$.   
     
@@ -192,22 +194,11 @@
           \\
           \\
           \\
-          \rho_Q(\overrightarrow{r_s})= \\
-          Q \dfrac{1}{r^2_s} \delta(r_s-d) \delta(cos(\theta)-1) \delta(\phi-\phi_0) \\
-          +Q \dfrac{1}{r^2_s} \delta(r_s-d) \delta(cos(\theta)) \delta(\phi-\phi_0) \\
-          +Q \dfrac{1}{r^2_s} \delta(r_s) \delta(cos(\theta)-1) \delta(\phi-\phi_0) \\
-          \\
-          \\
-          \\
-          \therefore ~~~ \rho_Q(\overrightarrow{r_s})=Q \dfrac{1}{r^2_s} \delta(\phi-\phi_0) \left[
-            \delta(r_s-d) \delta(cos(\theta)-1) 
-            +\delta(r_s-d) \delta(cos(\theta)) 
-            + \delta(r_s) \delta(cos(\theta)-1)
-          \right] ~~~~ \surd
-          \\
-          \\
-          \\
+          \rho_Q(\overrightarrow{r_s})=
+          Q \left[-\dfrac{\delta(r)}{r^2}+\dfrac{\delta(r-d) \delta(cos(\theta)-1) \delta(\phi_1)}{r^2}+\dfrac{\delta(r-d)\delta(cos(\theta) \delta(\phi))}{r^2}\right]
         $
+        \\
+        \\
         The infinitesimal volume element, $d^3\overrightarrow{r_s}$ in spherical polar coordinates is: \\
         \\
         $
@@ -220,45 +211,101 @@
         \\
         \\
         $
-          p^m_n=\bigints r^n_s \rho_Q(\overrightarrow{r_s}) Y^{m*}_n(\theta, \phi) \left(\hat{r_s}\right) d^3 \overrightarrow{r_s} \\
+          p^m_n=\bigints r^n_s \rho_Q(\overrightarrow{r_s}) Y^{m*}_n(\theta, \phi) d^3 \overrightarrow{r_s} \\
           \\
           \\
-          =\bigints r^n_s Q \dfrac{1}{r^2_s} \delta(\phi-\phi_0) \left[
-            \delta(r_s-d) \delta(cos(\theta)-1) 
-            +\delta(r_s-d) \delta(cos(\theta)) 
-            + \delta(r_s) \delta(cos(\theta)-1)
-          \right] Y^{m*}_n(\theta, \phi) \left(\hat{r_s}\right) r^2_s dr_s d(cos(\theta)) d\phi \\
+          =\bigints r^n_s \rho_Q(\overrightarrow{r_s}) Y^{m*}_n(\theta, \phi) r^2_s sin(\theta) dr_s d\theta d\phi \\
+          \\
+          \\
+          =\bigints r^n_s \rho_Q(\overrightarrow{r_s}) Y^{m*}_n(\theta, \phi) r^2_s sin(\theta) d^3V \\
+          \\
+          \\
+          =\bigints r^n_s \left[-\dfrac{Q}{r^2}\delta(r) \dfrac{Q}{r^2} \left(\delta(u-1)+\delta(u)\right) \delta(r-d)\left(\delta(\phi)+\delta(\phi_1)\right)\right] Y^{m*}_n(\theta, \phi) r^2_s sin(\theta) d^3V \\
+          \\
+          \\
+          =\bigints Y^{m*}_n r^n_s \left[Q  \left(\delta(u-1)+\delta(u)\right) \left(\delta(r-d)\right) \delta(\phi_1) \right] sin(\theta) d^3V
+          -\bigints Q Y^{m*}_n r^n_s \delta(r) \delta(\phi) \delta(\theta) sin(\theta) d^3V \\
+          \\
+          \\
+          =\bigints Y^{m*}_n r^n_s \left[Q  \left(\delta(u-1)+\delta(u)\right) \left(\delta(r-d)\right) \delta(\phi_1) \right] du ~ dr ~ d\Phi
+          -\bigints Q Y^{m*} r^n_s \delta(r) \delta(\phi) \delta(\theta) du ~ dr ~ d\Phi \\
+          \\
+          \\
+          =Q \left[
+            d^n \left(\bigints Y^{m*}_n \delta(u-1) \delta(\phi_1) ~ du ~ d\phi+\bigints Y^{m*}_n \delta(u) \delta(\phi_1) ~ du ~ d\phi  \right)
+            -\bigints Y^{m*}_n r^n_s \delta(r) \delta(\phi) \delta(\theta) du ~ dr ~ d\phi
+          \right]
           \\
           \\
           \\
-          =Q r^n_s \bigints Y^{m*}_n(\theta, \phi) \delta(\phi-\phi_0) \left[
-            \delta(r_s-d) \delta(cos(\theta)-1) 
-            +\delta(r_s-d) \delta(cos(\theta)) 
-            + \delta(r_s) \delta(cos(\theta)-1)
-          \right] d(cos(\theta)) d\phi
+          \therefore ~~~~ p^m_n=Qd^n(a)-Q(b) ~~~ \surd \\
+          \\
+          \\
+          \\
+          \\
+          Y^{m*}_n(\theta, \phi)=(-1)^m \left[\dfrac{(2n+1)(n-m)!}{4\pi (n+m)!}\right] p^m_n(u) e^{-im \phi}=(-1) p^m_n(u) \alpha e^{-im \phi} \\
+          \\
+          \\
+          \\
+          \\
+          (a): \\
+          \\
+          a=\bigints (-1)^m \alpha p^m_n(u) e^{-im \phi} \delta(u-1) \delta(\phi_1) du ~ d\phi+ \bigints (-1)^m \alpha p^m_n(u) e^{-im \phi} \delta(u) \delta(\phi_1) du ~ d\phi \\
+          \\
+          \\
+          \therefore ~~~ a=(-1)^m \alpha \delta_{m,0} \left[p^m_n(1)+p^m_n(0)\right] ~~~ \surd \\
+          \\
+          \\
+          \\
+          (b): \\
+          \\
+          b=\bigints Y^{m*}_n ~ r^n_s \delta(r) \delta(\phi) \delta(\theta) du ~ dr ~ d\phi \\
+          \\
+          \\
+          =\bigints (-1)^m p^m_n(u) \alpha  e^{-im \phi} r^n_s \delta(r) \delta(\phi) \delta(\theta) du ~ dr ~ d\phi \\
+          \\
+          \\
+          \therefore ~~~~ b=\delta_{m,0} \left[(-1)^m \alpha p^m_n(0) \delta_{n,0}\right]  ~~~ \surd
+        $ \\
+        \\
+        \\
         $
+          p^m_n=Qd^n (-1)^m \alpha \delta_{m,0} \left[p^m_n(1)+p^m_n(0)\right]-Q \delta_{m,0} \left[(-1)^m \alpha p^m_n(0) \delta_{n,0}\right] \\
+          \\
+          \\
+          \\
+          \therefore ~~~~ p^m_n=Q \alpha (-1)^m \delta_{m,0} \left[d^n \left(p^m_n(1)+p^m_n(0)\right)-\delta_{n,0} p^m_n(0) \right] ~~~ \surd 
+        $ \\
         \\
         \\
-        Now, because we took $\phi_0$ to be arbitrary, \emph{any} choice of this angle must give
-        us the same result for $p^m_n$. In other words, the multipole moments must
-        be independent of $\phi_0$. However, we also know that the spherical harmonics
-        have non-trivial $\phi$ behavior, with the exception of the spherical harmonics for
-        which $m=0$. Next, since $\phi$ is completely arbitrary, we will choose $\phi_0=0$.
-        \\
-        \\
-        Substituting $m=0$ and $\phi_0=0$ and evaluating the integral: \\
-        \\
+        \textbf{The monopole moment:} \\
         \\
         $
-          p^m_n=Q d^n \bigints Y^{m*}_n(\theta, \phi) \delta(\phi-\phi_0) \left[
-            \delta(r_s-d) \delta(cos(\theta)-1) 
-            +\delta(r_s-d) \delta(cos(\theta)) 
-            + \delta(r_s) \delta(cos(\theta)-1)
-          \right] d(cos(\theta)) d\phi
+          p^0_0=Q\left[ \dfrac{(2(0)+1)(0-0)!}{4 \pi (0+0)!}\right]^{\dfrac{1}{2}} (-1)^0 \left[d^0\left(p^0_0(1)+p^0_0(0)\right) -\delta_{0,0} p^0_0(0)\right] \\
+          \\
+          \\
+          \\
+          \therefore ~~~ p^0_0=\sqrt{\dfrac{1}{4 \pi}} ~~~ \surd
+        $ \\
+        \\
+        \\
+        \rule{15cm}{1pt}
+        \\
+        \\
+        \textbf{The dipole moment } \\
+        \\
+        $
+          p^0_1=Q\left[ \dfrac{(2(1)+1)(1-0)!}{4 \pi (0+1)!}\right]^{\dfrac{1}{2}} (-1)^0 \left[d^1\left(p^0_1(1)+p^0_1(0)\right) -\delta_{0,1} p^0_1(0)\right] \\
+          \\
+          \\
+          \\
+          \therefore ~~~ p^0_1=Q ~ d\sqrt{\dfrac{3}{4 \pi}} ~~~ \surd
         $
       }
     
   \end{enumerate}
+
+  \pagebreak
 
   \textbf{Part B}
   \begin{enumerate}
