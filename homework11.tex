@@ -349,24 +349,41 @@
 
         \textcolor{hwColor}{
           $
-            F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
+            F(x,y)=e^x(\cos y+i \sin y)=e^x e^{iy} \\ \\
+            \therefore ~~~ F(x,y)=e^z \\ \\
+            F^'(x,y)=\lim\limits_{\Delta z  \to 0} \left[\dfrac{F(z+\Delta z)-F(z)}{\Delta z}\right] \\
             \\
             \\
-            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{}{\Delta x+i \Delta y}\right] \\
+            =\lim\limits_{\Delta z  \to 0} \left[\dfrac{e^{z+ \Delta z}-e^z}{\Delta z}\right] \\
             \\
             \\
+            =\lim\limits_{\Delta z  \to 0} \left[e^z \left(\dfrac{e^{\Delta z}-1}{\Delta z}\right)\right] ~~~~ (\mathbf{H})\\
+            \\
+            \\
+            =e^z \lim\limits_{\Delta z  \to 0} e^{\Delta z} \\
+            \\
+            \\
+            \therefore ~~~  F^'(x,y)=e^z ~~~ \surd \\ \\
           $
+          Hence it is analytic. \\ \\ \\ 
         }
 
       \item $F(x,y)=e^y(\cos x+i \sin x)$.
 
         \textcolor{hwColor}{
           $
+            F(x,y)=e^y(\cos x+i \sin x)=e^y e^{ix}=e^{y+ix} \\ \\
             F^'(x,y)=\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{F(x+\Delta x,y+\Delta y)-F(x,y)}{\Delta x+i \Delta y}\right] \\
             \\
             \\
-            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{}{\Delta x+i \Delta y}\right]
+            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{e^{(y+\Delta y)+i(x+\Delta x)} -e^{y+ix}}{\Delta x+i \Delta y}\right] \\
+            \\
+            \\
+            =\lim\limits_{\Delta x,\Delta y  \to 0} \left[\dfrac{e^{\Delta y+i \Delta x}}{\Delta x+i \Delta y}\right]
           $
+          \\
+          \\
+          At this point, we are stuck - no matter what we do, we will not be able to get rid of the terms involving $\dfrac{\Delta y}{\Delta x}$, hence it is not analytic. \\ \\ \\
         }
 
     \end{enumerate}
