@@ -390,6 +390,75 @@
     
     \item Apply the Cauchy Riemann conditions to the complex functions in the Exercise 1 above.
     
+    \textcolor{hwColor}{
+      Another method of determining whether a function is analytic involves 
+      applying the Cauchy-Riemann conditions, given by equation 24.5 in the textbook.
+      $$\begin{cases}
+        \dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y} \\
+        \\
+        \dfrac{\partial v}{\partial x}=-\dfrac{\partial u}{\partial y}
+      \end{cases}$$
+      \\
+      \\
+      where the functions $u(x, y)$ and $v(x, y)$ are obtained from $f(z)$ by rewriting it as 
+      $f(z) =u(x, y) +iv(x, y)$. If each of these partial derivatives is continuous in the domain
+      in question, and if these two relations are satisfied, the functionis analytic. \\
+      \\
+      $
+        F(x,y)=x^2+2ixy+y^2 \\
+        \\
+        u=x^2+y^2, ~~ v=2xy \\
+        \\
+        \begin{cases}
+          \dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}=2x \\
+          \\
+          \dfrac{\partial v}{\partial x}=2y \\
+          \\
+          -\dfrac{\partial u}{\partial y}=-2y
+        \end{cases}
+      $
+      Hence, it is not analytic. 
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        F(x,y)=x^2-y^2
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        F(x,y)=x^2-2ixy-y^2
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        F(x,y)=x^2+2ixy-y^2
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        F(x,y)=e^x(\cos y+i \sin y)
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        F(x,y)=e^y(\cos x+i \sin x)
+      $
+    }
     
   \end{enumerate}
 
