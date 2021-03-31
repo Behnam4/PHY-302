@@ -424,40 +424,109 @@
       \\
       \\
       $
-        F(x,y)=x^2-y^2
+        F(x,y)=x^2-y^2 \\
+        \\
+        u=x^2-y^2, ~~ v=0 \\
+        \\
+        \begin{cases}
+          \dfrac{\partial u}{\partial x}=2x \\
+          \\
+          \dfrac{\partial v}{\partial y}=0 \\
+          \\
+          \dfrac{\partial v}{\partial x}=0 \\
+          \\
+          -\dfrac{\partial u}{\partial y}=2y
+        \end{cases}
       $
+      Hence, it is not analytic. 
       \\
       \\
       \rule{15cm}{1pt}
       \\
       \\
       $
-        F(x,y)=x^2-2ixy-y^2
+        F(x,y)=x^2-2ixy-y^2 \\
+        \\
+        u=x^2-y^2, ~~ v=-2xy \\
+        \\
+        \begin{cases}
+          \dfrac{\partial u}{\partial x}=2x \\
+          \\
+          \dfrac{\partial v}{\partial y}=-2x \\
+          \\
+          \dfrac{\partial v}{\partial x}=-2y \\
+          \\
+          -\dfrac{\partial u}{\partial y}=2y
+        \end{cases}
       $
+      Hence, it is not analytic.
       \\
       \\
       \rule{15cm}{1pt}
       \\
       \\
       $
-        F(x,y)=x^2+2ixy-y^2
+        F(x,y)=x^2+2ixy-y^2 \\
+        \\
+        u=x^2-y^2, ~~ v=2xy \\
+        \\
+        \begin{cases}
+          \dfrac{\partial u}{\partial x}=2x \\
+          \\
+          \dfrac{\partial v}{\partial y}=2x \\
+          \\
+          \dfrac{\partial v}{\partial x}=2y \\
+          \\
+          -\dfrac{\partial u}{\partial y}=2y
+        \end{cases}
       $
+      Hence, it is analytic.
       \\
       \\
       \rule{15cm}{1pt}
       \\
       \\
       $
-        F(x,y)=e^x(\cos y+i \sin y)
+        F(x,y)=e^x(\cos y+i \sin y) \\
+        \\
+        u=e^x cos(y), ~~ v=e^x sin(y) \\
+        \\
+        \begin{cases}
+          \dfrac{\partial u}{\partial x}=e^x cos(y) \\
+          \\
+          \dfrac{\partial v}{\partial y}=e^x cos(y) \\
+          \\
+          \dfrac{\partial v}{\partial x}=e^x sin(y) \\
+          \\
+          -\dfrac{\partial u}{\partial y}=e^x sin(y)
+        \end{cases}
       $
+      Hence, it is analytic.
       \\
       \\
       \rule{15cm}{1pt}
       \\
       \\
       $
-        F(x,y)=e^y(\cos x+i \sin x)
+        F(x,y)=e^y(\cos x+i \sin x) \\
+        \\
+        u=e^y cos(x), ~~ v=e^y sin(x) \\
+        \\
+        \begin{cases}
+          \dfrac{\partial u}{\partial x}=-e^y sin(x) \\
+          \\
+          \dfrac{\partial v}{\partial y}=e^y sin(x) \\
+          \\
+          \dfrac{\partial v}{\partial x}=e^y cos(x) \\
+          \\
+          -\dfrac{\partial u}{\partial y}=-e^y cos(x)
+        \end{cases}
       $
+      Hence, it is not analytic. \\
+      \\
+      \\
+      \\
+      \emph{\textbf{Note: All the above answers are the result of the provided condition in the beginning of this question.}}
     }
     
   \end{enumerate}
