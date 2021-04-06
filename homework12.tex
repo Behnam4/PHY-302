@@ -58,10 +58,103 @@
   \begin{enumerate}
 
     \item Find the poles in the following functions and determine their orders:
+    
+      \textcolor{hwColor}{
+        As you saw from lecture and from your readings, the singularitieswill occur at points that cause the 
+        denominator to become zero.
+        $$a=\lim\limits_{z \to z_0} f(z) (z-z_0)^n$$  
+      }
+
       \begin{enumerate}
-        \item  $\frac{1}{z^2 - 2z + 1}$ , 
-        \item  $\frac{1}{z^2 - 2z - 1}$ , 
+        \item  $\frac{1}{z^2 - 2z + 1}$ 
+
+          \textcolor{hwColor}{
+            $
+              f(z)=\dfrac{1}{(z-1)^2} \\
+              \\
+              \\
+              \lim\limits_{z \to z_0} f(z) (z-z_0)^n=\lim\limits_{z \to 1} \dfrac{1}{(z-1)^2} (z-1)^2 \\
+              \\
+              \\
+              \therefore ~~~ \lim\limits_{z \to 1}=1 ~~~ \surd
+            $ \\ \\
+            Based on $f(z)$ we assumed the pole of the function is $z=1$. Hence, $1$ is pole of order 2. \\ \\
+          }
+
+        \item  $\frac{1}{z^2 - 2z - 1}$ 
+
+          \textcolor{hwColor}{
+            Let's find the roots of the denominator of $f(z)$
+            $
+              z=\dfrac{2\pm \sqrt{4-4(1)(-1)}}{2} \Rightarrow z=1+\pm \sqrt{2} \\
+              \\
+              \\
+              \lim\limits_{z \to z_0} f(z) (z-z_0)^n=\lim\limits_{z \to (1+\sqrt{2})} \dfrac{1}{ \left[z-(1+\sqrt{2})\right] \left[z-(1-\sqrt{2})\right]} \left[z-(1+\sqrt{2})\right]=\dfrac{1}{2\sqrt{2}} \\
+              \\
+              \\
+              \lim\limits_{z \to z_0} f(z) (z-z_0)^n=\lim\limits_{z \to (1-\sqrt{2})} \dfrac{1}{ \left[z-(1+\sqrt{2})\right] \left[z-(1-\sqrt{2})\right]} \left[z-(1-\sqrt{2})\right]=-\dfrac{1}{2\sqrt{2}} \\
+              \\
+              \\
+              \\
+              \therefore ~~~~ \begin{cases}
+                1+\sqrt{2} \\
+                \\
+                1-\sqrt{2}
+              \end{cases}
+            $ order 1 poles at these points. \\ \\
+          }
+
         \item  $\frac{e^{(z-1)} - 1}{(z^2 + 1) (z - 1)}$  (Hint: be careful when analyzing the behavior at $z=1$, does the function diverge in that point? )
+
+          \textcolor{hwColor}{
+            $
+              \lim\limits_{z \to z_0} f(z) (z-z_0)^n=\lim\limits_{z \to i} \dfrac{e^{z-1}-1}{(z^2+1)(z-1)} (z-i)=\lim\limits_{z \to i} \dfrac{e^{z-1}-1}{(z-1)(z+i)(z-i)}(z-i) \\
+              \\
+              \\
+              =\dfrac{e^{i-1}-1}{(i-1)(i+i)} \\
+              \\
+              =\dfrac{e^{i-1}-1}{(i-1)2i} \\
+              \\
+              =\dfrac{e^{i-1}-1}{(2i^2-2i)} \\
+              \\
+              =-\dfrac{e^{i-1}-1}{2(1+i)} \\
+              \\
+              =-\dfrac{e^{i-1}-1}{2(1+i)} \times \dfrac{1-i}{1-i} \\
+              \\
+              \\
+              \therefore ~~~ \lim\limits_{z \to i} \dfrac{e^{z-1}-1}{(z-1)(z+i)(z-i)}(z-i)=-\dfrac{(e^{i-1}-1)(1-i)}{4} 
+              \\
+              \\
+              \rule{15cm}{1pt}
+              \\
+              \\
+              \lim\limits_{z \to z_0} f(z) (z-z_0)^n=\lim\limits_{z \to -i} \dfrac{e^{z-1}-1}{(z^2+1)(z-1)} (z+i)=\lim\limits_{z \to -i} \dfrac{e^{z-1}-1}{(z-1)(z+i)(z-i)} (z+i) \\
+              \\
+              \\
+              =\dfrac{e^{-i-1}-1}{(-i-1)(-i-i)} \\
+              \\
+              =\dfrac{e^{-i-1}-1}{-2i(-i-1)} \\
+              \\
+              =\dfrac{e^{-i-1}-1}{2i(i+1)} \\
+              \\
+              =\dfrac{e^{-i-1}-1}{2(i-1)} \\
+              \\
+              =\dfrac{e^{-i-1}-1}{2(i-1)} \times \dfrac{1+i}{1+i} \\
+              \\
+              \\
+              \therefore ~~~ \lim\limits_{z \to -i} \dfrac{e^{z-1}-1}{(z^2+1)(z-1)} (z+i)=-\dfrac{(e^{-i-1}-1)(1+i)}{4} 
+              \\
+              \\
+              \rule{15cm}{1pt}
+              \\
+              \\
+              \lim\limits_{z \to z_0} f(z) (z-z_0)^n=\lim\limits_{z \to 1} \dfrac{e^{z-1}-1}{(z^2+1)(z-1)} (z-1)=0
+            $ \\
+            \\
+            \\
+            Hence, we have poles of order one at the points $i$ and $-i$. \\ \\
+          }
+
       \end{enumerate}
 
     \item Show that, if $u$ and $v$ are the real and imaginary parts of the analytic function, f$ (z)$,
