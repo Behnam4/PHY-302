@@ -61,12 +61,37 @@
       \begin{enumerate}
         \item  $\frac{1}{z^2 - 2z + 1}$ , 
         \item  $\frac{1}{z^2 - 2z - 1}$ , 
-        \item   $\frac{e^{(z-1)} - 1}{(z^2 + 1) (z - 1)}$  (Hint: be careful when analyzing the behavior at $z=1$, does the function diverge in that point? )
+        \item  $\frac{e^{(z-1)} - 1}{(z^2 + 1) (z - 1)}$  (Hint: be careful when analyzing the behavior at $z=1$, does the function diverge in that point? )
       \end{enumerate}
 
     \item Show that, if $u$ and $v$ are the real and imaginary parts of the analytic function, f$ (z)$,
     the family of curves, $u(x, y) = $constant, is orthogonal to the family of curves, $v(x, y) =$ constant.\\
     (hint: Use the Cauchy-Riemann conditions to show that the slope of the curve $u = c$ is the negative inverse of the slope of the curve $v = d$ (with $d$ and $c$ being constants) at the same point $(x, y)$). 
+
+    \textcolor{hwColor}{
+      \\
+      From lecture and from page 826 of the textbook, we saw that we defined a function as analytic 
+      if it was single-valued and differentiable at all points in a domain $\mathcal{R}$ where we defined differentiability 
+      as the unique existence of the following expression (equation 24.1 in the textbook): \\
+      \\
+      $$f(z)=\lim\limits_{\Delta z \to 0} \left[\dfrac{f(z+\Delta z)-f(z)}{\Delta z}\right]$$ \\
+      \\
+      Cauchy–Riemann equations imply orthogonal gradients. For a real form $f=u+i v$, If $u$ and $v$ satisfy 
+      the Cauchy–Riemann equations, then the two gradient vectors have dot product as follows: \\
+      \\
+      $$\nabla u. \nabla v
+      =\dfrac{\partial u}{\partial x} \dfrac{\partial v}{\partial x}+\dfrac{\partial u}{\partial y} \dfrac{\partial v}{\partial y}
+      =\dfrac{\partial u}{\partial y} \dfrac{\partial u}{\partial x}-\dfrac{\partial u}{\partial x}\dfrac{\partial u}{\partial y}
+      =0$$
+      \\
+      Where in the last line we have used the Cauchy-Riemann relations to rewrite the partial 
+      deriviatives of $v$ as partial deriviatives of $u$. Since the scalar product of the 
+      normal vector is zero. they must be orthogonal, and the curves $u(x,y)=C$ and $v(x,y)=C$ must
+      therefore intersect at right angles. \\
+      \\
+      Deduction: The level curves of $u$ and the level curves of $v$ are orthogonal to each other.
+      (In real calculus, such families of curves are known as orthogonal trajectories.)
+    }
 
   \end{enumerate}
 
