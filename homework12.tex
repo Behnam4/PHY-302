@@ -290,6 +290,58 @@
     $$f(z) = \frac{z + 1}{z^2 - z - 6}$$
     as a Taylor series to order $(z - 2)^3$ about the point $z = 2$. Find the region of convergence. (Hint: you can rewrite the fiven function as a sum of two terms, using partial fractions). 
 
+    \textcolor{hwColor}{
+      $
+        f(z)=\dfrac{z+1}{z^2-z-6}=\dfrac{z+1}{(z+2)(z-3)} \Longrightarrow
+        \dfrac{z+1}{(z+2)(z-3)}=\dfrac{A}{z+2}+\dfrac{B}{z-3} \\
+        \\
+        \\
+        \therefore ~~~~ f(z)=\dfrac{1}{5(z+2)}+\dfrac{4}{5(z-3)} ~~~ \surd \\
+        \\
+        \\
+        \begin{cases}
+          f^'(z)=-\dfrac{1}{5(z+2)^2}-\dfrac{4}{5(z-3)^2} \\
+          \\
+          \\
+          f^{''}(z)=\dfrac{2}{5(z+2)^3}+\dfrac{8}{5(z-3)^3} \\
+          \\
+          \\
+          f^{'''}(z)=-\dfrac{6}{5(z+2)^4}-\dfrac{24}{5(z-3)^4}
+        \end{cases} \\
+        \\
+        \\
+        \begin{cases}
+          f(2)=\dfrac{2+1}{(2+2)(2-3)}=-\dfrac{3}{4} \\
+          \\
+          \\
+          f^'(2)=-\dfrac{1}{5(2+2)^2}-\dfrac{4}{5(2-3)^2}=-\dfrac{13}{16} \\
+          \\
+          \\
+          f^{''}(2)=\dfrac{2}{5(2+2)^3}+\dfrac{8}{5(2-3)^3}=-\dfrac{51}{32} \\
+          \\
+          \\
+          f^{'''}(2)=-\dfrac{6}{5(2+2)^4}-\dfrac{24}{5(2-3)^4}=-\dfrac{615}{128}
+        \end{cases} \\
+        \\
+        \\
+      $
+      By plugging in the above values into the folowing equations we get: \\
+      \\
+      \\
+      $
+        f(z)=f(z_0)+f^'(z_0)(z-z_0)+\dfrac{f^{''}(z_0)}{2!} (z-z_0)^2+\dfrac{f^{'''}(z_0)}{3!} (z-z_0)^3+... \\
+        \\
+        \\
+        f(z)=f(2)+f^'(2)(z-2)+\dfrac{f^{''}(2)}{2!} (z-2)^2+\dfrac{f^{'''}(2)}{3!} (z-2)^3+... \\
+        \\
+        \\
+        =-\dfrac{3}{4}-\dfrac{13}{16} (z-2)-\dfrac{\dfrac{51}{32}}{2!} (z-2)^2-\dfrac{\dfrac{615}{128}}{3!} (z-2)^3+...
+      $ \\
+      \\
+      \\
+      The region of convergence is the inside of a circle centered at $z_0=2$ with radius of $3−z_0=1$.
+    }
+
   \end{enumerate}
 
 \end{document}
