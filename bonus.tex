@@ -64,7 +64,105 @@
       \\
       \\
       \\
-      Behnam was here
+      Let's define branch cuts first. The regions where a function is not analytic are
+      called singularities. One type of singularity involves regions or points where
+      the function is not single-valued; these are called branch point. \\ \\
+      From the page 836 of the textbook we have $f(z)=\sqrt{z^2+1}=\sqrt{(z+i)(z-i)}$. \\
+      \\
+      \\
+      $
+        f(z)=\sqrt{(z+i)(z-i)}=\sqrt{r_1 r_2 e^{i \theta_1} ~ e^{i \theta_2}}
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      Rotation around $i$: \\
+      \\
+      $
+        f(z)=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2+2 \pi)}{2}} \\
+        \\
+        \\
+        \therefore ~~~ f(z)=-f(z) ~~~ \surd \\
+      $
+      \\
+      The value of the function changes with a Rotation therefore $-i$ and $i$ are a branch points. 
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      For complete a circle: \\
+      \\
+      $
+        f(z)=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2+4 \pi)}{2}}
+        =\sqrt{r_1 r_2} ~ e^{i2 \pi} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=f(z)
+      $
+      \\
+      \\
+      What just happened is that the path of the circle does NOT go over the finite branch cut. $[i,-i]$ \\
+      \\
+      We have the following cases: \\
+      \\
+      \begin{itemize}
+        \item Rotation around $i$ counterclockwise. 
+        \item Rotation around $i$ clockwise.
+        \item Rotation around $-i$ counterclockwise. 
+        \item Rotation around $-i$ clockwise.
+      \end{itemize}.
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        \theta_1=\dfrac{3 \pi}{2}, ~~~ \theta_2=0 \\
+        \\
+        \\
+        f(z)=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=\sqrt{r_1 r_2} e^{i\dfrac{3 \pi}{4}} \\
+        \\
+        f(z)=(-1)^{\dfrac{3}{4}} \sqrt{r_1 r_2}
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        \theta_1=-\dfrac{\pi}{2}, ~~~ \theta_2=0 \\
+        \\
+        \\
+        f(z)=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=\sqrt{r_1 r_2} e^{-i\dfrac{\pi}{4}} \\
+        \\
+        f(z)=(-1)^{\dfrac{3}{4}} \sqrt{r_1 r_2}
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        \theta_1=0, ~~~ \theta_2=\dfrac{\pi}{2} \\
+        \\
+        \\
+        f(z)=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=\sqrt{r_1 r_2} e^{i\dfrac{\pi}{4}} \\
+        \\
+        f(z)=(-1)^{\dfrac{1}{4}} \sqrt{r_1 r_2}
+      $
+      \\
+      \\
+      \rule{15cm}{1pt}
+      \\
+      \\
+      $
+        \theta_1=0, ~~~ \theta_2=-\dfrac{3\pi}{2} \\
+        \\
+        \\
+        f(z)=\sqrt{r_1 r_2} e^{i\dfrac{(\theta_1+\theta_2)}{2}}=\sqrt{r_1 r_2} e^{-i\dfrac{3\pi}{4}} \\
+        \\
+        f(z)=-(-1)^{\dfrac{1}{4}} \sqrt{r_1 r_2}
+      $
     }
 
 \end{document}
