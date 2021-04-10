@@ -1,0 +1,92 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+    \center
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm]
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm]
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Thirteen}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill
+
+  \end{titlepage}
+
+  \textbf{Part A}
+  \begin{enumerate}
+    \item Let ${\mathcal C}$ be a unit circle centered at $z = 1$. Compute
+      $$
+      \oint_{\mathcal C}   \frac{z^2 + 1}{z^2 - 1} dz
+      $$
+      (Hint: write the integral as a sum of terms using partial fractions; be careful as of which poles are within the given contour). 
+
+      \item Compute the same integral as above, where ${\mathcal C}$ is a circle of radius 2 centered at $z = 0$.
+
+
+      \item Use the generalized Cauchy's formula to evaluate
+      $$
+      \oint_{\mathcal C}   \frac{\sinh z}{z^4} dz
+      $$
+      where ${\mathcal C}$ is the unit circle centered at the origin.
+
+
+  \end{enumerate}
+
+  \pagebreak
+
+  \textbf{Part B}
+  \begin{enumerate}
+    % Exercises 30
+    \item Prove the identity:
+    $$\frac{1}{1-\omega} = 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1}  + \frac{\omega^n}{1- \omega}~,$$
+    where the last term is called the remainder of the series. (Hint: it may be easier to prove the equivalent expression: $(1- \omega^n) =(1- \omega)( 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1} )$~~).
+
+    % Exercises 31 + older lecture material.
+    \item  Use the result of the previous exercise to prove the expression of the remainder of a generic Taylor series, $R_n$ (see theory segment 35).  In other words, prove that, if the conditions for Taylor's theorem are satisfied, the following equality holds: 
+    $$\sum^{\infty}_{k=n} \frac{1}{k!} d^{(k)} f(z_0) (z-z_0)^k = \frac{(z-z_0)^n}{2 \pi i} \oint_{\mathcal C}  \frac{f(z^\prime)}{(z^\prime - z_0)^n(z^\prime - z)} dz^\prime ~,$$
+    where $d^{(k)} f(z_0)$ is the $k$-th order derivative of $f(z)$, evaluated in the point $z=z_0$.   (Hint: take inspiration from the derivation of the expression of the Taylor's series expansion done in Theory segment 35). 
+    
+  \end{enumerate}
+
+\end{document}
