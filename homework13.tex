@@ -122,15 +122,27 @@
           $
             \therefore ~~~ \oint\limits_{\mathcal C} \dfrac{z^2+1}{z^2-1} dz=I_A+I_B+I_C=2 \pi i ~~~ \surd
           $
+          \\
+          \\
+          \\
         }
 
       \item Compute the same integral as above, where $\mathcal{C}$ is a circle of radius 2 centered at $z=0$.
       
         \textcolor{hwColor}{
-          Here
+          Since this question is the same as the previous one we have
+          $$
+            \oint\limits_{\mathcal{C}} \dfrac{z^2+1}{z^2-1} dz=\oint\limits_{\mathcal C} dz-\oint\limits_{\mathcal C} \dfrac{1}{z+1}dz+\oint\limits_{\mathcal C}\dfrac{1}{z-1}dz=I_A+I_B+I_C
+          $$
+          For this problem $\mathcal{C}$ is a circle of radius 2 centered at $z=0$. Therefore, both $I_B$ and $I_C$ 
+          are inside $\mathcal{C}$, hence: \\
+          \\
+          $
+            \oint\limits_{\mathcal C} \dfrac{z^2+1}{z^2-1} dz=2 \pi i-2\pi i=0 ~~~ \surd
+          $ 
+          \\
+          \\
         }
-
-      \pagebreak
 
       \item Use the generalized Cauchy's formula to evaluate
       $$
@@ -140,6 +152,8 @@
 
 
         \textcolor{hwColor}{
+          \\
+          \\
           Let us remember that the generalized Cauchy formula allows us to write derivatives as integrals:
           $$\oint\limits_{\mathcal C} \dfrac{f(z)}{(z-z_0)^{n+1}}dz=\dfrac{2 \pi i}{n!} \dfrac{\partial^n f}{\partial z^n} \Big|_{z=z_0}$$
           We are told that $\mathcal{C}$ is the unit circle centered at the origin, therefore $\mathcal{C}:|z|=1$. 
