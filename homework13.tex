@@ -85,13 +85,46 @@
           \\
           \\
           $$
-            \oint\limits_{\mathcal C}   \frac{z^2 + 1}{z^2 - 1} dz \\ \\
-            =\oint\limits_{\mathcal C}  \left(1-\dfrac{1}{z+1}+\dfrac{1}{z-1}\right) dz \\ \\
-            =\oint\limits_{\mathcal C} dz-\oint\limits_{\mathcal C} \dfrac{1}{z+1}dz+\oint\limits_{\mathcal C}\dfrac{1}{z-1}dz
+            \oint\limits_{\mathcal C} \frac{z^2 + 1}{z^2 - 1} dz \\ \\
+            =\oint\limits_{\mathcal C} \left(1-\dfrac{1}{z+1}+\dfrac{1}{z-1}\right) dz \\ \\
+            =\oint\limits_{\mathcal C} dz-\oint\limits_{\mathcal C} \dfrac{1}{z+1}dz+\oint\limits_{\mathcal C}\dfrac{1}{z-1}dz=I_A+I_B+I_C
           $$
+          Let's review what the Cauchy's theorem is. Suppose $f(z)$ is a complex function and $\mathcal{C}$ is a closed 
+          curve in the complex plane. If the following conditions are satisfied:
+          \begin{itemize}
+            \item $f(z)$ is holomorphic on and everywhere inside $\mathcal{C}$.
+            \item $\mathcal{C}$ is a simple curve (does not cross itself).
+            \item $\mathcal{C}$ has a finite number of corners.
+          \end{itemize}
+          then we have 
+          $$\oint\limits_{\mathcal{C}} f(z) dz=0$$
+          We know that for this problem $\mathcal{C}$ is a unit circle centered at $z=1$. And we have $-1$ and $1$ as 
+          our singularities for the given function. If we look carefully we can see that only $I_B$ in inside $\mathcal{C}$,
+          hence we can equal to to zero. \\
+          \\
+          $
+            I_C=\oint\limits_{\mathcal{C}} \dfrac{1}{z-1}dz \Longrightarrow \begin{cases}
+              f(z)=1 \\
+              \\
+              z_0=1 
+            \end{cases}
+            \Longrightarrow f(1)=\dfrac{1}{2 \pi i} \oint\limits_{\mathcal{C}} \dfrac{1}{z-1}=1 \\
+            \\
+            \\
+            \therefore ~~~ \oint\limits_{\mathcal{C}} \dfrac{1}{z-1}=2 \pi i ~~~ \surd
+          $ 
+          \\
+          \\
+          For $I_A$ we have $\oint\limits_{\mathcal C} dz=\oint\limits_{0}^{2 \pi} i e^{it} dt=1-1=0$. \\
+          \\
+          \\
+          \\
+          $
+            \therefore ~~~ \oint\limits_{\mathcal C} \dfrac{z^2+1}{z^2-1} dz=I_A+I_B+I_C=2 \pi i ~~~ \surd
+          $
         }
 
-      \item Compute the same integral as above, where ${\mathcal C}$ is a circle of radius 2 centered at $z = 0$.
+      \item Compute the same integral as above, where $\mathcal{C}$ is a circle of radius 2 centered at $z = 0$.
 
       \pagebreak
 
