@@ -150,7 +150,6 @@
       $$
       where ${\mathcal C}$ is the unit circle centered at the origin.
 
-
         \textcolor{hwColor}{
           \\
           \\
@@ -222,16 +221,46 @@
 
   \textbf{Part B}
   \begin{enumerate}
-    % Exercises 30
     \item Prove the identity:
     $$\frac{1}{1-\omega} = 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1}  + \frac{\omega^n}{1- \omega}~,$$
     where the last term is called the remainder of the series. (Hint: it may be easier to prove the equivalent expression: $(1- \omega^n) =(1- \omega)( 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1} )$~~).
 
-    % Exercises 31 + older lecture material.
+      \textcolor{hwColor}{
+        From 
+      }
+
     \item  Use the result of the previous exercise to prove the expression of the remainder of a generic Taylor series, $R_n$ (see theory segment 35).  In other words, prove that, if the conditions for Taylor's theorem are satisfied, the following equality holds: 
     $$\sum^{\infty}_{k=n} \frac{1}{k!} d^{(k)} f(z_0) (z-z_0)^k = \frac{(z-z_0)^n}{2 \pi i} \oint_{\mathcal C}  \frac{f(z^\prime)}{(z^\prime - z_0)^n(z^\prime - z)} dz^\prime ~,$$
     where $d^{(k)} f(z_0)$ is the $k$-th order derivative of $f(z)$, evaluated in the point $z=z_0$.   (Hint: take inspiration from the derivation of the expression of the Taylor's series expansion done in Theory segment 35). 
     
+    \textcolor{hwColor}{
+      \\
+      \\
+      From theory Segment 35 we have, the Taylor’s theorem for complex functions as
+      $$f(z)=\sum\limits_{n=0}^{\infty} \left(z-z_0\right)^n \dfrac{1}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{(\omega-z_0)^{n+1}} d\omega$$
+      \\
+      \\
+      $
+        f(z)=\sum\limits_{n+1=0}^{\infty} \left(z-a\right)^{n+1} \dfrac{1}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{(\omega-a)^{n+2} d\omega} \\
+        \\
+        \\
+        =\dfrac{1}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{\omega-a} \sum\limits_{n+1=0}^{\infty} \left(\dfrac{z-a}{\omega-a}\right)^{n+1} d\omega \\
+        \\
+        \\
+        =\dfrac{1}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{\omega-a} \left(\dfrac{z-a}{\omega-a}\right)^{n+1} \sum\limits_{n+1=0}^{\infty} \left(\dfrac{z-a}{\omega-a}\right)^n d\omega \\
+        \\
+        \\
+        =\dfrac{1}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{\omega-a} \left(\dfrac{z-a}{\omega-a}\right)^{n+1} \dfrac{\omega-a}{\omega-a-z+a} d\omega \\
+        \\
+        \\
+        =\dfrac{(z-a)^{n+1}}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{(\omega-a)^{n+1}(\omega-z)} d\omega \\
+        \\
+        \\
+        \\
+        \therefore ~~~ \dfrac{(z-a)^s}{2 \pi i} \oint\limits_{\mathcal C} \dfrac{f(\omega)}{(\omega-a)^s(\omega-z)} d\omega ~~~ \surd
+      $
+    }
+
   \end{enumerate}
 
 \end{document}
