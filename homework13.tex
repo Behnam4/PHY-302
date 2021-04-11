@@ -124,7 +124,11 @@
           $
         }
 
-      \item Compute the same integral as above, where $\mathcal{C}$ is a circle of radius 2 centered at $z = 0$.
+      \item Compute the same integral as above, where $\mathcal{C}$ is a circle of radius 2 centered at $z=0$.
+      
+        \textcolor{hwColor}{
+          Here
+        }
 
       \pagebreak
 
@@ -135,67 +139,67 @@
       where ${\mathcal C}$ is the unit circle centered at the origin.
 
 
-      \textcolor{hwColor}{
-        Let us remember that the generalized Cauchy formula allows us to write derivatives as integrals:
-        $$\oint\limits_{\mathcal C} \dfrac{f(z)}{(z-z_0)^{n+1}}dz=\dfrac{2 \pi i}{n!} \dfrac{\partial^n f}{\partial z^n} \Big|_{z=z_0}$$
-        We are told that $\mathcal{C}$ is the unit circle centered at the origin, therefore $\mathcal{C}:|z|=1$. 
-        \\
-        \\
-        \textbf{Method I:} \\
-        \\
-        Since we divide by $z^4$, we need the third derivative in Cauchy's formula \\ \\
-        $
-          \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=\dfrac{2 \pi i}{3!} \dfrac{\partial^3}{\partial z^3} \left(sinh(z)\right) \Big|_{z=0}
-          =\dfrac{2 \pi i}{3!} \dfrac{\partial^3}{\partial z^3} \left(sinh(z)\right) \Big|_{z=0}
-          =\dfrac{2 \pi i}{3!} cosh(z) \Big|_{z=0}
+        \textcolor{hwColor}{
+          Let us remember that the generalized Cauchy formula allows us to write derivatives as integrals:
+          $$\oint\limits_{\mathcal C} \dfrac{f(z)}{(z-z_0)^{n+1}}dz=\dfrac{2 \pi i}{n!} \dfrac{\partial^n f}{\partial z^n} \Big|_{z=z_0}$$
+          We are told that $\mathcal{C}$ is the unit circle centered at the origin, therefore $\mathcal{C}:|z|=1$. 
           \\
           \\
+          \textbf{Method I:} \\
           \\
-          \therefore ~~~ \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=i\dfrac{\pi}{3} ~~~~ \surd
-        $ 
-        \\
-        \\
-        \rule{15cm}{1pt}
-        \\
-        \\
-        \textbf{Method II:} \\
-        \\
-        Since $z=0$ is a pole of order 3 of $f(z)=\dfrac{sinh(z)}{z^4}$, we have \\
-        \\
-        \\
-        $
-          Res_{z=0} \dfrac{sinh(z)}{z^4}=\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{d^2}{dz^2} \left(z^3 \dfrac{sinh(z)}{z^4}\right)
-          =\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{d^2}{dz^2} \left(\dfrac{sinh(z)}{z}\right) \\
+          Since we divide by $z^4$, we need the third derivative in Cauchy's formula \\ \\
+          $
+            \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=\dfrac{2 \pi i}{3!} \dfrac{\partial^3}{\partial z^3} \left(sinh(z)\right) \Big|_{z=0}
+            =\dfrac{2 \pi i}{3!} \dfrac{\partial^3}{\partial z^3} \left(sinh(z)\right) \Big|_{z=0}
+            =\dfrac{2 \pi i}{3!} cosh(z) \Big|_{z=0}
+            \\
+            \\
+            \\
+            \therefore ~~~ \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=i\dfrac{\pi}{3} ~~~~ \surd
+          $ 
           \\
           \\
-          =\dfrac{1}{2!} \lim\limits_{z\to\infty} \left[\dfrac{z^2 sinh(z)}{z^3}-\dfrac{2 \left(z cosh(z)-sinh(z)\right)}{z^3}\right]
-        $
-        \\
-        \\
-        Using L'H$\hat{o}$pital's rule: \\
-        \\
-        $
-          Res_{z=0} \dfrac{sinh(z)}{z^4}=\dfrac{1}{2!} \lim\limits_{z\to\infty} \left[\dfrac{2z sinh(z)+z^2 cosh(z)-2\left(cosh(z)+z sinh(z)-cosh(z)\right)}{3z^2}\right] \\
+          \rule{15cm}{1pt}
           \\
           \\
-          =\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{z^2 cosh(z)}{3z^2}=\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{2z cosh(z)+z^2 sinh(z)}{6z} \\
+          \textbf{Method II:} \\
+          \\
+          Since $z=0$ is a pole of order 3 of $f(z)=\dfrac{sinh(z)}{z^4}$, we have \\
           \\
           \\
-          =\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{2 cosh(z)+2z sinh(z)+2z sinh(z)+z^2 cosh(z)}{6} \\
+          $
+            Res_{z=0} \dfrac{sinh(z)}{z^4}=\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{d^2}{dz^2} \left(z^3 \dfrac{sinh(z)}{z^4}\right)
+            =\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{d^2}{dz^2} \left(\dfrac{sinh(z)}{z}\right) \\
+            \\
+            \\
+            =\dfrac{1}{2!} \lim\limits_{z\to\infty} \left[\dfrac{z^2 sinh(z)}{z^3}-\dfrac{2 \left(z cosh(z)-sinh(z)\right)}{z^3}\right]
+          $
           \\
           \\
+          Using L'H$\hat{o}$pital's rule: \\
           \\
-          Res_{z=0} \dfrac{sinh(z)}{z^4}=\dfrac{1}{6} ~~~ \surd
-          \\
-          \\
-          \\
-          \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=2\pi i Res_{z=0} \dfrac{sinh(z)}{z^4}=2 \pi i \left(\dfrac{1}{6}\right) \\
-          \\
-          \\
-          \\
-          \therefore ~~~ \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=i\dfrac{\pi}{3} ~~~~ \surd
-        $
-      }
+          $
+            Res_{z=0} \dfrac{sinh(z)}{z^4}=\dfrac{1}{2!} \lim\limits_{z\to\infty} \left[\dfrac{2z sinh(z)+z^2 cosh(z)-2\left(cosh(z)+z sinh(z)-cosh(z)\right)}{3z^2}\right] \\
+            \\
+            \\
+            =\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{z^2 cosh(z)}{3z^2}=\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{2z cosh(z)+z^2 sinh(z)}{6z} \\
+            \\
+            \\
+            =\dfrac{1}{2!} \lim\limits_{z\to\infty} \dfrac{2 cosh(z)+2z sinh(z)+2z sinh(z)+z^2 cosh(z)}{6} \\
+            \\
+            \\
+            \\
+            Res_{z=0} \dfrac{sinh(z)}{z^4}=\dfrac{1}{6} ~~~ \surd
+            \\
+            \\
+            \\
+            \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=2\pi i Res_{z=0} \dfrac{sinh(z)}{z^4}=2 \pi i \left(\dfrac{1}{6}\right) \\
+            \\
+            \\
+            \\
+            \therefore ~~~ \oint\limits_{\mathcal C} \dfrac{sinh(z)}{z^4} dz=i\dfrac{\pi}{3} ~~~~ \surd
+          $
+        }
 
 
   \end{enumerate}
