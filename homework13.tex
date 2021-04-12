@@ -14,6 +14,7 @@
 \usepackage[colorinlistoftodos]{todonotes}
 
 \definecolor{hwColor}{HTML}{AD53BA}
+\definecolor{extra}{HTML}{0122F9}
 
 \begin{document}
 
@@ -223,15 +224,93 @@
   \begin{enumerate}
     \item Prove the identity:
     $$\frac{1}{1-\omega} = 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1}  + \frac{\omega^n}{1- \omega}~,$$
-    where the last term is called the remainder of the series. (Hint: it may be easier to prove the equivalent expression: $(1- \omega^n) =(1- \omega)( 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1} )$~~).
+    where the last term is called the remainder of the series. (Hint: it may be easier to prove the 
+    equivalent expression: $(1- \omega^n) =(1- \omega)( 1 + \omega +\omega^2 + \omega^3 + ...... + \omega^{n-1} )$~~).
 
       \textcolor{hwColor}{
-        From 
+        \\
+        Let's begin by the given hint  \\
+        \\
+        $
+          (1-\omega^n)=(1-\omega)(1+\omega+\omega^2+\omega^3+...+\omega^{n-1})
+          \\
+          \\
+          \omega-\omega^{n+1}=(1-\omega) (\omega+\omega^2+\omega^3+\omega^4+...+\omega^n)
+          \\
+          \\
+          \omega^{n+1}-\omega=(\omega-1) (\omega+\omega^2+\omega^3+\omega^4+...+\omega^n)
+          \\
+          \\
+          \omega^{n+1}-\omega+1-1=(\omega-1) (\omega+\omega^2+\omega^3+\omega^4+...+\omega^n) 
+          \\
+          \\
+          (\omega^{n+1}-1)-(\omega-1)=(\omega-1) (\omega+\omega^2+\omega^3+\omega^4+...+\omega^n) 
+          \\
+          \\
+          \omega^{n+1}-1=(\omega-1) (\omega+\omega^2+\omega^3+\omega^4+...+\omega^n)+(\omega-1)
+          \\
+          \\
+          \omega^{n+1}-1=(\omega-1) \left[(\omega+\omega^2+\omega^3+\omega^4+...+\omega^n)+1\right]
+          \\
+          \\
+          \dfrac{\omega^{n+1}-1}{\omega-1}=1+\omega+\omega^2+\omega^3+\omega^4+...+\omega^n 
+          \\
+          \\
+          1+\omega+\omega^2+\omega^3+\omega^4+...+\omega^{n-1}+\left[\omega^n-\dfrac{\omega^{n+1}}{\omega-1}\right]=\dfrac{1}{1-\omega}
+          \\
+          \\
+        $
       }
+
+      \textcolor{extra}{
+        $
+          \left[\omega^n-\dfrac{\omega^{n+1}}{\omega-1}\right]=\omega^n-\dfrac{\omega^n \omega}{\omega}
+          =\omega \left(\omega^{n-1}-\dfrac{\omega^n}{\omega-1}\right)=-\dfrac{\omega}{\omega-1} \\ \\ \\
+        $
+      }
+
+      \textcolor{hwColor}{
+        $
+          \Longrightarrow 1+\omega+\omega^2+\omega^3+\omega^4+...+\omega^{n-1}+\left[\omega^n-\dfrac{\omega^{n+1}}{\omega-1}\right]=\dfrac{1}{1-\omega}
+          \\
+          \\
+          1+\omega+\omega^2+\omega^3+\omega^4+...+\omega^{n-1}+\dfrac{-\omega^n}{\omega-1}=\dfrac{1}{1-\omega}
+          \\
+          \\
+          \\
+          \therefore ~~~ 1+\omega+\omega^2+\omega^3+\omega^4+...+\omega^{n-1}+\dfrac{\omega^n}{1-\omega}=\dfrac{1}{1-\omega} ~~~ \surd
+          \\
+          \\
+        $
+      }
+
+      \pagebreak
+
+      \textcolor{hwColor}{
+        Another way to approac this based on the given hint is: \\
+        \\
+        $
+          \dfrac{1-\omega^n}{1-\omega}=\sum\limits_{i=1}^{n} \omega^{i-1} \\
+          \\
+          R.H.S: \\
+          \sum\limits_{i=1}^{N+1} \omega^{i-1}=\sum\limits_{i=1}^{N} \omega^{i-1}+\omega^N=\dfrac{1-\omega^N}{1-\omega}+\omega^N=\dfrac{1-\omega^{N+1}}{1-\omega} \\
+          \\
+          \\
+          \\
+          L.H.S: \\
+          \dfrac{1-\omega^n}{1-\omega}=\sum\limits_{i=1}^{n} \\
+          \\
+          1=(1-\omega) \sum\limits_{i=1}^{n} \omega^{i-1}+\omega^n \\
+          \\
+          \\
+          \therefore ~~~~ \dfrac{1}{1-\omega}=\sum\limits_{i=1}^{n} \omega^{i-1}+\dfrac{\omega^n}{1-\omega} ~~~ \surd
+        $
+      }
+
 
     \item  Use the result of the previous exercise to prove the expression of the remainder of a generic Taylor series, $R_n$ (see theory segment 35).  In other words, prove that, if the conditions for Taylor's theorem are satisfied, the following equality holds: 
     $$\sum^{\infty}_{k=n} \frac{1}{k!} d^{(k)} f(z_0) (z-z_0)^k = \frac{(z-z_0)^n}{2 \pi i} \oint_{\mathcal C}  \frac{f(z^\prime)}{(z^\prime - z_0)^n(z^\prime - z)} dz^\prime ~,$$
-    where $d^{(k)} f(z_0)$ is the $k$-th order derivative of $f(z)$, evaluated in the point $z=z_0$.   (Hint: take inspiration from the derivation of the expression of the Taylor's series expansion done in Theory segment 35). 
+    where $d^{(k)} f(z_0)$ is the $k$-th order derivative of $f(z)$, evaluated in the point $z=z_0$. (Hint: take inspiration from the derivation of the expression of the Taylor's series expansion done in Theory segment 35). 
     
     \textcolor{hwColor}{
       \\
