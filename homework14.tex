@@ -256,12 +256,62 @@
     \item Find the residues of each of the following functions at \emph{all} of their respective poles (in other words, for each function, find the poles and then proceed to calculate the residue at each pole):
     \begin{enumerate}
       \item $$\frac{z}{z^2 + 4z + 3}$$
+        \textcolor{hwColor}{
+          $
+            f(z)=\dfrac{z}{z^2+4z+3}=\dfrac{z}{(z+3)(z+1)}
+          $
+          \\
+          \\
+          Based on what we have, there are simply two poles, $-3$ and $-1$.
+          \\
+          \\
+          \rule{15cm}{1pt}
+          \\
+          \\
+          \textbf{When z=-3:}
+          \\
+          \\
+          $
+            Res(f(-3))=\lim\limits_{z \to -3} \dfrac{z(z+3)}{(z+3)(z+1)}=\dfrac{3}{2}
+          $
+          \\
+          \\
+          \rule{15cm}{1pt}
+          \\
+          \\
+          \textbf{When z=-1:}
+          \\
+          \\
+          $
+            Res(f(-1))=\lim\limits_{z \to -1} \dfrac{z(z+1)}{(z+3)(z+1)}=-\dfrac{1}{2}
+          $
+        }
       
       \item $$\frac{1}{e^z - 1}$$
+        \textcolor{hwColor}{
+          For this $f(z)=\dfrac{1}{e^z-1}$ we can see that only when $z=n2\pi i$. Fromm the page 858 of the textbook we have:
+          \\
+          \\
+          $
+            Res(f(z))=\lim\limits_{z \to n2\pi i} \dfrac{1}{e^z-1} \approx 1
+          $
+          \\
+          \\
+          Hence, we have a simple pole.
+        }
       
       \item $$\cot z$$
-    \end{enumerate}
-    (Hints:  For (b), you could try to expand the denominator.) 
+        \textcolor{hwColor}{
+          $f(z)=cot(z)=\dfrac{cos(z)}{sin(z)}$. We have a pole at $z=0$. Again from page 858 of the textbook we can say: 
+          \\
+          \\
+          $
+            Res(f(z))=\dfrac{cos(0)}{\dfrac{d sin(0)}{dz}}=1
+            \\
+            \\
+          $
+        }
+    \end{enumerate} 
     
     
     \item Compute the complex integral,
