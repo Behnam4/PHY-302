@@ -199,52 +199,52 @@
     \end{enumerate}
     (Hint: Refresh your knowledge of Taylor expansions of exponentials, trigonometric and hyperbolic functions.)
     
-    \textcolor{hwColor}{
-      \\
-      \\
-      We can think of the Laurent Series as a more generelized Taylor series, particularly one that is expanding 
-      out complex functions. The Laurent series is a representation of a complex function $f(z)$ as a series.
-      Unlike the Taylor series which expresses $f(z)$ as a series of terms with non-negative powers of $z$, a Laurent 
-      series includes terms with negative powers. A consequence of this is that a Laurent series may be used in cases where a Taylor expansion is not
-      possible.
-      \\
-      \\
-      \textbf{(a):}
-      \\
-      \\
-      $\dfrac{cosh(z)}{z^2}$ is analytic everywhere apart from the singularity at $z=0$.
-      \\
-      \\
-      $
-        f(z)=\dfrac{cosh(z)}{z^2}=\dfrac{\sum\limits_{n=0}^{\infty} \dfrac{z^{2n}}{2n!}}{z^2}
+      \textcolor{hwColor}{
         \\
         \\
-        \\
-        \therefore ~~~~ f(z)=\sum\limits_{n=0}^{\infty} \dfrac{z^{2n-2}}{2n!}=\dfrac{1}{z^2}+\dfrac{1}{2}+\dfrac{z^2}{4!}+\dfrac{z^4}{6!}+...
-      $
-      \\
-      \\
-      By expanding the above expression we can conclude that the order of the function's pole is 2 at 0. 
-      \\
-      \\
-      \rule{15cm}{1pt}
-      \\
-      \\
-      \textbf{(b):}
-      \\
-      \\
-      $
-        f(z)=\dfrac{e^z}{z^2-1}=e^z \dfrac{1}{z-1} \dfrac{1}{z+1}
+        We can think of the Laurent Series as a more generelized Taylor series, particularly one that is expanding 
+        out complex functions. The Laurent series is a representation of a complex function $f(z)$ as a series.
+        Unlike the Taylor series which expresses $f(z)$ as a series of terms with non-negative powers of $z$, a Laurent 
+        series includes terms with negative powers. A consequence of this is that a Laurent series may be used in cases where a Taylor expansion is not
+        possible.
         \\
         \\
-        =\dfrac{1}{z-1} \sum\limits_{n=0}^{\infty} \dfrac{(z-1)^n}{n!} e \times \sum\limits_{n=0}^{\infty} \dfrac{(-1)^n (z-1)^n}{2^{n+1}}
+        \textbf{(a):}
         \\
         \\
+        $\dfrac{cosh(z)}{z^2}$ is analytic everywhere apart from the singularity at $z=0$.
         \\
-        \therefore ~~~~ f(z)=\dfrac{1}{z-1} \sum\limits_{n=0}^{\infty} e \dfrac{(-1)^n (z-1)^{2n}}{2^{n+1} n!}=\dfrac{e}{2(z-1)}+...
-      $
-      We can see that the order of the function's pole is 1 at 1.
-    }
+        \\
+        $
+          f(z)=\dfrac{cosh(z)}{z^2}=\dfrac{\sum\limits_{n=0}^{\infty} \dfrac{z^{2n}}{2n!}}{z^2}
+          \\
+          \\
+          \\
+          \therefore ~~~~ f(z)=\sum\limits_{n=0}^{\infty} \dfrac{z^{2n-2}}{2n!}=\dfrac{1}{z^2}+\dfrac{1}{2}+\dfrac{z^2}{4!}+\dfrac{z^4}{6!}+...
+        $
+        \\
+        \\
+        By expanding the above expression we can conclude that the order of the function's pole is 2 at 0. 
+        \\
+        \\
+        \rule{15cm}{1pt}
+        \\
+        \\
+        \textbf{(b):}
+        \\
+        \\
+        $
+          f(z)=\dfrac{e^z}{z^2-1}=e^z \dfrac{1}{z-1} \dfrac{1}{z+1}
+          \\
+          \\
+          =\dfrac{1}{z-1} \sum\limits_{n=0}^{\infty} \dfrac{(z-1)^n}{n!} e \times \sum\limits_{n=0}^{\infty} \dfrac{(-1)^n (z-1)^n}{2^{n+1}}
+          \\
+          \\
+          \\
+          \therefore ~~~~ f(z)=\dfrac{1}{z-1} \sum\limits_{n=0}^{\infty} e \dfrac{(-1)^n (z-1)^{2n}}{2^{n+1} n!}=\dfrac{e}{2(z-1)}+...
+        $
+        We can see that the order of the function's pole is 1 at 1.
+      }
 
   \end{enumerate}
 
