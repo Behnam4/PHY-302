@@ -1,0 +1,77 @@
+\documentclass[fleqn]{article}
+\oddsidemargin 0.0in
+\textwidth 6.0in
+\thispagestyle{empty}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{amssymb}
+\usepackage{bigints} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\definecolor{hwColor}{HTML}{AD53BA}
+
+\begin{document}
+
+  \begin{titlepage}
+
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+    \center
+
+
+
+    \textsc{\LARGE Arizona State University}\\[1.5cm]
+
+    \textsc{\LARGE Mathematical Methods For Physics II }\\[1.5cm]
+
+
+    \begin{figure}
+      \includegraphics[width=\linewidth]{asu.png}
+    \end{figure}
+
+
+    \HRule \\[0.4cm]
+    { \huge \bfseries Homework Fifteen}\\[0.4cm] 
+    \HRule \\[1.5cm]
+
+    \textbf{Behnam Amiri}
+
+    \bigbreak
+
+    \textbf{Prof: Cecilia Lunardini}
+
+    \bigbreak
+
+
+    \textbf{{\large \today}\\[2cm]}
+
+    \vfill
+
+  \end{titlepage}
+
+  \begin{enumerate}
+    \item Evaluate the following definite integral: 
+    $$ \int^{2\pi}_0 \frac{d\theta}{p^2 -2p \cos\theta+1}~
+    $$ 
+    where $-1<p<1$. 
+    
+    
+    \item Evaluate the following integrals:
+    \begin{enumerate}
+      \item $$ \int^{+\infty}_{-\infty} \frac{ e^{imx}}{1+x^2}dx $$ 
+      \item $$ \int^{+\infty}_{0} \frac{ x^2}{1+x^4}dx $$ 
+    \end{enumerate}
+    (Hint: for the (a), use the property $\displaystyle\lim_{|z|  \to \infty} |e^{im z}| = \displaystyle\lim_{y  \to \infty} e^{-m y} = 0 $.  For (b): note that the integrand is an even function. ) 
+    
+    \item Evaluate the integral:
+    $$\int^{+\infty}_{0} \frac{ \sqrt{x}}{1+x^3}dx$$
+    (Hint: take inspiration from the example(s) shown in class. ) 
+    
+  \end{enumerate}
+
+\end{document}
