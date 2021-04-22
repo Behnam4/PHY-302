@@ -269,6 +269,61 @@
     \item Evaluate the integral:
     $$\int^{+\infty}_{0} \frac{ \sqrt{x}}{1+x^3}dx$$
     (Hint: take inspiration from the example(s) shown in class. ) 
+
+      \textcolor{hwColor}{
+        $
+          I=\bigints\limits_{0}^{+\infty} \dfrac{\sqrt{x}}{1+x^3} dx
+        $
+        \\
+        \\
+        Let $u=\sqrt{x}$ then we have: \\
+        \\
+        \\
+        $
+          I=\dfrac{2}{3} \bigints\limits_{0}^{+\infty} \dfrac{1}{1+u^2} du 
+        $
+        \\
+        \\
+        Let \textbf{C} be the closed path of the semi-circle of radius \textbf{R} on the upper 
+        half of the complex plane along with the real axis traversed counter-clockwise. Then when $R \to \infty$
+        the integral along the semi circle goes to 0. \\
+        \\
+        $
+          I=\dfrac{2}{3} \bigints\limits_{C} \dfrac{1}{1+z^2} dz=\dfrac{2}{3} \bigints\limits_{C} \dfrac{1}{(z-i)(z+i)} dz
+        $
+        \\
+        \\
+        Note this is not equal to the original integral since as $R \to \infty$ we are left with the integral from
+        $-\infty$ to $+\infty$. But we can divide the integral by 2 to solve for the integral from $0$ to $+\infty$.
+        \\
+        \\
+        $
+          \dfrac{1}{3} \bigints\limits_{C} \dfrac{1}{(z-i)(z+i)} dz
+          \\
+          \\
+          \\
+          \therefore ~~~~ Res(f(i))=\lim\limits_{z \to i} \dfrac{1}{z+i}=\dfrac{1}{2i} ~~~~ \surd
+        $
+        \\
+        \\
+        Note: In the interior of \textbf{C} , there is a pole of order 1 at i.
+        \\
+        \\
+        \\
+        $
+          \Longrightarrow I=\bigints\limits_{0}^{+\infty} \dfrac{\sqrt{x}}{1+x^3} dx
+          \\
+          \\
+          =\dfrac{1}{3} \bigints\limits_{C} \dfrac{1}{(z-i)(z+i)} dz=\dfrac{1}{3} 2 \pi i Res(f(i))
+          \\
+          \\
+          =\dfrac{1}{3} 2 \pi i \times \dfrac{1}{2i}
+          \\
+          \\
+          \\
+          \therefore ~~~~ I=\dfrac{\pi}{3} ~~~~ \surd
+        $
+      }
     
   \end{enumerate}
 
