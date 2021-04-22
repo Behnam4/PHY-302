@@ -132,15 +132,140 @@
     
     \item Evaluate the following integrals:
     \begin{enumerate}
-      \item $$ \int^{+\infty}_{-\infty} \frac{ e^{imx}}{1+x^2}dx $$ 
+      \item $$ \int^{+\infty}_{-\infty} \frac{ e^{imx}}{1+x^2}dx$$
+
+        \textcolor{hwColor}{
+          $
+            f(z)=\dfrac{e^{imz}}{(z+i)(z-i)}
+          $
+          \\
+          \\
+          thr poles are $i$ and $-i$. \\
+          \\
+          \\
+          $
+            Res(f(i))=\lim\limits_{z \to i} \dfrac{(z-i) e^{imz}}{(z+i)(z-i)}=\lim\limits_{z \to i} \dfrac{e^{imz}}{(z+i)}=\dfrac{e^{-m}}{2i}
+          $
+          \\
+          \\
+          Now picture a circle centered at the origin with radius $r$. Then we have: \\
+          \\
+          $
+            \oint\limits_{C} f(z) dz=\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            2 \pi i ~ Res(f(i))=\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            2 \pi i \times \dfrac{e^{-m}}{2i}=\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            \\
+            \therefore ~~~~ \bigints\limits_{-\infty}^{+\infty}=\dfrac{e^{imx}}{1+x^2} dx=\pi e^{-m} ~~~~ \surd
+          $
+        }
+  
       \item $$ \int^{+\infty}_{0} \frac{ x^2}{1+x^4}dx$$
       
-      \textcolor{hwColor}{
-        The answer should be $\pi e^k$
-      }
+        \textcolor{hwColor}{
+          $
+            f(z)=\dfrac{z^2}{1+z^4} 
+          $
+          \\
+          \\
+          \includegraphics[height=4cm, width=7cm]{Capture.JPG}
+          \\
+          \\
+          Based on $f(z)$ the poles is when $x^4=-1$, hence the poles are $
+          \begin{cases}
+            e^{i \pi/4}
+            \\
+            e^{3 i \pi/ 4} 
+          \end{cases}
+          $
+          \\
+          \\
+          \textbf{(A)}
+          \\
+          \\
+          $
+            Res(f(e^{i \pi/4}))=\lim\limits_{z \to e^{i \pi/4}} \dfrac{z^2(z-e^{i \pi/4})}{1+z^4}
+            \\
+            \\
+            =\lim\limits_{z \to e^{i \pi/4}} \dfrac{z^3-z^2 e^{i \pi/4}}{1+z^4}
+            \\
+            \\
+            =\lim\limits_{z \to e^{i \pi/4}} \dfrac{3z^2-2ze^{i \pi/4}}{4z^3}
+            \\
+            \\
+            \\
+            \therefore ~~~~ Res(f(e^{i \pi/4}))=\dfrac{1}{4 e^{i \pi/4}} ~~~~ \surd
+          $
+          \\
+          \\
+          \rule{15cm}{1pt}
+          \\
+          \\
+          \textbf{(B)}
+          \\
+          \\
+          $
+            Res(f(e^{3 i \pi/ 4}))=\lim\limits_{z \to e^{3 i \pi/ 4}} \dfrac{z^2(z-e^{3 i \pi/ 4})}{1+z^4}
+            \\
+            \\
+            =\lim\limits_{z \to e^{3 i \pi/ 4}} \dfrac{z^3-z^2 e^{3 i \pi/ 4}}{1+z^4}
+            \\
+            \\
+            =\lim\limits_{z \to e^{3 i \pi/ 4}} \dfrac{3z^2-2z e^{3 i \pi/ 4}}{4z^3}
+            \\
+            \\
+            \\
+            \therefore ~~~~ Res(f(e^{3 i \pi/ 4}))=\dfrac{1}{4e^{3 i \pi/ 4}} ~~~~ \surd
+          $
+          \\
+          \\
+          By using the $(24.70)$ equation we have:
+          \\
+          \\
+          \\
+          \rule{15cm}{1pt}
+          \\
+          \\
+          $
+            \oint\limits_{C} f(z) dz=\bigints f(z) dz+\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            \left[2 \pi i Res(f(e^{i \pi/4}))\right]+\left[2 \pi i Res(f(e^{3 i \pi/ 4}))\right]=\bigints f(z) dz+\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            \left[2 \pi i \dfrac{1}{4 e^{i \pi/4}} \right]+\left[2 \pi i \dfrac{1}{4e^{3 i \pi/ 4}}\right]=\bigints f(z) dz+\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            \dfrac{1}{2} \pi i \left[cos(\pi/4)- i sin(\pi/4)+ cos(3\pi/4)-i sin(3\pi/4)\right]=\bigints f(z) dz+\bigints\limits_{-r}^{r} f(z) dz
+            \\
+            \\
+            \\
+            \therefore ~~~~ \dfrac{1}{\sqrt{2}} \pi=\bigints f(z) dz+\bigints\limits_{-r}^{r} f(z) dz ~~~~ \surd
+          $
+          \\
+          \\
+          \\
+          \\
+          When $R \to \infty$, then we have: \\
+          \\
+          \\
+          $
+            \bigints\limits_{0}^{+\infty} \dfrac{x^2}{1+x^4} dx=\dfrac{1}{2} \bigints\limits_{-\infty}^{+\infty} \dfrac{x^2}{1+x^4} dx
+            \\
+            \\
+            \\
+            \therefore ~~~~ \bigints\limits_{0}^{+\infty} \dfrac{x^2}{1+x^4} dx=\pi \dfrac{\sqrt{2}}{4}
+            \\
+            \\
+          $
+        }
+
     \end{enumerate}
-    (Hint: for the (a), use the property $\displaystyle\lim_{|z|  \to \infty} |e^{im z}| = \displaystyle\lim_{y  \to \infty} e^{-m y} = 0 $.  For (b): note that the integrand is an even function. ) 
-    
     \item Evaluate the integral:
     $$\int^{+\infty}_{0} \frac{ \sqrt{x}}{1+x^3}dx$$
     (Hint: take inspiration from the example(s) shown in class. ) 
