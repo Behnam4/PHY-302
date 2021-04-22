@@ -56,15 +56,88 @@
 
   \begin{enumerate}
     \item Evaluate the following definite integral: 
-    $$ \int^{2\pi}_0 \frac{d\theta}{p^2 -2p \cos\theta+1}~
-    $$ 
-    where $-1<p<1$. 
-    
+    $$\int^{2\pi}_0 \frac{d\theta}{p^2 -2p \cos\theta+1}~$$ 
+    where $-1<p<1$.
+
+      \textcolor{hwColor}{
+        $
+          \begin{cases}
+            z=e^{i \theta} \longrightarrow dz=iz d\theta
+            \\
+            \\
+            e^{i \theta}+e^{-i\theta}=\left[cos(\theta)+i sin(\theta)\right]+\left[cos(\theta)-i sin(\theta)\right] \Longrightarrow cos(\theta)=\dfrac{1}{2} \left(e^{i \theta}+e^{-i \theta}\right)=\dfrac{1}{2} \left(z+\dfrac{1}{z}\right)
+          \end{cases}
+          \\
+          \\
+          \\
+          I=\bigints\limits_{0}^{2 \pi} \dfrac{d\theta}{p^2-2p cos(\theta)+1}
+          \\
+          \\
+          =\bigints\limits_{0}^{2 \pi} \dfrac{\dfrac{dz}{iz}}{p^2-2p \left[\dfrac{1}{2} \left(z+\dfrac{1}{z}\right)\right]+1}
+          \\
+          \\
+          =\dfrac{1}{i} \bigints\limits_{0}^{2 \pi} \dfrac{dz}{zp^2-p\left(z^2+1\right)+z}
+          \\
+          \\
+          =-i \bigints\limits_{0}^{2 \pi} \dfrac{dz}{zp^2-p\left(z^2+1\right)+z}
+          \\
+          \\
+          =-i \bigints\limits_{0}^{2 \pi} \dfrac{dz}{(p-z)(zp-1)}
+        $
+        \\
+        \\
+        What we ended up with is a function that has two poles 
+        \\
+        \\
+        $
+          \begin{cases}
+            z=p
+            \\
+            z=p^{-1}
+          \end{cases}
+        $
+        Based on the two poles we have the two scenarios: \\
+        \\
+        \\
+        \\
+        \textbf{(A) ~ $|z|>1$}
+        \\
+        \\
+        $
+          Res(f(p^{-1}))=\lim\limits_{z \to p^{-1}} \dfrac{i (z-p^{-1})}{p(z-p)(z-p^{-1})}=i\dfrac{1}{1-p^2}
+        $
+        \\
+        \\
+        \rule{15cm}{1pt}
+        \\
+        \\
+        \textbf{(B) ~ $|z|<1$}
+        \\
+        \\
+        $
+          Res(f(p))=\lim\limits_{z \to p} \dfrac{i (z-p)}{p(z-p)(z-p^{-1})}=\dfrac{i}{p^2-1}
+        $
+        \\
+        \\
+        \\
+        I=$
+          \begin{cases}
+            I_A=2 \pi i Res(f(p^{-1}))=\dfrac{2 \pi}{1-p^2} ~~~~~ \surd
+            \\
+            \\
+            I_B=2 \pi i Res(f(p))=\dfrac{2 \pi}{p^2-1} ~~~~~ \surd
+          \end{cases}
+        $
+      }
     
     \item Evaluate the following integrals:
     \begin{enumerate}
       \item $$ \int^{+\infty}_{-\infty} \frac{ e^{imx}}{1+x^2}dx $$ 
-      \item $$ \int^{+\infty}_{0} \frac{ x^2}{1+x^4}dx $$ 
+      \item $$ \int^{+\infty}_{0} \frac{ x^2}{1+x^4}dx$$
+      
+      \textcolor{hwColor}{
+        The answer should be $\pi e^k$
+      }
     \end{enumerate}
     (Hint: for the (a), use the property $\displaystyle\lim_{|z|  \to \infty} |e^{im z}| = \displaystyle\lim_{y  \to \infty} e^{-m y} = 0 $.  For (b): note that the integrand is an even function. ) 
     
